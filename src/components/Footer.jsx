@@ -69,7 +69,7 @@ function Footer() {
             {/* Text-based logo — temporary until brand assets are finalised */}
              <Link to="/" className="inline-block mb-6">
                 <img
-                  src="/Glimmora_website_logov2.png"
+                  src="/Glimmora_website_logov2_fit.png"
                   alt="Glimmora International"
                   className="h-20 w-auto object-contain"
                 />
