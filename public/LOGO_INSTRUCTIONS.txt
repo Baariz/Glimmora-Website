@@ -1,0 +1,21 @@
+BAAREZ LOGO SETUP
+==================
+
+Please add the Glimmora logo to this directory as "logo.png"
+
+The logo will be used in:
+1. Navigation bar (top left)
+2. Footer
+3. Branding throughout the site
+
+Recommended specifications:
+- File name: logo.png
+- Format: PNG with transparent background
+- Dimensions: At least 200px wide for quality
+- The logo will be automatically scaled to fit (h-12 / 48px in navbar)
+
+Alternative:
+If you have the logo in a different format (SVG, JPG, etc.),
+you can rename this file to match and update the references in:
+- src/components/Navbar.jsx (line 73)
+- src/components/Footer.jsx (line 56)

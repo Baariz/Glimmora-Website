@@ -1,0 +1,193 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Global CSS custom properties — Glimmora International brand palette */
+:root {
+  --color-primary:   #70564b;
+  --color-secondary: #4a3830;
+  --color-neutral:   #F5F3F1;
+  --color-charcoal:  #4e413b;
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply font-sans antialiased bg-white;
+    color: #4e413b;
+  }
+
+  /* Headings inherit colour from their context so they turn white
+     automatically inside dark / brand-bg sections */
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-bold;
+    color: inherit;
+  }
+
+  h1 {
+    @apply text-4xl md:text-5xl lg:text-6xl;
+  }
+
+  h2 {
+    @apply text-3xl md:text-4xl lg:text-5xl;
+  }
+
+  h3 {
+    @apply text-2xl md:text-3xl lg:text-4xl;
+  }
+
+  h4 {
+    @apply text-xl md:text-2xl;
+  }
+
+  h5 {
+    @apply text-lg md:text-xl;
+  }
+
+  h6 {
+    @apply text-base md:text-lg;
+  }
+}
+
+@layer components {
+  /* Primary CTA button — warm gradient */
+  .btn-primary {
+    background: linear-gradient(135deg, #956e5d 0%, #70564b 100%);
+    @apply text-white font-semibold px-6 py-3 transition-all duration-300 inline-flex items-center justify-center shadow-lg;
+    box-shadow: 0 4px 20px rgba(112, 86, 75, 0.30);
+  }
+  .btn-primary:hover {
+    background: linear-gradient(135deg, #70564b 0%, #5f4940 100%);
+    @apply -translate-y-0.5;
+  }
+
+  .btn-secondary {
+    @apply border-2 border-brand-maroon text-brand-maroon hover:bg-brand-maroon hover:text-white font-semibold px-6 py-3 rounded-lg transition-all duration-200 inline-flex items-center justify-center;
+  }
+
+  .section-container {
+    @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8;
+  }
+
+  .input-field {
+    @apply w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-brand-maroon focus:border-transparent outline-none transition-all;
+  }
+
+  .card {
+    @apply bg-white rounded-xl shadow-lg hover:shadow-xl transition-shadow duration-300;
+  }
+
+  /* ============================================================
+     Reusable section background: warm gradient + subtle diagonal
+     hatching. Use class="section-brand-bg" on any section/div.
+  ============================================================ */
+  .section-brand-bg {
+    background-color: #5f4940;
+    background-image:
+      repeating-linear-gradient(
+        -45deg,
+        transparent,
+        transparent 24px,
+        rgba(255, 255, 255, 0.035) 24px,
+        rgba(255, 255, 255, 0.035) 25px
+      ),
+      linear-gradient(135deg, #956e5d 0%, #70564b 55%, #4a3830 100%);
+  }
+}
+
+/* ============================================================
+   DARK / BRAND SECTION TEXT RULES
+   All text and headings inside brand-gradient or dark sections
+   must be white / light so they remain readable.
+============================================================ */
+
+/* --- section-brand-bg: force white text on everything --- */
+.section-brand-bg {
+  color: white;
+}
+.section-brand-bg h1,
+.section-brand-bg h2,
+.section-brand-bg h3,
+.section-brand-bg h4,
+.section-brand-bg h5,
+.section-brand-bg h6 {
+  color: white !important;
+}
+.section-brand-bg p {
+  color: rgba(255, 255, 255, 0.80) !important;
+}
+.section-brand-bg span:not([class*="bg-"]) {
+  color: rgba(255, 255, 255, 0.80) !important;
+}
+.section-brand-bg li {
+  color: rgba(255, 255, 255, 0.75) !important;
+}
+/* Labels / eyebrow text */
+.section-brand-bg .text-\[#70564b\] {
+  color: rgba(255, 255, 255, 0.65) !important;
+}
+/* SVG icons */
+.section-brand-bg svg {
+  color: rgba(255, 255, 255, 0.75) !important;
+}
+
+/* --- Exception: opaque white card children restore dark text --- */
+.section-brand-bg .bg-white,
+.section-brand-bg .bg-white h1,
+.section-brand-bg .bg-white h2,
+.section-brand-bg .bg-white h3,
+.section-brand-bg .bg-white h4,
+.section-brand-bg .bg-white h5,
+.section-brand-bg .bg-white h6,
+.section-brand-bg .bg-white p,
+.section-brand-bg .bg-white span,
+.section-brand-bg .bg-white li,
+.section-brand-bg .bg-white svg {
+  color: #4e413b !important;
+}
+
+/* --- bg-[#2E2A28] (charcoal) sections: ensure white text --- */
+.bg-\[#2E2A28\] {
+  color: white;
+}
+.bg-\[#2E2A28\] h1,
+.bg-\[#2E2A28\] h2,
+.bg-\[#2E2A28\] h3,
+.bg-\[#2E2A28\] h4,
+.bg-\[#2E2A28\] h5,
+.bg-\[#2E2A28\] h6 {
+  color: white !important;
+}
+.bg-\[#2E2A28\] p {
+  color: rgba(255, 255, 255, 0.75) !important;
+}
+
+/* --- Inline bg-[#70564b] elements (cards, buttons) get gradient --- */
+.bg-\[#70564b\]:not(.section-brand-bg) {
+  background: linear-gradient(135deg, #956e5d 0%, #70564b 100%) !important;
+  color: white;
+}
+.bg-\[#70564b\]:not(.section-brand-bg) h1,
+.bg-\[#70564b\]:not(.section-brand-bg) h2,
+.bg-\[#70564b\]:not(.section-brand-bg) h3,
+.bg-\[#70564b\]:not(.section-brand-bg) h4,
+.bg-\[#70564b\]:not(.section-brand-bg) h5,
+.bg-\[#70564b\]:not(.section-brand-bg) h6 {
+  color: white !important;
+}
+.bg-\[#70564b\]:not(.section-brand-bg) p,
+.bg-\[#70564b\]:not(.section-brand-bg) span {
+  color: rgba(255, 255, 255, 0.85) !important;
+}
+.bg-\[#70564b\]:not(.section-brand-bg) svg,
+.bg-\[#70564b\]:not(.section-brand-bg) .text-\[#70564b\] {
+  color: rgba(255, 255, 255, 0.80) !important;
+}
+
+/* --- Dark text override: all text-[#2E2A28] → warm brown --- */
+.text-\[#2E2A28\] {
+  color: #4e413b !important;
+}
