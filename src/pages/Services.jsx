@@ -209,7 +209,7 @@ const Services = () => {
                 
                 {/* Center Hub */}
                 <div className="relative z-20 w-32 h-32 bg-white rounded-full shadow-[0_0_40px_rgba(112,86,75,0.1)] border border-gray-100 flex flex-col items-center justify-center">
-                    <span className="text-[#70564b] font-bold tracking-tight text-xl">baarez</span>
+                    <span className="text-[#70564b] font-bold tracking-tight text-xl">Glimmora</span>
                     <span className="text-xs text-gray-400 uppercase tracking-widest mt-1">Core</span>
                 </div>
 

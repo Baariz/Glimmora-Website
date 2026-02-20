@@ -2,7 +2,7 @@ import React from 'react';
 import { motion } from 'framer-motion';
 
 const Privacy = () => {
-  const lastUpdated = "January 2024";
+  const lastUpdated = "February 2026";
 
   return (
     <div className="bg-[#FCFCFC] font-sans text-[#2E2A28] pt-32 min-h-screen">
@@ -17,7 +17,7 @@ const Privacy = () => {
             <span className="text-xs text-[#70564b] font-bold uppercase tracking-[0.4em] mb-4 block">Legal Documentation</span>
             <h1 className="text-3xl md:text-4xl font-bold text-[#70564b] mb-6">Privacy Policy</h1>
             <p className="text-gray-500 text-sm max-w-2xl mx-auto leading-relaxed">
-              Baâriz Technology Solutions is committed to protecting your privacy. This policy explains how we collect, 
+              Glimmora International is committed to protecting your privacy. This policy explains how we collect,
               use, and safeguard your personal information across our services and subdomains.
             </p>
             <div className="mt-8 text-gray-400 text-xs uppercase tracking-widest font-bold">
@@ -46,9 +46,9 @@ const Privacy = () => {
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                 {[
                   { term: "Cookie", desc: "Small data used to identify your browser, provide analytics, and remember preferences." },
-                  { term: "Company", desc: "Baâriz Technology Solutions, Doha, Qatar (responsible for your information)." },
+                  { term: "Company", desc: "Glimmora International Private Limited (responsible for your information)." },
                   { term: "Personal Data", desc: "Information allowing for the identification or identifiability of a natural person." },
-                  { term: "Website", desc: "Accessed via baariz.com.qa." },
+                  { term: "Website", desc: "Accessed via glimmora.ai." },
                   { term: "Device", desc: "Any internet-connected device used to visit the Service." },
                   { term: "IP Address", desc: "Numbers assigned to devices to identify geographic connection blocks." }
                 ].map((item, idx) => (
@@ -100,8 +100,8 @@ const Privacy = () => {
             <div>
               <h3 className="text-[#70564b] font-bold text-lg mb-4">International Data Transfers</h3>
               <p className="text-sm text-gray-600 leading-relaxed">
-                Baâriz Technology Solutions is incorporated in Qatar. Information collected may be transferred to 
-                offices, personnel, or third parties worldwide. By using our Service, you consent to the trans-border 
+                Glimmora International Private Limited is incorporated in Maharashtra, India. Information collected may be transferred to
+                offices, personnel, or third parties worldwide. By using our Service, you consent to the trans-border
                 transfer and hosting of such information.
               </p>
             </div>
@@ -122,15 +122,13 @@ const Privacy = () => {
               <div className="grid grid-cols-1 md:grid-cols-2 gap-8 text-sm text-gray-600">
                 <div>
                   <span className="block font-bold text-[#70564b] text-[10px] uppercase mb-2">Support Channels</span>
-                  <p>Email: info@baarez.com</p>
-                  <p>Phone: +974 44164978</p>
+                  <p>Email: info@glimmora.ai</p>
                 </div>
                 <div>
                   <span className="block font-bold text-[#70564b] text-[10px] uppercase mb-2">Registered Address</span>
                   <p className="leading-relaxed">
-                    Baâriz Technology Solutions<br />
-                    Office No.15, 2nd Floor, MISR Insurance Building<br />
-                    Street no 230, C-ring Road, Doha, Qatar
+                    Glimmora International Private Limited<br />
+                    India
                   </p>
                 </div>
               </div>

@@ -297,7 +297,7 @@ const Solutions = () => {
                             <div className="w-2.5 h-2.5 rounded-full bg-red-400"></div>
                             <div className="w-2.5 h-2.5 rounded-full bg-yellow-400"></div>
                             <div className="w-2.5 h-2.5 rounded-full bg-green-400"></div>
-                            <div className="ml-auto text-[10px] font-mono text-gray-400">dashboard.baarez.com</div>
+                            <div className="ml-auto text-[10px] font-mono text-gray-400">dashboard.glimmora.ai</div>
                         </div>
                         <div className="relative">
                             <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=2070&auto=format&fit=crop" alt="Analytics Dashboard" className="w-full h-48 object-cover opacity-90" />
