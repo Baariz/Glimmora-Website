@@ -76,7 +76,7 @@ function Footer() {
             </Link>
 
             <p className="text-sm text-[#ffffff] mb-4 font-bold tracking-widest uppercase">
-              Engineering the Intelligent Future.
+              The Intelligence Layer for the Modern World.
             </p>
 
             <p className="text-sm text-gray-500 leading-relaxed max-w-sm">
