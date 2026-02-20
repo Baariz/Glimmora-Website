@@ -61,7 +61,7 @@ const About = () => {
            </div>
            <div className="relative z-10 h-full flex flex-col justify-center">
               <h2 className="text-white text-xl font-bold leading-tight mb-6">"We take ownership of each project we engage in."</h2>
-              <p className="text-white/70 font-bold text-xs uppercase tracking-widest">Making Thinking Visible</p>
+              <p className="text-white/70 font-bold text-xs uppercase tracking-widest">The Intelligence Layer for the Modern World.</p>
            </div>
         </div>
         <div className="absolute -bottom-10 -left-10 w-64 h-64 border border-gray-100 -z-10"></div>
