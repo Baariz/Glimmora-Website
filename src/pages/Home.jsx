@@ -720,9 +720,7 @@ function Home() {
             </div>
 
             <div className="flex items-center gap-3">
-  {/* <div className="w-7 h-7 bg-[#70564b] flex items-center justify-center flex-shrink-0">
-    <div className="w-3 h-3 border-[1.5px] border-white/70" />
-  </div> */}
+  
 
   <img
     src="/Glimmora_website_logov2_fit.png"   // change this to your logo path

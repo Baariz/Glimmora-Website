@@ -126,7 +126,7 @@ function Navbar() {
           {/* --- LOGO (text-based, temporary until brand assets are finalised) --- */}
           <Link to="/" className="flex items-center space-x-3 z-50 shrink-0">
             <img
-              src="/Glimmora_website_logo_fit.png"
+              src="/Glimmora_website_logov2_fit.png"
               alt="Glimmora International"
               className="h-52 w-52 object-contain" 
             />
