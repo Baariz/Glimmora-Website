@@ -719,7 +719,7 @@ function Home() {
               ))}
             </div>
 
-            <div className="flex items-center gap-3">
+      
              <Link to="/" className="flex items-center space-x-3 z-50 shrink-0">
             <img
               src="/Glimmora_website_logo_fit.png"
@@ -727,7 +727,7 @@ function Home() {
               className="h-52 w-52 object-contain" 
             />
           </Link>
-          </div>
+         
 
           {/* Floating info chip — top-right */}
           <motion.div
