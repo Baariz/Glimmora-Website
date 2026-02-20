@@ -618,9 +618,9 @@ function Home() {
         </div>
 
         {/* Headline */}
-        <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-[3.5rem] font-bold text-[#2E2A28] leading-[1.08] tracking-tight">
-          Engineering the
-          <span className="text-[#70564b]"> Intelligent Future.</span>
+        <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-[3 rem] font-bold text-[#2E2A28] leading-[1.08] tracking-tight">
+          The Intelligence layer <br/>
+          <span className="text-[#70564b]"> for the Modern World</span>
         </h1>
 
         {/* Subtext */}
@@ -720,11 +720,16 @@ function Home() {
             </div>
 
             <div className="flex items-center gap-3">
-              <div className="w-7 h-7 bg-[#70564b] flex items-center justify-center flex-shrink-0">
-                <div className="w-3 h-3 border-[1.5px] border-white/70" />
-              </div>
-              <span className="text-xs font-bold text-[#70564b] uppercase tracking-[0.2em]">Glimmora</span>
-            </div>
+  {/* <div className="w-7 h-7 bg-[#70564b] flex items-center justify-center flex-shrink-0">
+    <div className="w-3 h-3 border-[1.5px] border-white/70" />
+  </div> */}
+
+  <img
+    src="/Glimmora_website_logov2_fit.png"   // change this to your logo path
+    alt="Glimmora Logo"
+    className="h-12 w-auto object-contain"
+  />
+</div>
           </div>
 
           {/* Floating info chip — top-right */}
