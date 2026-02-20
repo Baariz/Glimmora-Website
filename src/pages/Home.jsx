@@ -720,11 +720,13 @@ function Home() {
             </div>
 
             <div className="flex items-center gap-3">
-              <div className="w-7 h-7 bg-[#70564b] flex items-center justify-center flex-shrink-0">
-                <div className="w-3 h-3 border-[1.5px] border-white/70" />
-              </div>
-              <span className="text-xs font-bold text-[#70564b] uppercase tracking-[0.2em]">Glimmora</span>
-            </div>
+             <Link to="/" className="flex items-center space-x-3 z-50 shrink-0">
+            <img
+              src="/Glimmora_website_logo_fit.png"
+              alt="Glimmora International"
+              className="h-52 w-52 object-contain" 
+            />
+          </Link>
           </div>
 
           {/* Floating info chip — top-right */}
