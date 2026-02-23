@@ -375,6 +375,119 @@ const About = () => {
         </div>
       </section>
 
+      {/* BECOME A PARTNER */}
+      <section className="py-32 bg-[#F5F3F1] relative overflow-hidden">
+        <div className="absolute inset-0 bg-[linear-gradient(rgba(112,86,75,0.02)_1px,transparent_1px),linear-gradient(90deg,rgba(112,86,75,0.02)_1px,transparent_1px)] bg-[size:40px_40px]"></div>
+        <div className="max-w-7xl mx-auto px-6 lg:px-12 relative z-10">
+
+          {/* Header */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
+            className="max-w-2xl mb-20"
+          >
+            <h2 className="text-xs text-[#70564b] font-bold uppercase tracking-[0.4em] mb-4">Partner with Glimmora</h2>
+            <h3 className="text-3xl md:text-4xl font-bold text-[#2E2A28] leading-tight mb-6">
+              Grow Together.<br />Build the Future.
+            </h3>
+            <p className="text-gray-500 text-sm leading-relaxed">
+              Glimmora's partner ecosystem is built for organizations that want to co-deliver intelligence at scale. Whether you are a technology reseller, system integrator, or industry consultant — there is a place for you in the Glimmora ecosystem.
+            </p>
+          </motion.div>
+
+          {/* Partner Types Grid */}
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-px bg-gray-200 border border-gray-200 mb-16">
+            {[
+              {
+                num: '01',
+                title: 'Reseller Partners',
+                desc: 'Resell and distribute Glimmora platforms to your existing client base. Access full sales support, training, and co-marketing resources.',
+                benefit: 'Revenue share + deal registration',
+              },
+              {
+                num: '02',
+                title: 'System Integrators',
+                desc: 'Integrate Glimmora\'s intelligence layer into complex enterprise environments. Leverage our API stack and technical certification program.',
+                benefit: 'Technical certification + support',
+              },
+              {
+                num: '03',
+                title: 'Consulting Partners',
+                desc: 'Deliver Glimmora\'s advisory and implementation services to your clients. Augment your practice with AI-native GRC, cyber, and hospitality intelligence.',
+                benefit: 'Practice enablement + co-delivery',
+              },
+              {
+                num: '04',
+                title: 'Technology Partners',
+                desc: 'Integrate your product with Glimmora\'s platform APIs. Build joint solutions that combine your capabilities with Glimmora\'s intelligence layer.',
+                benefit: 'Joint go-to-market + API access',
+              },
+            ].map((type, i) => (
+              <motion.div
+                key={type.num}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.5, delay: i * 0.1 }}
+                className="bg-white p-10 hover:bg-[#fafafa] transition-colors group"
+              >
+                <span className="text-3xl font-black text-[#70564b] opacity-20 block mb-6">{type.num}</span>
+                <h4 className="text-lg font-bold text-[#70564b] mb-4 group-hover:text-[#5f4940] transition-colors">{type.title}</h4>
+                <p className="text-gray-500 text-xs leading-relaxed mb-6">{type.desc}</p>
+                <div className="border-t border-gray-100 pt-4">
+                  <p className="text-[10px] font-bold text-[#70564b] uppercase tracking-widest">{type.benefit}</p>
+                </div>
+              </motion.div>
+            ))}
+          </div>
+
+          {/* Why Partner */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
+            className="bg-white border border-gray-100 p-8 md:p-12 shadow-sm relative overflow-hidden mb-12"
+          >
+            <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-[#956e5d] to-[#70564b]"></div>
+            <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+              {[
+                { metric: '12+', label: 'Platforms to Sell' },
+                { metric: '8+', label: 'Industries Covered' },
+                { metric: '6', label: 'Global Markets' },
+                { metric: '100%', label: 'Partner Support' },
+              ].map((stat) => (
+                <div key={stat.label} className="text-center md:text-left">
+                  <p className="text-3xl font-bold text-[#70564b] mb-1">{stat.metric}</p>
+                  <p className="text-xs font-bold text-gray-400 uppercase tracking-widest">{stat.label}</p>
+                </div>
+              ))}
+            </div>
+          </motion.div>
+
+          {/* CTA */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
+          >
+            <Link
+              to="/partner-on-board"
+              className="inline-flex items-center gap-3 bg-[#70564b] text-white px-12 py-4 text-xs font-bold uppercase tracking-[0.2em] hover:bg-[#5f4940] transition-all shadow-xl"
+            >
+              Apply to Become a Partner
+              <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
+              </svg>
+            </Link>
+          </motion.div>
+
+        </div>
+      </section>
+
       {/* 7. FINAL CALL TO ACTION */}
       <section className="py-32 bg-white text-center">
         <div className="max-w-3xl mx-auto px-6">

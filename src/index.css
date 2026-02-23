@@ -65,7 +65,7 @@
   }
 
   .btn-secondary {
-    @apply border-2 border-brand-maroon text-brand-maroon hover:bg-brand-maroon hover:text-white font-semibold px-6 py-3 rounded-lg transition-all duration-200 inline-flex items-center justify-center;
+    @apply border-2 border-brand-maroon text-brand-maroon hover:bg-brand-maroon hover:text-white font-semibold px-6 py-3 transition-all duration-200 inline-flex items-center justify-center;
   }
 
   .section-container {

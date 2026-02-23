@@ -1,27 +1,65 @@
 import { useState, useEffect } from 'react'
 import { Link, NavLink } from 'react-router-dom'
 
-// Reusable Icon Components for the Menu
 const Icons = {
   Shield: () => (
     <svg className="w-5 h-5 text-brand-maroon" fill="none" viewBox="0 0 24 24" stroke="currentColor">
       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
     </svg>
   ),
-  Chart: () => (
+  Hotel: () => (
     <svg className="w-5 h-5 text-brand-maroon" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 01-2 2h-2a2 2 0 01-2-2z" />
+      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" />
     </svg>
   ),
-  Cloud: () => (
+  Military: () => (
     <svg className="w-5 h-5 text-brand-maroon" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M3 15a4 4 0 004 4h9a5 5 0 10-.1-9.999 5.002 5.002 0 10-9.78 2.096A4.001 4.001 0 003 15z" />
+      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M12 9v3.75m0-10.036A11.959 11.959 0 013.598 6 11.99 11.99 0 003 9.75c0 5.592 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
     </svg>
   ),
-  Cog: () => (
+  Lock: () => (
     <svg className="w-5 h-5 text-brand-maroon" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z" />
-      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
+      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z" />
+    </svg>
+  ),
+  Sparkles: () => (
+    <svg className="w-5 h-5 text-brand-maroon" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z" />
+    </svg>
+  ),
+  Globe: () => (
+    <svg className="w-5 h-5 text-brand-maroon" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+    </svg>
+  ),
+  Layers: () => (
+    <svg className="w-5 h-5 text-brand-maroon" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5" />
+    </svg>
+  ),
+  Building: () => (
+    <svg className="w-5 h-5 text-brand-maroon" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M3 21h18M9 8h1M9 12h1M9 16h1M15 8h1M15 12h1M15 16h1M5 21V5a2 2 0 012-2h10a2 2 0 012 2v16" />
+    </svg>
+  ),
+  Users: () => (
+    <svg className="w-5 h-5 text-brand-maroon" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" />
+    </svg>
+  ),
+  Heart: () => (
+    <svg className="w-5 h-5 text-brand-maroon" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
+    </svg>
+  ),
+  Plane: () => (
+    <svg className="w-5 h-5 text-brand-maroon" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M12 19l9 2-9-18-9 18 9-2zm0 0v-8" />
+    </svg>
+  ),
+  Film: () => (
+    <svg className="w-5 h-5 text-brand-maroon" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M7 4v16M17 4v16M3 8h4m10 0h4M3 12h18M3 16h4m10 0h4M4 20h16a1 1 0 001-1V5a1 1 0 00-1-1H4a1 1 0 00-1 1v14a1 1 0 001 1z" />
     </svg>
   ),
   Doc: () => (
@@ -29,23 +67,23 @@ const Icons = {
       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
     </svg>
   ),
-  Users: () => (
+  BookOpen: () => (
     <svg className="w-5 h-5 text-brand-maroon" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197M13 7a4 4 0 11-8 0 4 4 0 018 0z" />
+      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" />
     </svg>
   ),
-  Sparkles: () => (
+  ChartBar: () => (
     <svg className="w-5 h-5 text-brand-maroon" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z" />
+      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" />
     </svg>
-  )
+  ),
 }
 
 function Navbar() {
   const [isScrolled, setIsScrolled] = useState(false)
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
-  const [activeMegaMenu, setActiveMegaMenu] = useState(null) 
-  const [mobileExpanded, setMobileExpanded] = useState(null) 
+  const [activeMegaMenu, setActiveMegaMenu] = useState(null)
+  const [mobileExpanded, setMobileExpanded] = useState(null)
 
   useEffect(() => {
     const handleScroll = () => setIsScrolled(window.scrollY > 10)
@@ -53,61 +91,57 @@ function Navbar() {
     return () => window.removeEventListener('scroll', handleScroll)
   }, [])
 
-  const solutionsMenu = [
+  const platformsMenu = [
     {
-      title: "Core Platforms",
+      title: 'Live Now',
       items: [
-        { name: 'Glimmora Hospitality', path: '/solutions/glimmora', desc: 'AGI-native hospitality intelligence.', icon: Icons.Sparkles },
+        { name: 'Glimmora Hospitality', path: '/platforms/hospitality', desc: 'AGI-native intelligence for hotels & resorts.', icon: Icons.Hotel, badge: null },
+        { name: 'Glimmora VerifAI', path: '/platforms/verifai', desc: 'Enterprise governance, risk & compliance intelligence.', icon: Icons.Shield, badge: null },
+        { name: 'AI OCR ScanVista', path: '/platforms/scanvista', desc: 'Intelligent document understanding — English & Arabic OCR.', icon: Icons.Doc, badge: null },
+      ]
+    },
+    {
+      title: 'Coming Soon',
+      items: [
+        { name: 'Moda Glimmora',    path: '/platforms/moda',          desc: 'Fashion & retail intelligence layer.',                        icon: Icons.Sparkles, badge: 'Soon' },
+        { name: 'Design Glimmora',  path: '/platforms/design',        desc: 'AI architecture & interior design intelligence.',            icon: Icons.Building, badge: 'Soon' },
+        { name: 'GlimmoraTeam',     path: '/platforms/team',          desc: 'SOW to governed project execution via AGI.',                icon: Icons.Users,    badge: 'Soon' },
+        { name: 'Film Glimmora',    path: '/platforms/film',          desc: 'Cinema & entertainment intelligence.',                      icon: Icons.Film,     badge: 'Soon' },
+        { name: 'Elan Glimmora',    path: '/platforms/elan',          desc: 'Travel & luxury intelligence ecosystem.',                   icon: Icons.Plane,    badge: 'Soon' },
+        { name: 'Glimmora Reach',   path: '/platforms/reach',         desc: 'Multi-channel enterprise outreach platform.',               icon: Icons.Globe,    badge: 'Soon' },
+        { name: 'AEGIS Glimmora',   path: '/platforms/aegis-defense', desc: 'Defense & military simulation intelligence.',               icon: Icons.Military, badge: 'Soon' },
+        { name: 'Glimmora Nidhi',   path: '/platforms/nidhi',         desc: 'Financial intelligence & advisory platform.',              icon: Icons.Layers,   badge: 'Soon' },
+        { name: 'Cyber Glimmora',   path: '/platforms/cyber',         desc: '24/7 cybersecurity & sovereign threat intelligence.',      icon: Icons.Lock,     badge: 'Soon' },
+      ]
+    },
+  ]
 
-        { name: 'AI GRC Platform', path: '/solutions/grc', desc: 'Unified governance, risk & compliance.', icon: Icons.Shield },
-        { name: 'AI TPRM Platform', path: '/solutions/tprm', desc: 'Third-party risk management lifecycle.', icon: Icons.Shield },
-        { name: 'AI Internal Audit Platform', path: '/solutions/internal-audit', desc: 'Streamline audit workflows.', icon: Icons.Doc },
+  const industriesMenu = [
+    {
+      title: 'Core Industries',
+      items: [
+        { name: 'Enterprise', path: '/industries/enterprise', desc: 'GRC, compliance & risk for regulated industries.', icon: Icons.Building },
+        { name: 'Defense & Military', path: '/industries/defense', desc: 'AI simulation & tactical intelligence.', icon: Icons.Military },
+        { name: 'Hospitality', path: '/industries/hospitality', desc: 'Revenue optimization & guest intelligence.', icon: Icons.Hotel },
+        { name: 'Healthcare', path: '/industries/healthcare', desc: 'Regulatory compliance & patient intelligence.', icon: Icons.Heart },
       ]
     },
     {
-      title: "Intelligence & Automation",
+      title: 'Growth Industries',
       items: [
-        { name: 'AI OCR ScanVista', path: '/solutions/scanvista', desc: 'AI-powered document processing.', icon: Icons.Doc },
-        { name: 'Tax Automation', path: '/solutions/tax-automation', desc: 'Automated tax reporting engine.', icon: Icons.Chart },
-      ]
-    },
-    {
-      title: "Enterprise Systems",
-      items: [
-        { name: 'Dynamics 365', path: '/solutions/dynamics-365', desc: 'ERP & CRM implementation.', icon: Icons.Cloud },
-        { name: 'Human Resources (HR)', path: '/solutions/human-resource', desc: 'Business Central HR solution.', icon: Icons.Users },
+        { name: 'Travel & Luxury', path: '/industries/travel-luxury', desc: 'Premium experience & distribution intelligence.', icon: Icons.Plane },
+        { name: 'Fashion', path: '/industries/fashion', desc: 'Trend intelligence & retail AI.', icon: Icons.Sparkles },
+        { name: 'Cinema & Entertainment', path: '/industries/cinema', desc: 'Content intelligence & audience analytics.', icon: Icons.Film },
+        { name: 'Public Sector', path: '/industries/public-sector', desc: 'Sovereign AI for government & public institutions.', icon: Icons.Globe },
       ]
     }
   ]
 
-  const servicesMenu = [
-    {
-      title: "Consulting & Transformation",
-      items: [
-        { name: 'Business Process Consulting', path: '/services/business-process-consulting', desc: 'Optimize operational efficiency.', icon: Icons.Chart },
-        { name: 'Digital Transformation', path: '/services/digital-transformation', desc: 'Modernize legacy systems.', icon: Icons.Cog },
-      ]
-    },
-    {
-      title: "Technology & AI",
-      items: [
-        { name: 'Data Analytics & AI', path: '/services/data-analytics-ai', desc: 'Actionable insights from data.', icon: Icons.Chart },
-      ]
-    },
-    {
-      title: "Cloud, Security & ERP",
-      items: [
-        { name: 'ERP Consulting', path: '/services/erp-consulting', desc: 'Expert ERP advisory services.', icon: Icons.Cog },
-        { name: 'Cybersecurity & SOC', path: '/services/cybersecurity-soc', desc: '24/7 threat monitoring.', icon: Icons.Shield },
-        { name: 'Cloud & Automation', path: '/services/cloud-automation', desc: 'Cloud migration & DevOps.', icon: Icons.Cloud },
-      ]
-    }
-  ]
-
-  // Updated Resources Array
+  // Resources dropdown: GRC White Paper, Blogs, Case Studies
   const resources = [
-    { name: 'Blogs', path: '/blogs' },
-    { name: 'White Paper', path: '/grc-whitepaper' },
+    { name: 'GRC White Paper', path: '/grc-whitepaper', icon: Icons.Doc },
+    { name: 'Blogs', path: '/blogs', icon: Icons.BookOpen },
+    { name: 'Case Studies', path: '/case-studies', icon: Icons.ChartBar },
   ]
 
   const toggleMobileExpand = (menu) => {
@@ -122,19 +156,19 @@ function Navbar() {
     >
       <div className="section-container relative">
         <div className="flex items-center justify-between h-24">
-          
-          {/* --- LOGO (text-based, temporary until brand assets are finalised) --- */}
+
+          {/* LOGO */}
           <Link to="/" className="flex items-center space-x-3 z-50 shrink-0">
             <img
               src="/Glimmora_website_logov2_fit.png"
               alt="Glimmora International"
-              className="h-52 w-52 object-contain" 
+              className="h-52 w-52 object-contain"
             />
           </Link>
 
-          {/* --- DESKTOP NAVIGATION --- */}
-          <div className="hidden lg:flex items-center space-x-8 h-full">
-            
+          {/* DESKTOP NAV — Order: About, Ecosystem, Platforms, Industries, Resources, Contact */}
+          <div className="hidden lg:flex items-center space-x-10 h-full">
+
             {/* 1. About */}
             <NavLink
               to="/about"
@@ -145,56 +179,118 @@ function Navbar() {
               About
             </NavLink>
 
-            {/* 2. Solutions Mega Menu */}
-            <div 
+            {/* 2. Ecosystem */}
+            <NavLink
+              to="/ecosystem"
+              className={({ isActive }) =>
+                `text-sm font-medium transition-colors ${isActive ? 'text-brand-maroon' : 'text-gray-700 hover:text-brand-maroon'}`
+              }
+            >
+              Ecosystem
+            </NavLink>
+
+            {/* 3. Platforms Mega Menu */}
+            <div
               className="h-full flex items-center"
-              onMouseEnter={() => setActiveMegaMenu('solutions')}
+              onMouseEnter={() => setActiveMegaMenu('platforms')}
               onMouseLeave={() => setActiveMegaMenu(null)}
             >
-              <button 
-                className={`text-sm font-medium transition-colors flex items-center space-x-1 outline-none ${
-                  activeMegaMenu === 'solutions' ? 'text-brand-maroon' : 'text-gray-700 hover:text-brand-maroon'
-                }`}
-              >
-                <span><Link to="/solutions" onClick={() => setActiveMegaMenu(null)}>Solutions</Link></span>
-                <svg className={`w-4 h-4 transition-transform duration-200 ${activeMegaMenu === 'solutions' ? 'rotate-180' : ''}`} fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <button className={`text-sm font-medium transition-colors flex items-center space-x-1 outline-none ${activeMegaMenu === 'platforms' ? 'text-brand-maroon' : 'text-gray-700 hover:text-brand-maroon'}`}>
+                <Link to="/platforms" onClick={() => setActiveMegaMenu(null)}>Platforms</Link>
+                <svg className={`w-4 h-4 transition-transform duration-200 ${activeMegaMenu === 'platforms' ? 'rotate-180' : ''}`} fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
                 </svg>
               </button>
 
-              <div 
-                className={`absolute top-full left-0 w-full bg-white shadow-xl border-t border-gray-100 transition-all duration-300 origin-top transform ${
-                  activeMegaMenu === 'solutions' 
-                    ? 'opacity-100 visible translate-y-0' 
-                    : 'opacity-0 invisible -translate-y-2'
-                }`}
-              >
+              <div className={`absolute top-full left-0 w-full bg-white shadow-xl border-t border-gray-100 transition-all duration-300 origin-top transform ${activeMegaMenu === 'platforms' ? 'opacity-100 visible translate-y-0' : 'opacity-0 invisible -translate-y-2'}`}>
                 <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
                   <div className="grid grid-cols-3 gap-8">
-                    {solutionsMenu.map((column, idx) => (
+                    {/* Live Now — 1 column */}
+                    <div className="space-y-4">
+                      <h3 className="text-xs font-semibold text-gray-400 uppercase tracking-wider flex items-center gap-2">
+                        {platformsMenu[0].title}
+                        <span className="w-1.5 h-1.5 bg-green-500 rounded-full inline-block" />
+                      </h3>
+                      <ul className="space-y-3">
+                        {platformsMenu[0].items.map((item) => (
+                          <li key={item.path}>
+                            <Link to={item.path} onClick={() => setActiveMegaMenu(null)} className="group block p-3 -mx-3 hover:bg-gray-50 transition-colors">
+                              <div className="flex items-start">
+                                <div className="flex-shrink-0 mt-1"><item.icon /></div>
+                                <div className="ml-4">
+                                  <p className="text-base font-medium text-gray-900 group-hover:text-brand-maroon">{item.name}</p>
+                                  <p className="mt-1 text-sm text-gray-500">{item.desc}</p>
+                                </div>
+                              </div>
+                            </Link>
+                          </li>
+                        ))}
+                      </ul>
+                    </div>
+
+                    {/* Coming Soon — spans 2 columns, 2-col inner grid */}
+                    <div className="col-span-2 space-y-4 pl-8 border-l border-gray-100">
+                      <h3 className="text-xs font-semibold text-gray-400 uppercase tracking-wider">
+                        {platformsMenu[1].title}
+                      </h3>
+                      <ul className="grid grid-cols-2 gap-x-6 gap-y-1">
+                        {platformsMenu[1].items.map((item) => (
+                          <li key={item.path}>
+                            <Link to={item.path} onClick={() => setActiveMegaMenu(null)} className="group block p-3 -mx-3 hover:bg-gray-50 transition-colors">
+                              <div className="flex items-start">
+                                <div className="flex-shrink-0 mt-1"><item.icon /></div>
+                                <div className="ml-4">
+                                  <div className="flex items-center gap-1.5 flex-wrap">
+                                    <p className="text-sm font-medium text-gray-900 group-hover:text-brand-maroon leading-tight">{item.name}</p>
+                                    {item.badge && (
+                                      <span className="text-[9px] font-semibold bg-brand-maroon/10 text-brand-maroon px-1.5 py-0.5">{item.badge}</span>
+                                    )}
+                                  </div>
+                                  <p className="mt-1 text-xs text-gray-500">{item.desc}</p>
+                                </div>
+                              </div>
+                            </Link>
+                          </li>
+                        ))}
+                      </ul>
+                    </div>
+                  </div>
+                  <div className="mt-6 pt-6 border-t border-gray-100 bg-gray-50 -mx-8 -mb-8 px-8 py-4 flex justify-between items-center">
+                    <span className="text-sm text-gray-500">Explore the full Glimmora Intelligence Ecosystem</span>
+                    <Link to="/ecosystem" className="text-sm font-semibold text-brand-maroon hover:text-brand-maroon-dark" onClick={() => setActiveMegaMenu(null)}>View Ecosystem &rarr;</Link>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            {/* 4. Industries Mega Menu */}
+            <div
+              className="h-full flex items-center"
+              onMouseEnter={() => setActiveMegaMenu('industries')}
+              onMouseLeave={() => setActiveMegaMenu(null)}
+            >
+              <button className={`text-sm font-medium transition-colors flex items-center space-x-1 outline-none ${activeMegaMenu === 'industries' ? 'text-brand-maroon' : 'text-gray-700 hover:text-brand-maroon'}`}>
+                <Link to="/industries" onClick={() => setActiveMegaMenu(null)}>Industries</Link>
+                <svg className={`w-4 h-4 transition-transform duration-200 ${activeMegaMenu === 'industries' ? 'rotate-180' : ''}`} fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+                </svg>
+              </button>
+
+              <div className={`absolute top-full left-0 w-full bg-white shadow-xl border-t border-gray-100 transition-all duration-300 origin-top transform ${activeMegaMenu === 'industries' ? 'opacity-100 visible translate-y-0' : 'opacity-0 invisible -translate-y-2'}`}>
+                <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+                  <div className="grid grid-cols-2 gap-8">
+                    {industriesMenu.map((column, idx) => (
                       <div key={idx} className="space-y-4">
-                        <h3 className="text-xs font-semibold text-gray-400 uppercase tracking-wider">
-                          {column.title}
-                        </h3>
+                        <h3 className="text-xs font-semibold text-gray-400 uppercase tracking-wider">{column.title}</h3>
                         <ul className="space-y-3">
                           {column.items.map((item) => (
                             <li key={item.path}>
-                              <Link 
-                                to={item.path} 
-                                onClick={() => setActiveMegaMenu(null)}
-                                className="group block p-3 -mx-3 rounded-lg hover:bg-gray-50 transition-colors"
-                              >
+                              <Link to={item.path} onClick={() => setActiveMegaMenu(null)} className="group block p-3 -mx-3 hover:bg-gray-50 transition-colors">
                                 <div className="flex items-start">
-                                  <div className="flex-shrink-0 mt-1">
-                                    <item.icon />
-                                  </div>
+                                  <div className="flex-shrink-0 mt-1"><item.icon /></div>
                                   <div className="ml-4">
-                                    <p className="text-base font-medium text-gray-900 group-hover:text-brand-maroon">
-                                      {item.name}
-                                    </p>
-                                    <p className="mt-1 text-sm text-gray-500">
-                                      {item.desc}
-                                    </p>
+                                    <p className="text-base font-medium text-gray-900 group-hover:text-brand-maroon">{item.name}</p>
+                                    <p className="mt-1 text-sm text-gray-500">{item.desc}</p>
                                   </div>
                                 </div>
                               </Link>
@@ -204,132 +300,52 @@ function Navbar() {
                       </div>
                     ))}
                   </div>
-                  <div className="mt-6 pt-6 border-t border-gray-100 bg-gray-50 -mx-8 -mb-8 px-8 py-4 flex justify-between items-center rounded-b-lg">
-                    <span className="text-sm text-gray-500">Need help finding the right solution?</span>
-                    <Link 
-                      to="/contact" 
-                      className="text-sm font-semibold text-brand-maroon hover:text-brand-dark"
-                      onClick={() => setActiveMegaMenu(null)}
-                    >
-                      Talk to an expert &rarr;
-                    </Link>
+                  <div className="mt-6 pt-6 border-t border-gray-100 bg-gray-50 -mx-8 -mb-8 px-8 py-4 flex justify-between items-center">
+                    <span className="text-sm text-gray-500">Find the right intelligence layer for your industry</span>
+                    <Link to="/industries" className="text-sm font-semibold text-brand-maroon hover:text-brand-maroon-dark" onClick={() => setActiveMegaMenu(null)}>All Industries &rarr;</Link>
                   </div>
                 </div>
               </div>
             </div>
 
-            {/* 3. Services Mega Menu */}
-            <div 
-              className="h-full flex items-center"
-              onMouseEnter={() => setActiveMegaMenu('services')}
-              onMouseLeave={() => setActiveMegaMenu(null)}
-            >
-              <button 
-                className={`text-sm font-medium transition-colors flex items-center space-x-1 outline-none ${
-                  activeMegaMenu === 'services' ? 'text-brand-maroon' : 'text-gray-700 hover:text-brand-maroon'
-                }`}
-              >
-                <span><Link to="/services" onClick={() => setActiveMegaMenu(null)}>Services</Link></span>
-                <svg className={`w-4 h-4 transition-transform duration-200 ${activeMegaMenu === 'services' ? 'rotate-180' : ''}`} fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
-                </svg>
-              </button>
-
-              <div 
-                className={`absolute top-full left-0 w-full bg-white shadow-xl border-t border-gray-100 transition-all duration-300 origin-top transform ${
-                  activeMegaMenu === 'services' 
-                    ? 'opacity-100 visible translate-y-0' 
-                    : 'opacity-0 invisible -translate-y-2'
-                }`}
-              >
-                <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
-                  <div className="grid grid-cols-3 gap-8">
-                    {servicesMenu.map((column, idx) => (
-                      <div key={idx} className="space-y-4">
-                        <h3 className="text-xs font-semibold text-gray-400 uppercase tracking-wider">
-                          {column.title}
-                        </h3>
-                        <ul className="space-y-3">
-                          {column.items.map((item) => (
-                            <li key={item.path}>
-                              <Link 
-                                to={item.path} 
-                                onClick={() => setActiveMegaMenu(null)}
-                                className="group block p-3 -mx-3 rounded-lg hover:bg-gray-50 transition-colors"
-                              >
-                                <div className="flex items-start">
-                                  <div className="flex-shrink-0 mt-1">
-                                    <item.icon />
-                                  </div>
-                                  <div className="ml-4">
-                                    <p className="text-base font-medium text-gray-900 group-hover:text-brand-maroon">
-                                      {item.name}
-                                    </p>
-                                    <p className="mt-1 text-sm text-gray-500">
-                                      {item.desc}
-                                    </p>
-                                  </div>
-                                </div>
-                              </Link>
-                            </li>
-                          ))}
-                        </ul>
-                      </div>
-                    ))}
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            {/* 4. Resources */}
-            <div 
-              className="relative group h-full flex items-center"
+            {/* 5. Resources Dropdown */}
+            <div
+              className="relative h-full flex items-center"
               onMouseEnter={() => setActiveMegaMenu('resources')}
               onMouseLeave={() => setActiveMegaMenu(null)}
             >
-              <button className={`text-sm font-medium transition-colors flex items-center space-x-1 outline-none ${
-                  activeMegaMenu === 'resources' ? 'text-brand-maroon' : 'text-gray-700 hover:text-brand-maroon'
-                }`}>
+              <button className={`text-sm font-medium transition-colors flex items-center space-x-1 outline-none ${activeMegaMenu === 'resources' ? 'text-brand-maroon' : 'text-gray-700 hover:text-brand-maroon'}`}>
                 <span>Resources</span>
-                <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <svg className={`w-4 h-4 transition-transform duration-200 ${activeMegaMenu === 'resources' ? 'rotate-180' : ''}`} fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
                 </svg>
               </button>
-              <div className={`absolute top-full right-0 w-48 bg-white rounded-b-lg shadow-xl py-2 border border-gray-100 transition-all duration-200 ${
-                  activeMegaMenu === 'resources' 
-                    ? 'opacity-100 visible translate-y-0' 
-                    : 'opacity-0 invisible -translate-y-2'
-                }`}>
+              <div className={`absolute top-full right-0 w-56 bg-white shadow-xl py-2 border border-gray-100 transition-all duration-200 ${activeMegaMenu === 'resources' ? 'opacity-100 visible translate-y-0' : 'opacity-0 invisible -translate-y-2'}`}>
                 {resources.map((resource) => (
                   <Link
                     key={resource.path}
                     to={resource.path}
                     onClick={() => setActiveMegaMenu(null)}
-                    className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-50 hover:text-brand-maroon"
+                    className="flex items-center gap-3 px-4 py-3 text-sm text-gray-700 hover:bg-gray-50 hover:text-brand-maroon transition-colors"
                   >
+                    <resource.icon />
                     {resource.name}
                   </Link>
                 ))}
               </div>
             </div>
 
-            {/* 5. Contact */}
-            <NavLink
+            {/* 6. Contact — solid button, sharp corners */}
+            <Link
               to="/contact"
-              className={({ isActive }) =>
-                `text-sm font-medium transition-colors ${isActive ? 'text-brand-maroon' : 'text-gray-700 hover:text-brand-maroon'}`
-              }
+              className="btn-primary text-sm px-6 py-2.5"
+              style={{ borderRadius: 0 }}
             >
               Contact
-            </NavLink>
-
-            {/* Button */}
-            <Link to="/partner-on-board" className="btn-primary text-sm px-5 py-2.5">
-              Become A Partner
             </Link>
           </div>
 
-          {/* --- MOBILE MENU BUTTON --- */}
+          {/* MOBILE MENU BUTTON */}
           <button
             className="lg:hidden p-2 text-gray-700"
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
@@ -345,41 +361,49 @@ function Navbar() {
           </button>
         </div>
 
-        {/* --- MOBILE MENU --- */}
+        {/* MOBILE MENU */}
         {isMobileMenuOpen && (
           <div className="lg:hidden absolute top-24 left-0 w-full bg-white border-t border-gray-100 shadow-xl overflow-y-auto max-h-[calc(100vh-6rem)]">
             <div className="px-4 py-6 space-y-4">
-              
-              {/* 1. About */}
-              <Link
-                to="/about"
-                className="block text-lg font-semibold text-gray-900 py-2"
-                onClick={() => setIsMobileMenuOpen(false)}
-              >
-                About
-              </Link>
 
-              {/* 2. Solutions */}
+              <Link to="/about" className="block text-lg font-semibold text-gray-900 py-2" onClick={() => setIsMobileMenuOpen(false)}>About</Link>
+              <Link to="/ecosystem" className="block text-lg font-semibold text-gray-900 py-2" onClick={() => setIsMobileMenuOpen(false)}>Ecosystem</Link>
+
+              {/* Platforms */}
               <div>
-                <button 
-                  onClick={() => toggleMobileExpand('solutions')}
-                  className="w-full flex justify-between items-center text-lg font-semibold text-gray-900 py-2"
-                >
-                  <span>Solutions</span>
-                  <svg className={`w-5 h-5 transform transition-transform ${mobileExpanded === 'solutions' ? 'rotate-180' : ''}`} fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <button onClick={() => toggleMobileExpand('platforms')} className="w-full flex justify-between items-center text-lg font-semibold text-gray-900 py-2">
+                  <span>Platforms</span>
+                  <svg className={`w-5 h-5 transform transition-transform ${mobileExpanded === 'platforms' ? 'rotate-180' : ''}`} fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
                   </svg>
                 </button>
-                {mobileExpanded === 'solutions' && (
+                {mobileExpanded === 'platforms' && (
                   <div className="pl-4 space-y-2 mt-2 border-l-2 border-gray-100">
-                    {solutionsMenu.map((group) => 
+                    {platformsMenu.map((group) =>
                       group.items.map((item) => (
-                        <Link
-                          key={item.path}
-                          to={item.path}
-                          className="block py-2 text-gray-600 hover:text-brand-maroon text-base"
-                          onClick={() => setIsMobileMenuOpen(false)}
-                        >
+                        <Link key={item.path} to={item.path} className="flex items-center justify-between py-2 text-gray-600 hover:text-brand-maroon text-base" onClick={() => setIsMobileMenuOpen(false)}>
+                          <span>{item.name}</span>
+                          {item.badge && <span className="text-[10px] font-semibold bg-brand-maroon/10 text-brand-maroon px-2 py-0.5">Soon</span>}
+                        </Link>
+                      ))
+                    )}
+                  </div>
+                )}
+              </div>
+
+              {/* Industries */}
+              <div>
+                <button onClick={() => toggleMobileExpand('industries')} className="w-full flex justify-between items-center text-lg font-semibold text-gray-900 py-2">
+                  <span>Industries</span>
+                  <svg className={`w-5 h-5 transform transition-transform ${mobileExpanded === 'industries' ? 'rotate-180' : ''}`} fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+                  </svg>
+                </button>
+                {mobileExpanded === 'industries' && (
+                  <div className="pl-4 space-y-2 mt-2 border-l-2 border-gray-100">
+                    {industriesMenu.map((group) =>
+                      group.items.map((item) => (
+                        <Link key={item.path} to={item.path} className="block py-2 text-gray-600 hover:text-brand-maroon text-base" onClick={() => setIsMobileMenuOpen(false)}>
                           {item.name}
                         </Link>
                       ))
@@ -388,41 +412,9 @@ function Navbar() {
                 )}
               </div>
 
-              {/* 3. Services */}
+              {/* Resources */}
               <div>
-                <button 
-                  onClick={() => toggleMobileExpand('services')}
-                  className="w-full flex justify-between items-center text-lg font-semibold text-gray-900 py-2"
-                >
-                  <span>Services</span>
-                  <svg className={`w-5 h-5 transform transition-transform ${mobileExpanded === 'services' ? 'rotate-180' : ''}`} fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
-                  </svg>
-                </button>
-                {mobileExpanded === 'services' && (
-                  <div className="pl-4 space-y-2 mt-2 border-l-2 border-gray-100">
-                    {servicesMenu.map((group) => 
-                      group.items.map((item) => (
-                        <Link
-                          key={item.path}
-                          to={item.path}
-                          className="block py-2 text-gray-600 hover:text-brand-maroon text-base"
-                          onClick={() => setIsMobileMenuOpen(false)}
-                        >
-                          {item.name}
-                        </Link>
-                      ))
-                    )}
-                  </div>
-                )}
-              </div>
-
-              {/* 4. Resources */}
-              <div>
-                <button 
-                  onClick={() => toggleMobileExpand('resources')}
-                  className="w-full flex justify-between items-center text-lg font-semibold text-gray-900 py-2"
-                >
+                <button onClick={() => toggleMobileExpand('resources')} className="w-full flex justify-between items-center text-lg font-semibold text-gray-900 py-2">
                   <span>Resources</span>
                   <svg className={`w-5 h-5 transform transition-transform ${mobileExpanded === 'resources' ? 'rotate-180' : ''}`} fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
@@ -431,12 +423,7 @@ function Navbar() {
                 {mobileExpanded === 'resources' && (
                   <div className="pl-4 space-y-2 mt-2 border-l-2 border-gray-100">
                     {resources.map((resource) => (
-                      <Link
-                        key={resource.path}
-                        to={resource.path}
-                        className="block py-2 text-gray-600 hover:text-brand-maroon text-base"
-                        onClick={() => setIsMobileMenuOpen(false)}
-                      >
+                      <Link key={resource.path} to={resource.path} className="block py-2 text-gray-600 hover:text-brand-maroon text-base" onClick={() => setIsMobileMenuOpen(false)}>
                         {resource.name}
                       </Link>
                     ))}
@@ -444,23 +431,9 @@ function Navbar() {
                 )}
               </div>
 
-              {/* 5. Contact */}
-              <Link
-                to="/contact"
-                className="block text-lg font-semibold text-gray-900 py-2"
-                onClick={() => setIsMobileMenuOpen(false)}
-              >
-                Contact
-              </Link>
-
-              {/* Button */}
               <div className="pt-4">
-                <Link 
-                  to="/partner-on-board" 
-                  className="btn-primary w-full text-center block"
-                  onClick={() => setIsMobileMenuOpen(false)}
-                >
-                  Become A Partner
+                <Link to="/contact" className="btn-primary w-full text-center block" style={{ borderRadius: 0 }} onClick={() => setIsMobileMenuOpen(false)}>
+                  Contact
                 </Link>
               </div>
             </div>

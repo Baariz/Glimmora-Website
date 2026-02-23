@@ -22,30 +22,25 @@ function Footer() {
     </Link>
   )
 
-  const solutions = [
-    { name: 'AI GRC Platform', path: '/solutions/grc' },
-    { name: 'AI TPRM Platform', path: '/solutions/tprm' },
-    { name: 'AI Internal Audit', path: '/solutions/internal-audit' },
-    { name: 'AI OCR ScanVista', path: '/solutions/scanvista' },
-    { name: 'Glimmora Hospitality', path: '/solutions/glimmora' },
-  ]
-
-  const services = [
-    { name: 'Business Process Consulting', path: '/services/business-process-consulting' },
-    { name: 'Digital Transformation', path: '/services/digital-transformation' },
-    { name: 'Data Analytics & AI', path: '/services/data-analytics-ai' },
-    { name: 'ERP Consulting', path: '/services/erp-consulting' },
+  const platforms = [
+    { name: 'Glimmora VerifAI', path: '/platforms/verifai' },
+    { name: 'AI OCR ScanVista', path: '/platforms/scanvista' },
+    { name: 'Glimmora Hospitality', path: '/platforms/hospitality' },
+    { name: 'AEGIS Glimmora', path: '/platforms/aegis-defense' },
   ]
 
   const resources = [
+    { name: 'Ecosystem', path: '/ecosystem' },
+    { name: 'Case Studies', path: '/case-studies' },
     { name: 'White Paper', path: '/grc-whitepaper' },
     { name: 'Blogs', path: '/blogs' },
   ]
 
   const company = [
     { name: 'About Us', path: '/about' },
-    { name: 'Contact', path: '/contact' },
     { name: 'Careers', path: '/careers' },
+    { name: 'Become a Partner', path: '/partner-on-board' },
+    { name: 'Contact', path: '/contact' },
   ]
 
   const locations = [
@@ -66,7 +61,6 @@ function Footer() {
 
           {/* 1. Left Column: Brand Identity */}
           <div className="lg:col-span-4 flex flex-col items-start">
-            {/* Text-based logo — temporary until brand assets are finalised */}
              <Link to="/" className="inline-block mb-6">
                 <img
                   src="/Glimmora_website_logov2_fit.png"
@@ -76,7 +70,7 @@ function Footer() {
             </Link>
 
             <p className="text-sm text-[#ffffff] mb-4 font-bold tracking-widest uppercase">
-              The intelligence layer for the modern world.
+              The Intelligence Layer for the Modern World.
             </p>
 
             <p className="text-sm text-gray-500 leading-relaxed max-w-sm">
@@ -102,9 +96,31 @@ function Footer() {
             <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
 
               <div>
-                <h3 className="text-white font-bold mb-6 text-xs uppercase tracking-widest border-b border-[#70564b]/50 pb-2 inline-block">Solutions</h3>
+                <h3 className="text-white font-bold mb-6 text-xs uppercase tracking-widest border-b border-[#70564b]/50 pb-2 inline-block">Platforms</h3>
                 <ul className="space-y-3">
-                  {solutions.map((item) => (
+                  {platforms.map((item) => (
+                    <li key={item.path}>
+                      <FooterLink to={item.path}>{item.name}</FooterLink>
+                    </li>
+                  ))}
+                  <li>
+                    <Link
+                      to="/platforms"
+                      className="flex items-center gap-2 text-sm text-[#70564b] hover:text-[#956e5d] transition-colors font-semibold mt-1"
+                    >
+                      View All Platforms
+                      <svg className="w-3 h-3" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                      </svg>
+                    </Link>
+                  </li>
+                </ul>
+              </div>
+
+              <div>
+                <h3 className="text-white font-bold mb-6 text-xs uppercase tracking-widest border-b border-[#70564b]/50 pb-2 inline-block">Resources</h3>
+                <ul className="space-y-3">
+                  {resources.map((item) => (
                     <li key={item.path}>
                       <FooterLink to={item.path}>{item.name}</FooterLink>
                     </li>
@@ -113,38 +129,14 @@ function Footer() {
               </div>
 
               <div>
-                <h3 className="text-white font-bold mb-6 text-xs uppercase tracking-widest border-b border-[#70564b]/50 pb-2 inline-block">Services</h3>
+                <h3 className="text-white font-bold mb-6 text-xs uppercase tracking-widest border-b border-[#70564b]/50 pb-2 inline-block">Company</h3>
                 <ul className="space-y-3">
-                  {services.map((item) => (
+                  {company.map((item) => (
                     <li key={item.path}>
                       <FooterLink to={item.path}>{item.name}</FooterLink>
                     </li>
                   ))}
                 </ul>
-              </div>
-
-              <div className="flex flex-col gap-8">
-                <div>
-                    <h3 className="text-white font-bold mb-6 text-xs uppercase tracking-widest border-b border-[#70564b]/50 pb-2 inline-block">Resources</h3>
-                    <ul className="space-y-3">
-                    {resources.map((item) => (
-                        <li key={item.path}>
-                          <FooterLink to={item.path}>{item.name}</FooterLink>
-                        </li>
-                    ))}
-                    </ul>
-                </div>
-
-                <div>
-                    <h3 className="text-white font-bold mb-4 text-xs uppercase tracking-widest border-b border-[#70564b]/50 pb-2 inline-block">Company</h3>
-                    <ul className="space-y-3">
-                    {company.map((item) => (
-                        <li key={item.path}>
-                          <FooterLink to={item.path}>{item.name}</FooterLink>
-                        </li>
-                    ))}
-                    </ul>
-                </div>
               </div>
 
               <div>

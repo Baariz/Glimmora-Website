@@ -231,10 +231,10 @@ const BAAREZ_CONFIG = {
     },
     {
       id: "glimmora",
-      label: "Glimmora",
+      label: "Hospitality",
       icon: Icons.Chip,
       title: "AGI-Native Hospitality Intelligence",
-      desc: "The operating brain for modern hospitality groups. Glimmora unifies guest data, operations, and pricing intelligence to optimize revenue and experience in real-time.",
+      desc: "The operating brain for modern hospitality groups. Glimmora Hospitality unifies guest data, operations, and pricing intelligence to optimize revenue and experience in real-time.",
       target: "Hospitality COOs & Revenue Managers",
       outcome: "15% increase in RevPAR (Revenue Per Available Room)",
       features: [
@@ -242,8 +242,8 @@ const BAAREZ_CONFIG = {
         "Guest Sentiment Analysis",
         "Operational Digital Twins"
       ],
-      synergy: "Glimmora Operational Data → Corporate GRC Oversight",
-      link: "/solutions/glimmora",
+      synergy: "Glimmora Hospitality Data → Corporate GRC Oversight via VerifAI",
+      link: "/platforms/hospitality",
       image: "https://images.unsplash.com/photo-1542314831-068cd1dbfeeb?q=80&w=2070&auto=format&fit=crop"
     }
   ]
@@ -443,9 +443,9 @@ services: {
   },
   // --- NEW CONFIG DATA END ---
   cta: {
-    headline: "Ready to unify your GRC operations?",
-    subheadline: "See how organizations reduce audit prep time by 40% and cut compliance overhead by 60% with Glimmora platforms.",
-    button: "Request Platform Demo"
+    headline: "Ready to deploy the intelligence layer?",
+    subheadline: "See how enterprises, governments, and hospitality groups are transforming operations with Glimmora's AI-native platforms.",
+    button: "Request Strategic Demo"
   }
 }
 
@@ -584,7 +584,7 @@ function Home() {
 {/* ================================================================= */}
 {/* GLIMMORA HERO — SPLIT LAYOUT, WHITE + BEIGE, ENTERPRISE GRADE   */}
 {/* ================================================================= */}
-<section className="relative flex items-center mt-5 bg-white overflow-hidden">
+<section className="relative flex items-center mt-12 bg-white overflow-hidden">
 
   {/* BACKGROUND: White-to-beige gradient + abstract geometric shapes at 5–8% opacity */}
   <div className="absolute inset-0 pointer-events-none">
@@ -655,10 +655,9 @@ function Home() {
         {/* Platform links — visible on mobile, hidden on lg (shown in right panel instead) */}
         <div className="flex lg:hidden flex-wrap items-center justify-center gap-x-4 gap-y-2 pt-4 border-t border-gray-100">
           {[
-            { name: 'Hospitality', to: '/solutions/glimmora' },
-            { name: 'GRC', to: '/solutions/grc' },
-            { name: 'TPRM', to: '/solutions/tprm' },
-            { name: 'Internal Audit', to: '/solutions/internal-audit' }
+            { name: 'VerifAI', to: '/platforms/verifai' },
+            { name: 'ScanVista', to: '/platforms/scanvista' },
+            { name: 'Hospitality', to: '/platforms/hospitality' },
           ].map((p, i) => (
             <Link key={i} to={p.to} className="flex items-center gap-2 text-xs text-gray-400 hover:text-[#70564b] font-medium transition-colors">
               <div className="w-1 h-1 rounded-full bg-[#70564b]" />
@@ -693,16 +692,15 @@ function Home() {
             <div>
               <div className="w-8 h-[2px] bg-[#70564b] mb-4" />
               <p className="text-[#2E2A28] text-base font-bold leading-snug">
-                Enterprise<br />Intelligence Platform
+                Global Intelligence<br />Ecosystem
               </p>
             </div>
 
             <div className="space-y-3">
               {[
-                { name: 'Glimmora Hospitality', to: '/solutions/glimmora' },
-                { name: 'AI GRC Platform', to: '/solutions/grc' },
-                { name: 'AI TPRM Platform', to: '/solutions/tprm' },
-                { name: 'AI Internal Audit', to: '/solutions/internal-audit' }
+                { name: 'Glimmora VerifAI', to: '/platforms/verifai' },
+                { name: 'AI OCR ScanVista', to: '/platforms/scanvista' },
+                { name: 'Glimmora Hospitality', to: '/platforms/hospitality' },
               ].map((platform, i) => (
                 <motion.div
                   key={i}
@@ -736,8 +734,8 @@ function Home() {
             transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
             className="absolute -top-5 -right-5 bg-white shadow-lg border-l-2 border-[#70564b] px-4 py-2.5 z-10"
           >
-            <p className="text-[9px] font-bold uppercase tracking-widest text-gray-400">Platform</p>
-            <p className="text-xs font-bold text-[#2E2A28] mt-0.5">AI-Native GRC</p>
+            <p className="text-[9px] font-bold uppercase tracking-widest text-gray-400">Ecosystem</p>
+            <p className="text-xs font-bold text-[#2E2A28] mt-0.5">12+ AI Platforms</p>
           </motion.div>
 
           {/* Floating info chip — bottom-left */}
@@ -746,8 +744,8 @@ function Home() {
             transition={{ duration: 4, repeat: Infinity, ease: "easeInOut", delay: 2 }}
             className="absolute -bottom-5 -left-5 bg-white shadow-lg border-l-2 border-[#70564b] px-4 py-2.5 z-10"
           >
-            <p className="text-[9px] font-bold uppercase tracking-widest text-gray-400">Coverage</p>
-            <p className="text-xs font-bold text-[#2E2A28] mt-0.5">MENA Region</p>
+            <p className="text-[9px] font-bold uppercase tracking-widest text-gray-400">Presence</p>
+            <p className="text-xs font-bold text-[#2E2A28] mt-0.5">6 Global Offices</p>
           </motion.div>
 
         </div>
@@ -758,124 +756,67 @@ function Home() {
 </section>
 
 
-{/* //Sectors section */}
-<section className="w-full bg-slate-50 border-b border-slate-200 py-8">
-  <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-    <div className="flex flex-col md:flex-row items-center justify-between gap-6">
-      
-      {/* Strategic Positioning Text */}
-      <div className="text-center md:text-left">
-        <h2 className="text-xl font-semibold text-slate-800">
-          Core Risk & Compliance for <span className="text-[#70564b]">Regulated Industries</span>
+{/* --- BAAREZ → GLIMMORA REBRAND STRIP --- */}
+<section className="w-full bg-white border-y border-[#70564b]/15 relative overflow-hidden">
+  {/* Warm diagonal accent */}
+  <div className="absolute inset-0 bg-[linear-gradient(135deg,rgba(112,86,75,0.03)_0%,transparent_60%)]" />
+  <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-12 py-10 relative z-10">
+    <div className="flex flex-col md:flex-row items-center gap-8 md:gap-12">
+
+      {/* Left: Label + Headline */}
+      <div className="shrink-0 text-center md:text-left">
+        <span className="text-[9px] font-black uppercase tracking-[0.5em] text-[#70564b]/60 block mb-2">Brand Evolution</span>
+        <h2 className="text-xl md:text-2xl font-bold text-[#2E2A28] leading-tight">
+          Baarez is now<br className="hidden sm:block" />
+          <span className="text-[#70564b]"> Glimmora International</span>
         </h2>
-        <p className="text-sm text-slate-500 mt-1">
-          Specialized governance for high-stakes environments.
-        </p>
       </div>
 
-      {/* Priority Sector Badges */}
-      <div className="flex flex-wrap justify-center md:justify-end gap-3">
-        
-        {/* Badge 1: BFSI */}
-        <span className="inline-flex items-center px-4 py-2 rounded-full text-sm font-medium bg-white text-slate-700 border border-slate-300 shadow-sm hover:border-[#70564b] transition-colors duration-200">
-          <svg className="mr-2 h-4 w-4 text-[#70564b]" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
-          BFSI
-        </span>
+      {/* Centre: Logo Transition */}
+      <div className="flex items-center gap-5 md:gap-8 shrink-0 mx-auto md:mx-0">
+        {/* Old logo — faded */}
+        <div className="flex flex-col items-center gap-1.5">
+          <div className="grayscale opacity-35 hover:opacity-50 transition-opacity">
+            <img src="/logo.png" alt="Baarez Technology Solutions" className="h-10 md:h-12 w-auto object-contain" />
+          </div>
+          <span className="text-[9px] text-gray-400 font-semibold uppercase tracking-widest">Est. 2017</span>
+        </div>
 
-        {/* Badge 2: Pharma */}
-        <span className="inline-flex items-center px-4 py-2 rounded-full text-sm font-medium bg-white text-slate-700 border border-slate-300 shadow-sm hover:border-[#70564b] transition-colors duration-200">
-          <svg className="mr-2 h-4 w-4 text-[#70564b]" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19.428 15.428a2 2 0 00-1.022-.547l-2.384-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z"></path></svg>
-          Pharma
-        </span>
+        {/* Arrow */}
+        <div className="flex flex-col items-center gap-1">
+          <div className="flex items-center gap-1">
+            <div className="w-8 md:w-12 h-[2px] bg-gradient-to-r from-gray-300 to-[#70564b]" />
+            <div className="w-0 h-0 border-l-[8px] border-l-[#70564b] border-t-[5px] border-t-transparent border-b-[5px] border-b-transparent" />
+          </div>
+          <span className="text-[9px] font-bold text-[#70564b] uppercase tracking-widest">Evolved</span>
+        </div>
 
-        {/* Badge 3: Manufacturing */}
-        <span className="inline-flex items-center px-4 py-2 rounded-full text-sm font-medium bg-white text-slate-700 border border-slate-300 shadow-sm hover:border-[#70564b] transition-colors duration-200">
-          <svg className="mr-2 h-4 w-4 text-[#70564b]" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19.428 15.428a2 2 0 00-1.022-.547l-2.384-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z"></path></svg>
-          Manufacturing
-        </span>
-
-        {/* Badge 4: Public Sector */}
-        <span className="inline-flex items-center px-4 py-2 rounded-full text-sm font-medium bg-white text-slate-700 border border-slate-300 shadow-sm hover:border-[#70564b] transition-colors duration-200">
-          <svg className="mr-2 h-4 w-4 text-[#70564b]" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M8 14v3m4-3v3m4-3v3M3 21h18M3 10h18M3 7l9-4 9 4M4 10h16v11H4V10z"></path></svg>
-          Public Sector
-        </span>
-
+        {/* New logo */}
+        <div className="flex flex-col items-center gap-1.5">
+          <img src="/Glimmora_logo_icon_fit.png" alt="Glimmora International" className="h-10 md:h-12 w-auto object-contain" />
+          <span className="text-[9px] text-[#70564b] font-bold uppercase tracking-widest">Since 2026</span>
+        </div>
       </div>
-    </div>
-  </div>
-</section>
 
-
-{/* CSS for the rotating border (add to global CSS) */}
-<style>{`
-  .animate-spin-slow {
-    animation: spin 60s linear infinite;
-  }
-  @keyframes spin {
-    from { transform: rotate(0deg); }
-    to { transform: rotate(360deg); }
-  }
-`}</style>
-
-{/* --- WHY AI-NATIVE VS AI-ENABLED GRC --- */}
-<section className="w-full bg-white py-16 border-b border-slate-100">
-  <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-    <div className="grid lg:grid-cols-2 gap-12 items-center">
-
-      {/* Left: Heading & Context */}
-      <div>
-        <span className="text-xs font-bold text-[#70564b] uppercase tracking-[0.2em] mb-3 block">AI Differentiation</span>
-        <h2 className="text-3xl md:text-4xl font-bold text-[#2E2A28] mb-4">
-          Why AI-Native Matters vs Traditional GRC
-        </h2>
-        <p className="text-sm text-gray-500 leading-relaxed mb-6">
-          Legacy GRC tools bolt AI onto aging architectures. Glimmora International was built from the ground up with AI at its core—meaning faster insights, lower configuration debt, and workflows designed around intelligence, not retrofitted with it.
+      {/* Right: Message + link */}
+      <div className="flex-1 border-l-0 md:border-l border-[#70564b]/15 md:pl-10 text-center md:text-left">
+        <p className="text-sm text-gray-500 leading-relaxed max-w-sm mx-auto md:mx-0">
+          Same team. Same trust. A broader vision. Baarez Technology Solutions has evolved into Glimmora International — building the AI-native operating system for enterprise governance worldwide.
         </p>
-        <Link to="/solutions/grc" className="inline-flex items-center gap-2 text-xs text-[#70564b] font-bold uppercase tracking-widest border-b border-[#70564b] pb-1 hover:text-[#70564b] hover:border-[#70564b] transition-colors">
-          Explore AI GRC Platform <Icons.ArrowRight className="w-4 h-4" />
+        <Link to="/about" className="inline-flex items-center gap-2 mt-3 text-xs font-bold text-[#70564b] uppercase tracking-widest hover:gap-3 transition-all duration-200">
+          Our Story
+          <svg className="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
+          </svg>
         </Link>
       </div>
 
-      {/* Right: Comparison Bullets */}
-      <div className="space-y-4">
-        {[
-          {
-            traditional: "AI features added as afterthought modules",
-            baarez: "AI embedded in every workflow from day one"
-          },
-          {
-            traditional: "Separate tools for document processing",
-            baarez: "ScanVista natively feeds regulatory data into GRC & Audit"
-          },
-          {
-            traditional: "Months of configuration and customization",
-            baarez: "Weeks to value with pre-built industry libraries"
-          },
-          {
-            traditional: "Manual rule updates for regulatory changes",
-            baarez: "AI-assisted regulatory change detection & mapping"
-          }
-        ].map((item, i) => (
-          <div key={i} className="grid grid-cols-2 gap-4">
-            <div className="bg-red-50 p-4 rounded-lg border border-red-100">
-              <div className="flex items-start gap-2">
-                <svg className="w-4 h-4 text-red-400 mt-0.5 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M6 18L18 6M6 6l12 12"></path></svg>
-                <span className="text-xs text-gray-600">{item.traditional}</span>
-              </div>
-            </div>
-            <div className="bg-green-50 p-4 rounded-lg border border-green-100">
-              <div className="flex items-start gap-2">
-                <svg className="w-4 h-4 text-green-500 mt-0.5 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7"></path></svg>
-                <span className="text-xs text-gray-700 font-medium">{item.baarez}</span>
-              </div>
-            </div>
-          </div>
-        ))}
-      </div>
-
     </div>
   </div>
 </section>
+
+
+
 
       {/* --- TRUST TICKER --- */}
       {/* --- TRUST LOGO GRID --- */}
@@ -1057,139 +998,6 @@ function Home() {
 </section>
 
 
-{/* --- PLATFORM TABS SECTION (RESPONSIVE) --- */}
-<div className="py-16 md:py-24 bg-[#fdfbf9] relative">
-  <Section>
-    <div className="mb-12 md:mb-16 max-w-3xl">
-      <FadeIn>
-        <h2 className="text-xs font-bold uppercase tracking-[0.2em] text-[#70564b] mb-4">Our Platform</h2>
-        <h3 className="text-3xl md:text-4xl font-bold text-[#2E2A28] mb-4 md:mb-6">{BAAREZ_CONFIG.solutions.title}</h3>
-        <p className="text-sm text-gray-500">{BAAREZ_CONFIG.solutions.subtitle}</p>
-      </FadeIn>
-    </div>
-
-    {/* MAIN UNIFIED CARD LAYOUT */}
-    {/* This wrapper creates the single "box" look */}
-    <div className="bg-white rounded-2xl shadow-xl border border-gray-200 overflow-hidden">
-      
-      {/* Grid with NO GAP, separated by lines (divide-gray-200) */}
-      <div className="grid grid-cols-1 lg:grid-cols-12 gap-0 divide-y lg:divide-y-0 lg:divide-x divide-gray-200">
-        
-        {/* --- LEFT: SIDEBAR NAVIGATION --- */}
-        <div className="w-full lg:col-span-4 bg-gray-50 flex flex-col h-full">
-          {BAAREZ_CONFIG.solutions.tabs.map((tab) => (
-            <button
-              key={tab.id}
-              onClick={() => setActiveTab(tab.id)}
-              className={`group w-full text-left p-5 lg:p-6 transition-all duration-200 border-l-[6px] relative outline-none focus:outline-none ${
-                activeTab === tab.id 
-                ? 'bg-white border-[#70564b] z-10' // Active: White bg to blend with right side, Deep Red border
-                : 'bg-transparent border-transparent hover:bg-gray-100 hover:border-gray-300' // Inactive: Transparent/Gray
-              }`}
-            >
-              <div className="flex items-center gap-4">
-                <div className={`p-2.5 rounded-lg transition-colors shrink-0 ${
-                  activeTab === tab.id 
-                  ? 'bg-[#70564b] text-white' 
-                  : 'bg-white border border-gray-200 text-gray-400 group-hover:border-[#70564b] group-hover:text-[#70564b]'
-                }`}>
-                  <tab.icon className="w-5 h-5" />
-                </div>
-                <div>
-                  <h4 className={`text-sm font-bold transition-colors ${
-                    activeTab === tab.id ? 'text-[#70564b]' : 'text-gray-500 group-hover:text-gray-900'
-                  }`}>
-                    {tab.label}
-                  </h4>
-                </div>
-              </div>
-            </button>
-          ))}
-        </div>
-
-        {/* --- RIGHT: TAB CONTENT AREA --- */}
-        <div className="w-full lg:col-span-8 bg-white lg:min-h-[600px] relative"> 
-          <AnimatePresence mode="wait">
-            {BAAREZ_CONFIG.solutions.tabs.map((tab) => (
-              activeTab === tab.id && (
-                <motion.div
-                  key={tab.id}
-                  initial={{ opacity: 0 }}
-                  animate={{ opacity: 1 }}
-                  exit={{ opacity: 0 }}
-                  transition={{ duration: 0.3 }}
-                  className="h-full flex flex-col p-6 md:p-8 lg:p-10" // Padding is now inside this container
-                >
-                  <div className="grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-12 items-center flex-1">
-                    
-                    {/* Text Content Side */}
-                    <div className="flex flex-col h-full order-2 md:order-1">
-                      
-                      {/* Header Area */}
-                      <div className="mb-6">
-                        <div className="inline-flex items-center gap-2 mb-4 px-3 py-1 bg-gray-100 rounded-full w-fit">
-                          <Icons.User className="w-3 h-3 text-gray-500" />
-                          <span className="text-xs font-semibold text-gray-600 uppercase tracking-wide">For {tab.target}</span>
-                        </div>
-
-                        <h3 className="text-xl font-bold text-[#2E2A28] mb-4">{tab.title}</h3>
-
-                        <p className="text-sm text-gray-600 leading-relaxed">
-                          {tab.desc}
-                        </p>
-                      </div>
-
-                      {/* Features List */}
-                      <div className="space-y-4 mb-8">
-                        {tab.features.map((feat, i) => (
-                          <div key={i} className="flex items-start gap-3">
-                            <Icons.CheckCircle className="w-5 h-5 text-[#70564b] shrink-0 mt-0.5" />
-                            <span className="text-sm font-medium text-gray-700">{feat}</span>
-                          </div>
-                        ))}
-                        
-                        {/* Outcome Metric */}
-                        <div className="flex items-start gap-3 pt-3 border-t border-dashed border-gray-200 mt-2">
-                            <Icons.TrendingUp className="w-5 h-5 text-[#70564b] shrink-0 mt-0.5" />
-                            <span className="text-sm font-bold text-[#70564b]">{tab.outcome}</span>
-                        </div>
-                      </div>
-
-                      {/* Ecosystem Flow */}
-                      <div className="mt-auto">
-                        <div className="mb-8 p-4 bg-[#fdfbf9] border border-[#70564b]/20 rounded-lg">
-                          <p className="text-xs font-bold text-gray-400 uppercase mb-2">Ecosystem Synergy</p>
-                          <div className="flex items-center gap-2 text-xs font-semibold text-gray-700">
-                            <Icons.Layers className="w-4 h-4 text-[#70564b] shrink-0" />
-                            <span>{tab.synergy}</span>
-                          </div>
-                        </div>
-
-                        <Button to={tab.link} variant="secondary" className="text-sm px-8 py-4 w-full md:w-auto uppercase tracking-wider font-bold">
-                          Explore {tab.label}
-                        </Button>
-                      </div>
-                    </div>
-
-                    {/* Image Content Side */}
-                    <div className="relative rounded-xl overflow-hidden w-full h-64 md:h-full min-h-[300px] shadow-inner order-1 md:order-2 border border-gray-100">
-                      <div className="absolute inset-0 bg-[#70564b]/10 z-10 mix-blend-multiply"></div>
-                      <img 
-                        src={tab.image} 
-                        alt={tab.label} 
-                        className="w-full h-full object-cover"
-                      />
-                    </div>
-                  </div>
-                </motion.div>
-              )
-            ))}
-          </AnimatePresence>
-        </div>
-      </div>
-    </div>
-  </Section>
-</div>
 
 {/* --- VERTICAL AI MODULES --- */}
 <section className="py-16 bg-white border-b border-gray-100">
@@ -1198,64 +1006,63 @@ function Home() {
 
       {/* Left: Context */}
       <div className="lg:col-span-5">
-        <span className="text-xs font-bold text-[#70564b] uppercase tracking-[0.2em] mb-3 block">Vertical AI Modules</span>
+        <span className="text-xs font-bold text-[#70564b] uppercase tracking-[0.2em] mb-3 block">Intelligence Ecosystem</span>
         <h2 className="text-3xl md:text-4xl font-bold text-[#2E2A28] mb-4">
-          Purpose-Built AI for Specific Industries
+          12+ Platforms. One Unified Ecosystem.
         </h2>
         <p className="text-sm text-gray-500 leading-relaxed mb-6">
-          Unlike one-size-fits-all GRC tools, Glimmora architecture supports vertical micro-modules and specialized AI applications. Glimmora is our first example—a dedicated hospitality intelligence module that demonstrates how our platform extends into industry-specific workflows.
+          Glimmora has expanded into a multi-industry intelligence ecosystem. Three platforms are live today — VerifAI, ScanVista, and Hospitality — with more in active development across defense, fashion, cinema, finance, and more.
         </p>
 
         <div className="p-4 bg-gray-50 rounded-lg border border-gray-100">
           <p className="text-xs text-gray-500 italic">
-            "Glimmora International isn't a generic GRC tool repurposed for different industries—it's an AI-native operating system that hosts purpose-built modules for each vertical."
+            "Glimmora isn't a single product — it's a sovereign AI infrastructure layer. Each platform is purpose-built for its industry, yet interconnected through a shared intelligence core."
           </p>
         </div>
       </div>
 
-      {/* Right: Glimmora Card + Future Modules */}
+      {/* Right: Live Platforms + Coming Soon */}
       <div className="lg:col-span-7 space-y-4">
 
-        {/* Glimmora Spotlight */}
-        <Link to="/solutions/glimmora" className="group block bg-gradient-to-br from-[#70564b] to-[#5f4940] p-6 rounded-xl text-white hover:shadow-xl transition-all duration-300 relative overflow-hidden">
-          <div className="absolute top-0 right-0 w-32 h-32 bg-[#70564b]/20 rounded-full blur-2xl -mr-16 -mt-16"></div>
-          <div className="relative z-10">
-            <div className="flex items-center justify-between mb-4">
-              <div className="flex items-center gap-3">
-                <div className="w-10 h-10 bg-white/10 rounded-lg flex items-center justify-center">
-                  <Icons.Chip className="w-5 h-5 text-white/80" />
-                </div>
-                <div>
-                  <h3 className="text-xl font-bold">Glimmora</h3>
-                  <span className="text-xs text-white/60 uppercase tracking-wide">Hospitality Intelligence</span>
-                </div>
-              </div>
-              <span className="px-3 py-1 bg-[#70564b] text-white text-xs font-bold rounded-full">Live</span>
-            </div>
-            <p className="text-sm text-white/80 leading-relaxed mb-4">
-              AGI-native module for hospitality groups—unifying guest data, dynamic pricing intelligence, and operational optimization in real-time.
-            </p>
-            <div className="flex items-center gap-2 text-xs font-bold text-white/80 uppercase tracking-wide group-hover:gap-3 transition-all">
-              Explore Glimmora <Icons.ArrowRight className="w-4 h-4" />
-            </div>
-          </div>
-        </Link>
-
-        {/* Future Modules Teaser */}
-        <div className="grid grid-cols-2 gap-4">
+        {/* Live Platforms */}
+        <div className="grid grid-cols-3 gap-3">
           {[
-            { name: "Financial Services Module", status: "Coming Soon", desc: "Pre-configured for Basel, AML, IFRS" },
-            { name: "Healthcare Module", status: "Roadmap", desc: "HIPAA, FDA 21 CFR workflows" }
-          ].map((module, i) => (
-            <div key={i} className="p-4 bg-gray-50 rounded-lg border border-gray-100 hover:border-[#70564b]/20 transition-colors">
-              <div className="flex items-center justify-between mb-2">
-                <h4 className="text-sm font-bold text-gray-700">{module.name}</h4>
-                <span className="text-xs text-gray-400 font-medium bg-gray-100 px-2 py-0.5 rounded">{module.status}</span>
+            { name: 'Glimmora VerifAI', desc: 'Enterprise GRC & Compliance', to: '/platforms/verifai', status: 'Live' },
+            { name: 'AI OCR ScanVista', desc: 'Intelligent Document Understanding', to: '/platforms/scanvista', status: 'Live' },
+            { name: 'Glimmora Hospitality', desc: 'AGI-Native Hotel Intelligence', to: '/platforms/hospitality', status: 'Live' },
+          ].map((p, i) => (
+            <Link key={i} to={p.to} className="group block bg-gradient-to-br from-[#70564b] to-[#5f4940] p-5 text-white hover:shadow-xl transition-all duration-300 relative overflow-hidden">
+              <div className="absolute top-0 right-0 w-16 h-16 bg-white/5 rounded-full blur-xl -mr-8 -mt-8"></div>
+              <div className="relative z-10">
+                <span className="text-[9px] font-bold text-green-300 uppercase tracking-widest block mb-2">● Live</span>
+                <h4 className="text-sm font-bold leading-snug mb-1">{p.name}</h4>
+                <p className="text-xs text-white/60">{p.desc}</p>
               </div>
-              <p className="text-xs text-gray-500">{module.desc}</p>
-            </div>
+            </Link>
           ))}
         </div>
+
+        {/* Coming Soon Modules Teaser */}
+        <div className="grid grid-cols-2 gap-3">
+          {[
+            { name: "Cyber Glimmora", desc: "24/7 SOC & Threat Intelligence", to: "/platforms/cyber" },
+            { name: "AEGIS Glimmora", desc: "Defense & Military Simulation", to: "/platforms/aegis-defense" },
+            { name: "Elan Glimmora", desc: "Travel & Luxury Intelligence", to: "/platforms/elan" },
+            { name: "Moda Glimmora", desc: "Fashion & Retail Intelligence", to: "/platforms/moda" },
+          ].map((module, i) => (
+            <Link key={i} to={module.to} className="group flex items-center justify-between p-4 bg-gray-50 border border-gray-100 hover:border-[#70564b]/30 transition-colors">
+              <div>
+                <h4 className="text-sm font-bold text-gray-700 group-hover:text-[#70564b] transition-colors">{module.name}</h4>
+                <p className="text-xs text-gray-500">{module.desc}</p>
+              </div>
+              <span className="text-[9px] text-gray-400 font-bold bg-gray-200 px-2 py-0.5 uppercase tracking-wide shrink-0">Soon</span>
+            </Link>
+          ))}
+        </div>
+
+        <Link to="/platforms" className="flex items-center justify-center gap-2 text-sm text-[#70564b] font-bold border border-[#70564b]/30 py-3 hover:bg-[#70564b]/5 transition-colors">
+          View All 12+ Platforms <Icons.ArrowRight className="w-4 h-4" />
+        </Link>
 
       </div>
     </div>
@@ -1664,7 +1471,15 @@ function Home() {
               <h2 className="text-xs font-bold uppercase tracking-[0.2em] text-[#70564b] mb-4">Industries</h2>
               <h3 className="text-3xl md:text-4xl font-bold text-[#2E2A28]">{BAAREZ_CONFIG.industries.title}</h3>
             </div>
-            
+            <Link
+              to="/industries"
+              className="flex items-center gap-2 text-sm font-bold text-[#70564b] hover:gap-3 transition-all duration-200 uppercase tracking-widest mt-4 md:mt-0"
+            >
+              View All Industries
+              <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
+              </svg>
+            </Link>
           </div>
 
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
@@ -1938,108 +1753,75 @@ function Home() {
 
     <div className="text-center mb-12">
       <h2 className="text-xs font-bold uppercase tracking-[0.2em] text-[#70564b] mb-3">
-        Tailored Pathways
+        Find Your Intelligence Layer
       </h2>
       <h3 className="text-3xl md:text-4xl font-bold text-[#2E2A28]">
-        Explore Glimmora based on your priorities
+        Explore Glimmora by what matters to you
       </h3>
     </div>
 
     <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
 
-      {/* 1. Executive / Strategic Focus -> Linked to GRC (Core Governance) */}
-      <a href="/solutions/grc" className="group bg-white p-8 rounded-xl shadow-sm border border-gray-100 hover:border-[#70564b] hover:shadow-lg transition-all duration-300 text-center flex flex-col items-center relative overflow-hidden">
-        <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-[#70564b] to-[#70564b] opacity-0 group-hover:opacity-100 transition-opacity"></div>
-
-        {/* Persona Labels */}
+      {/* 1. By Platform */}
+      <a href="/platforms" className="group bg-white p-8 rounded-xl shadow-sm border border-gray-100 hover:border-[#70564b] hover:shadow-lg transition-all duration-300 text-center flex flex-col items-center relative overflow-hidden">
+        <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-[#70564b] to-[#956e5d] opacity-0 group-hover:opacity-100 transition-opacity"></div>
         <div className="flex flex-wrap justify-center gap-2 mb-4">
-          {['Boards', 'CROs', 'Regulators'].map((persona, i) => (
-            <span key={i} className="px-2 py-0.5 bg-[#70564b]/5 text-[#70564b] text-xs font-bold rounded-full">
-              {persona}
-            </span>
+          {['CISOs', 'CROs', 'COOs', 'CTOs'].map((persona, i) => (
+            <span key={i} className="px-2 py-0.5 bg-[#70564b]/5 text-[#70564b] text-xs font-bold">{persona}</span>
           ))}
         </div>
-
         <div className="w-16 h-16 bg-[#fdfbf9] text-[#70564b] rounded-full flex items-center justify-center mb-4 group-hover:bg-[#70564b] group-hover:text-white transition-colors duration-300">
-          {/* Chart/Insight Icon */}
-          <svg className="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.5" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 01-2 2h-2a2 2 0 01-2-2z"></path></svg>
+          <svg className="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.5" d="M13.5 16.875h3.375m0 0h3.375m-3.375 0V13.5m0 3.375v3.375M6 10.5h2.25a2.25 2.25 0 002.25-2.25V6a2.25 2.25 0 00-2.25-2.25H6A2.25 2.25 0 003.75 6v2.25A2.25 2.25 0 006 10.5zm0 9.75h2.25A2.25 2.25 0 0010.5 18v-2.25a2.25 2.25 0 00-2.25-2.25H6a2.25 2.25 0 00-2.25 2.25V18A2.25 2.25 0 006 20.25zm9.75-9.75H18a2.25 2.25 0 002.25-2.25V6A2.25 2.25 0 0018 3.75h-2.25A2.25 2.25 0 0013.5 6v2.25a2.25 2.25 0 002.25 2.25z" /></svg>
         </div>
-
-        <h4 className="font-bold text-xl text-[#2E2A28] mb-2">Strategic Oversight</h4>
-
-        {/* Primary Question */}
-        <p className="text-xs text-[#70564b] font-medium italic mb-3">"What risks matter most to the business?"</p>
-
+        <h4 className="font-bold text-xl text-[#2E2A28] mb-2">Browse by Platform</h4>
+        <p className="text-xs text-[#70564b] font-medium italic mb-3">"Which platform fits my use case?"</p>
         <p className="text-sm text-gray-500 leading-relaxed mb-6">
-          Drive decision-making with centralized governance. View risk heatmaps, compliance ROI, and executive dashboards.
+          Explore all 12+ Glimmora platforms — from GRC and cybersecurity to hospitality intelligence and defense simulation.
         </p>
-
         <span className="mt-auto text-[#70564b] font-bold text-xs uppercase tracking-widest flex items-center gap-2 group-hover:gap-3 transition-all">
-          View Governance Impact <Icons.ArrowRight className="w-4 h-4" />
+          View All Platforms <Icons.ArrowRight className="w-4 h-4" />
         </span>
       </a>
 
-      {/* 2. Practitioner / Workflow Focus -> Linked to Internal Audit (Workflow heavy) */}
-      <a href="/solutions/internal-audit" className="group bg-white p-8 rounded-xl shadow-sm border border-gray-100 hover:border-[#70564b] hover:shadow-lg transition-all duration-300 text-center flex flex-col items-center relative overflow-hidden">
-        <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-[#70564b] to-[#fdba74] opacity-0 group-hover:opacity-100 transition-opacity"></div>
-
-        {/* Persona Labels */}
+      {/* 2. By Industry */}
+      <a href="/industries" className="group bg-white p-8 rounded-xl shadow-sm border border-gray-100 hover:border-[#70564b] hover:shadow-lg transition-all duration-300 text-center flex flex-col items-center relative overflow-hidden">
+        <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-[#70564b] to-[#4a3830] opacity-0 group-hover:opacity-100 transition-opacity"></div>
         <div className="flex flex-wrap justify-center gap-2 mb-4">
-          {['Internal Audit Heads', 'Compliance Ops'].map((persona, i) => (
-            <span key={i} className="px-2 py-0.5 bg-[#70564b]/10 text-[#70564b] text-xs font-bold rounded-full">
-              {persona}
-            </span>
+          {['Enterprise', 'Defense', 'Hospitality', 'Healthcare'].map((persona, i) => (
+            <span key={i} className="px-2 py-0.5 bg-[#70564b]/10 text-[#70564b] text-xs font-bold">{persona}</span>
           ))}
         </div>
-
         <div className="w-16 h-16 bg-[#fdfbf9] text-[#70564b] rounded-full flex items-center justify-center mb-4 group-hover:bg-[#70564b] group-hover:text-white transition-colors duration-300">
-          {/* Workflow/List Icon */}
-          <svg className="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.5" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-3 7h3m-3 4h3m-6-4h.01M9 16h.01"></path></svg>
+          <svg className="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.5" d="M2.25 21h19.5m-18-18v18m10.5-18v18m6-13.5V21M6.75 6.75h.75m-.75 3h.75m-.75 3h.75m3-6h.75m-.75 3h.75m-.75 3h.75M6.75 21v-3.375c0-.621.504-1.125 1.125-1.125h2.25c.621 0 1.125.504 1.125 1.125V21M3 3h12m-.75 4.5H21m-3.75 3.75h.008v.008h-.008v-.008zm0 3h.008v.008h-.008v-.008zm0 3h.008v.008h-.008v-.008z" /></svg>
         </div>
-
-        <h4 className="font-bold text-xl text-[#2E2A28] mb-2">Operational Efficiency</h4>
-
-        {/* Primary Question */}
-        <p className="text-xs text-[#70564b] font-medium italic mb-3">"How do we reduce manual effort?"</p>
-
+        <h4 className="font-bold text-xl text-[#2E2A28] mb-2">Browse by Industry</h4>
+        <p className="text-xs text-[#70564b] font-medium italic mb-3">"What's built for my sector?"</p>
         <p className="text-sm text-gray-500 leading-relaxed mb-6">
-          Streamline daily controls. Automate assessments, audit trails, and reporting workflows to reduce manual effort.
+          Each industry gets purpose-built intelligence — not generic tools. Find the exact platform for your regulatory and operational environment.
         </p>
-
         <span className="mt-auto text-[#70564b] font-bold text-xs uppercase tracking-widest flex items-center gap-2 group-hover:gap-3 transition-all">
-          Explore Workflows <Icons.ArrowRight className="w-4 h-4" />
+          Explore Industries <Icons.ArrowRight className="w-4 h-4" />
         </span>
       </a>
 
-      {/* 3. Technical / IT Focus -> Linked to ScanVista (Tech/AI heavy) */}
-      <a href="/solutions/scanvista" className="group bg-white p-8 rounded-xl shadow-sm border border-gray-100 hover:border-[#2E2A28] hover:shadow-lg transition-all duration-300 text-center flex flex-col items-center relative overflow-hidden">
+      {/* 3. Full Ecosystem */}
+      <a href="/ecosystem" className="group bg-white p-8 rounded-xl shadow-sm border border-gray-100 hover:border-[#2E2A28] hover:shadow-lg transition-all duration-300 text-center flex flex-col items-center relative overflow-hidden">
         <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-[#2E2A28] to-[#555] opacity-0 group-hover:opacity-100 transition-opacity"></div>
-
-        {/* Persona Labels */}
         <div className="flex flex-wrap justify-center gap-2 mb-4">
-          {['CIO', 'CISO', 'Enterprise Architect'].map((persona, i) => (
-            <span key={i} className="px-2 py-0.5 bg-gray-100 text-gray-600 text-xs font-bold rounded-full">
-              {persona}
-            </span>
+          {['Strategic Leaders', 'Enterprise Architects', 'Boards'].map((persona, i) => (
+            <span key={i} className="px-2 py-0.5 bg-gray-100 text-gray-600 text-xs font-bold">{persona}</span>
           ))}
         </div>
-
         <div className="w-16 h-16 bg-[#fdfbf9] text-[#2E2A28] rounded-full flex items-center justify-center mb-4 group-hover:bg-[#2E2A28] group-hover:text-white transition-colors duration-300">
-          {/* Tech/Chip Icon */}
-          <svg className="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.5" d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10"></path></svg>
+          <svg className="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.5" d="M12 21a9.004 9.004 0 008.716-6.747M12 21a9.004 9.004 0 01-8.716-6.747M12 21c2.485 0 4.5-4.03 4.5-9S14.485 3 12 3m0 18c-2.485 0-4.5-4.03-4.5-9S9.515 3 12 3m0 0a8.997 8.997 0 017.843 4.582M12 3a8.997 8.997 0 00-7.843 4.582m15.686 0A11.953 11.953 0 0112 10.5c-2.998 0-5.74-1.1-7.843-2.918m15.686 0A8.959 8.959 0 0121 12c0 .778-.099 1.533-.284 2.253" /></svg>
         </div>
-
-        <h4 className="font-bold text-xl text-[#2E2A28] mb-2">Technical Integration</h4>
-
-        {/* Primary Question */}
-        <p className="text-xs text-[#70564b] font-medium italic mb-3">"How does this fit our architecture?"</p>
-
+        <h4 className="font-bold text-xl text-[#2E2A28] mb-2">The Full Ecosystem</h4>
+        <p className="text-xs text-[#70564b] font-medium italic mb-3">"How does the full ecosystem connect?"</p>
         <p className="text-sm text-gray-500 leading-relaxed mb-6">
-          Assess enterprise compatibility. Review API capabilities, AI models, and secure deployment specifications.
+          Understand Glimmora's 4-layer intelligence architecture and how platforms connect to create compounded intelligence across your organization.
         </p>
-
         <span className="mt-auto text-[#70564b] font-bold text-xs uppercase tracking-widest flex items-center gap-2 group-hover:gap-3 transition-all">
-          View Technical Specs <Icons.ArrowRight className="w-4 h-4" />
+          View Full Ecosystem <Icons.ArrowRight className="w-4 h-4" />
         </span>
       </a>
 

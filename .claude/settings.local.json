@@ -4,7 +4,11 @@
       "Bash(for file in src/pages/solutions/InternalAudit.jsx src/pages/solutions/ScanVista.jsx src/pages/solutions/TaxAutomation.jsx src/pages/solutions/Dynamics365.jsx src/pages/solutions/HumanResource.jsx src/pages/solutions/RobotAsAService.jsx src/pages/solutions/Glimmora.jsx src/pages/services/*.jsx)",
       "Bash(do echo \"=== $file ===\")",
       "Bash(done)",
-      "Bash(grep:*)"
+      "Bash(grep:*)",
+      "Bash(python3:*)",
+      "Bash(py:*)",
+      "Bash(py3:*)",
+      "Bash(node:*)"
     ]
   }
 }
