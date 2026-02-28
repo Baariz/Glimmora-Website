@@ -31,6 +31,11 @@ import FilmPlatform from './pages/platforms/FilmPlatform'
 import Nidhi from './pages/platforms/Nidhi'
 import DesignGlimmora from './pages/platforms/DesignGlimmora'
 import GlimmoraTeam from './pages/platforms/GlimmoraTeam'
+import AscendDefense from './pages/platforms/AscendDefense'
+import AscendVitalis from './pages/platforms/AscendVitalis'
+import AscendAero from './pages/platforms/AscendAero'
+import AscendManufacturing from './pages/platforms/AscendManufacturing'
+import AscendEnergy from './pages/platforms/AscendEnergy'
 
 // Industry Pages
 import Enterprise from './pages/industries/Enterprise'
@@ -103,6 +108,11 @@ function App() {
           <Route path="platforms/nidhi" element={<Nidhi />} />
           <Route path="platforms/design" element={<DesignGlimmora />} />
           <Route path="platforms/team" element={<GlimmoraTeam />} />
+          <Route path="platforms/ascend-defense" element={<AscendDefense />} />
+          <Route path="platforms/ascend-vitalis" element={<AscendVitalis />} />
+          <Route path="platforms/ascend-aero" element={<AscendAero />} />
+          <Route path="platforms/ascend-manufacturing" element={<AscendManufacturing />} />
+          <Route path="platforms/ascend-energy" element={<AscendEnergy />} />
 
           {/* Industry Pages */}
           <Route path="industries/enterprise" element={<Enterprise />} />

@@ -333,7 +333,7 @@ const PartnerOnboard = () => {
                       </div>
                       <div className="space-y-2">
                         <label className="text-xs font-bold uppercase tracking-widest text-gray-400">Company Website *</label>
-                        <input type="text" name="company_website" value={formData.company_website} onChange={handleChange} placeholder="baarez.com" className={`w-full px-4 py-3 bg-[#fcfcfc] border ${errors.company_website ? 'border-red-500' : 'border-gray-100'} focus:border-[#70564b] outline-none text-sm`} />
+                        <input type="text" name="company_website" value={formData.company_website} onChange={handleChange} placeholder="yourcompany.com" className={`w-full px-4 py-3 bg-[#fcfcfc] border ${errors.company_website ? 'border-red-500' : 'border-gray-100'} focus:border-[#70564b] outline-none text-sm`} />
                         {errors.company_website && <p className="text-red-500 text-[10px] uppercase font-bold">{errors.company_website}</p>}
                       </div>
                     </div>
@@ -464,8 +464,18 @@ const PartnerOnboard = () => {
                     {/* NEW FIELDS: REVENUE & CLIENTS */}
                     <div className="grid md:grid-cols-2 gap-6">
                         <div className="space-y-2">
-                            <label className="text-xs font-bold uppercase tracking-widest text-gray-400">Annual Revenue *</label>
-                            <input type="text" name="annual_revenue" value={formData.annual_revenue} onChange={handleChange} placeholder="e.g. $1M - $5M" className={`w-full px-4 py-3 bg-[#fcfcfc] border ${errors.annual_revenue ? 'border-red-500' : 'border-gray-100'} focus:border-[#70564b] outline-none text-sm`} />
+                            <label className="text-xs font-bold uppercase tracking-widest text-gray-400">Annual Revenue (USD) *</label>
+                            <select name="annual_revenue" value={formData.annual_revenue} onChange={handleChange} className={`w-full px-4 py-3 bg-[#fcfcfc] border ${errors.annual_revenue ? 'border-red-500' : 'border-gray-100'} focus:border-[#70564b] outline-none text-sm`}>
+                                <option value="">--Select Range--</option>
+                                <option value="Under $50,000">Under $50,000</option>
+                                <option value="$50,000 - $100,000">$50,000 - $100,000</option>
+                                <option value="$100,000 - $500,000">$100,000 - $500,000</option>
+                                <option value="$500,000 - $1M">$500,000 - $1M</option>
+                                <option value="$1M - $5M">$1M - $5M</option>
+                                <option value="$5M - $10M">$5M - $10M</option>
+                                <option value="$10M - $50M">$10M - $50M</option>
+                                <option value="$50M+">$50M+</option>
+                            </select>
                             {errors.annual_revenue && <p className="text-red-500 text-[10px] uppercase font-bold">{errors.annual_revenue}</p>}
                         </div>
                         <div className="space-y-2">

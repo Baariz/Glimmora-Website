@@ -143,17 +143,9 @@ const BAAREZ_CONFIG = {
       name: "Palo Alto Networks", 
       url: "https://i.postimg.cc/9frc5Zpj/image.png" 
     },
-    { 
-      name: "Newgen", 
-      url: "https://i.postimg.cc/mgrsCCKd/image.png" 
-    },
-    { 
-      name: "RSA Security", 
-      url: "https://i.postimg.cc/9Q06rVqy/image.png" 
-    },
-    { 
-      name: "AlgoSec", 
-      url: "https://i.postimg.cc/76ktMybB/image.png" 
+    {
+      name: "Newgen",
+      url: "https://i.postimg.cc/mgrsCCKd/image.png"
     }
   ]
 },
@@ -174,7 +166,7 @@ const BAAREZ_CONFIG = {
         "Regulatory Change Management",
         "Real-time Risk Heatmaps"
       ],
-      synergy: "ScanVista feeds Regulatory Data → GRC → Internal Audit", // New Field
+      synergy: "Glimmora ScanVista feeds Regulatory Data → GRC → Internal Audit", // New Field
       link: "/solutions/grc",
       image: "https://images.unsplash.com/photo-1556155092-8707de31f9c4?q=80&w=2070&auto=format&fit=crop"
     },
@@ -214,10 +206,10 @@ const BAAREZ_CONFIG = {
     },
     {
       id: "scanvista",
-      label: "ScanVista",
+      label: "Glimmora ScanVista",
       icon: Icons.Search,
       title: "Intelligent Document Understanding",
-      desc: "Turn unstructured documents into decision-ready data. ScanVista uses AI to read, classify, and extract data from complex files (PDFs, images) in English and Arabic.",
+      desc: "Turn unstructured documents into decision-ready data. Glimmora ScanVista uses AI to read, classify, and extract data from complex files (PDFs, images) in English and Arabic.",
       target: "Operations & Compliance Teams",
       outcome: "90% accuracy in automated data extraction",
       features: [
@@ -225,7 +217,7 @@ const BAAREZ_CONFIG = {
         "KYC & Contract Analysis",
         "Automated Metadata Tagging"
       ],
-      synergy: "ScanVista Extraction → GRC Evidence → TPRM Assessments",
+      synergy: "Glimmora ScanVista Extraction → GRC Evidence → TPRM Assessments",
       link: "/solutions/scanvista",
       image: "https://i.postimg.cc/05WRxbzP/image.png"
     },
@@ -279,7 +271,7 @@ services: {
         "Process Automation Enablement",
         "Enterprise Technology Modernization"
       ],
-      platformTie: "Leverages ScanVista for document digitization & workflow automation",
+      platformTie: "Leverages Glimmora ScanVista for document digitization & workflow automation",
       link: "/services/digital-transformation",
       image: "https://images.unsplash.com/photo-1519389950473-47ba0277781c?q=80&w=2070&auto=format&fit=crop"
     },
@@ -656,7 +648,7 @@ function Home() {
         <div className="flex lg:hidden flex-wrap items-center justify-center gap-x-4 gap-y-2 pt-4 border-t border-gray-100">
           {[
             { name: 'VerifAI', to: '/platforms/verifai' },
-            { name: 'ScanVista', to: '/platforms/scanvista' },
+            { name: 'Glimmora ScanVista', to: '/platforms/scanvista' },
             { name: 'Hospitality', to: '/platforms/hospitality' },
           ].map((p, i) => (
             <Link key={i} to={p.to} className="flex items-center gap-2 text-xs text-gray-400 hover:text-[#70564b] font-medium transition-colors">
@@ -699,7 +691,7 @@ function Home() {
             <div className="space-y-3">
               {[
                 { name: 'Glimmora VerifAI', to: '/platforms/verifai' },
-                { name: 'AI OCR ScanVista', to: '/platforms/scanvista' },
+                { name: 'Glimmora ScanVista', to: '/platforms/scanvista' },
                 { name: 'Glimmora Hospitality', to: '/platforms/hospitality' },
               ].map((platform, i) => (
                 <motion.div
@@ -756,59 +748,22 @@ function Home() {
 </section>
 
 
-{/* --- BAAREZ → GLIMMORA REBRAND STRIP --- */}
+{/* --- BAAREZ = GLIMMORA STRIP --- */}
 <section className="w-full bg-white border-y border-[#70564b]/15 relative overflow-hidden">
-  {/* Warm diagonal accent */}
   <div className="absolute inset-0 bg-[linear-gradient(135deg,rgba(112,86,75,0.03)_0%,transparent_60%)]" />
-  <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-12 py-10 relative z-10">
-    <div className="flex flex-col md:flex-row items-center gap-8 md:gap-12">
+  <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-12 py-8 relative z-10">
+    <div className="flex flex-col md:flex-row items-center gap-6 md:gap-10">
 
-      {/* Left: Label + Headline */}
-      <div className="shrink-0 text-center md:text-left">
-        <span className="text-[9px] font-black uppercase tracking-[0.5em] text-[#70564b]/60 block mb-2">Brand Evolution</span>
-        <h2 className="text-xl md:text-2xl font-bold text-[#2E2A28] leading-tight">
-          Baarez is now<br className="hidden sm:block" />
-          <span className="text-[#70564b]"> Glimmora International</span>
-        </h2>
+      <div className="flex items-center gap-4 shrink-0">
+        <img src="/logo.png" alt="Baarez Technology Solutions" className="h-10 md:h-12 w-auto object-contain opacity-40 grayscale" />
+        <span className="text-lg font-bold text-[#70564b]">=</span>
+        <img src="/Glimmora_logo_icon_fit.png" alt="Glimmora International" className="h-10 md:h-12 w-auto object-contain" />
       </div>
 
-      {/* Centre: Logo Transition */}
-      <div className="flex items-center gap-5 md:gap-8 shrink-0 mx-auto md:mx-0">
-        {/* Old logo — faded */}
-        <div className="flex flex-col items-center gap-1.5">
-          <div className="grayscale opacity-35 hover:opacity-50 transition-opacity">
-            <img src="/logo.png" alt="Baarez Technology Solutions" className="h-10 md:h-12 w-auto object-contain" />
-          </div>
-          <span className="text-[9px] text-gray-400 font-semibold uppercase tracking-widest">Est. 2017</span>
-        </div>
-
-        {/* Arrow */}
-        <div className="flex flex-col items-center gap-1">
-          <div className="flex items-center gap-1">
-            <div className="w-8 md:w-12 h-[2px] bg-gradient-to-r from-gray-300 to-[#70564b]" />
-            <div className="w-0 h-0 border-l-[8px] border-l-[#70564b] border-t-[5px] border-t-transparent border-b-[5px] border-b-transparent" />
-          </div>
-          <span className="text-[9px] font-bold text-[#70564b] uppercase tracking-widest">Evolved</span>
-        </div>
-
-        {/* New logo */}
-        <div className="flex flex-col items-center gap-1.5">
-          <img src="/Glimmora_logo_icon_fit.png" alt="Glimmora International" className="h-10 md:h-12 w-auto object-contain" />
-          <span className="text-[9px] text-[#70564b] font-bold uppercase tracking-widest">Since 2026</span>
-        </div>
-      </div>
-
-      {/* Right: Message + link */}
-      <div className="flex-1 border-l-0 md:border-l border-[#70564b]/15 md:pl-10 text-center md:text-left">
-        <p className="text-sm text-gray-500 leading-relaxed max-w-sm mx-auto md:mx-0">
-          Same team. Same trust. A broader vision. Baarez Technology Solutions has evolved into Glimmora International — building the AI-native operating system for enterprise governance worldwide.
+      <div className="flex-1 text-center md:text-left">
+        <p className="text-sm text-gray-500 leading-relaxed max-w-md mx-auto md:mx-0">
+          <span className="font-semibold text-gray-600">Baarez Technology Solutions</span> is now <span className="font-semibold text-[#70564b]">Glimmora International</span>. Same team, same trust, a broader vision.
         </p>
-        <Link to="/about" className="inline-flex items-center gap-2 mt-3 text-xs font-bold text-[#70564b] uppercase tracking-widest hover:gap-3 transition-all duration-200">
-          Our Story
-          <svg className="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
-          </svg>
-        </Link>
       </div>
 
     </div>
@@ -969,7 +924,7 @@ function Home() {
         </div>
       </div>
 
-      {/* Card 4: ScanVista (Data) */}
+      {/* Card 4: Glimmora ScanVista (Data) */}
       <div className="group relative bg-slate-50 rounded-xl p-6 border border-slate-200 hover:border-[#70564b] hover:shadow-md transition-all duration-300">
         <div className="flex items-start gap-3 mb-4">
           <div className="p-2 bg-red-50 rounded-lg text-[#70564b]">
@@ -985,7 +940,7 @@ function Home() {
 
         <div className="flex items-center justify-between">
           <span className="text-xs font-bold text-[#70564b] uppercase tracking-wide">
-            Solved by ScanVista
+            Solved by Glimmora ScanVista
           </span>
           <a href="/solutions/scanvista" className="p-1.5 rounded-full bg-white text-slate-400 hover:text-[#70564b] hover:bg-orange-50 transition-colors shadow-sm ring-1 ring-slate-200 group-hover:ring-[#70564b]">
              <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
@@ -1011,7 +966,7 @@ function Home() {
           12+ Platforms. One Unified Ecosystem.
         </h2>
         <p className="text-sm text-gray-500 leading-relaxed mb-6">
-          Glimmora has expanded into a multi-industry intelligence ecosystem. Three platforms are live today — VerifAI, ScanVista, and Hospitality — with more in active development across defense, fashion, cinema, finance, and more.
+          Glimmora has expanded into a multi-industry intelligence ecosystem. Three platforms are live today — VerifAI, Glimmora ScanVista, and Hospitality — with more in active development across defense, fashion, cinema, finance, and more.
         </p>
 
         <div className="p-4 bg-gray-50 rounded-lg border border-gray-100">
@@ -1028,7 +983,7 @@ function Home() {
         <div className="grid grid-cols-3 gap-3">
           {[
             { name: 'Glimmora VerifAI', desc: 'Enterprise GRC & Compliance', to: '/platforms/verifai', status: 'Live' },
-            { name: 'AI OCR ScanVista', desc: 'Intelligent Document Understanding', to: '/platforms/scanvista', status: 'Live' },
+            { name: 'Glimmora ScanVista', desc: 'Intelligent Document Understanding', to: '/platforms/scanvista', status: 'Live' },
             { name: 'Glimmora Hospitality', desc: 'AGI-Native Hotel Intelligence', to: '/platforms/hospitality', status: 'Live' },
           ].map((p, i) => (
             <Link key={i} to={p.to} className="group block bg-gradient-to-br from-[#70564b] to-[#5f4940] p-5 text-white hover:shadow-xl transition-all duration-300 relative overflow-hidden">

@@ -84,6 +84,7 @@ function Navbar() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
   const [activeMegaMenu, setActiveMegaMenu] = useState(null)
   const [mobileExpanded, setMobileExpanded] = useState(null)
+  const [mobileAscendOpen, setMobileAscendOpen] = useState(false)
 
   useEffect(() => {
     const handleScroll = () => setIsScrolled(window.scrollY > 10)
@@ -91,13 +92,15 @@ function Navbar() {
     return () => window.removeEventListener('scroll', handleScroll)
   }, [])
 
+  const [ascendHover, setAscendHover] = useState(false)
+
   const platformsMenu = [
     {
       title: 'Live Now',
       items: [
         { name: 'Glimmora Hospitality', path: '/platforms/hospitality', desc: 'AGI-native intelligence for hotels & resorts.', icon: Icons.Hotel, badge: null },
         { name: 'Glimmora VerifAI', path: '/platforms/verifai', desc: 'Enterprise governance, risk & compliance intelligence.', icon: Icons.Shield, badge: null },
-        { name: 'AI OCR ScanVista', path: '/platforms/scanvista', desc: 'Intelligent document understanding — English & Arabic OCR.', icon: Icons.Doc, badge: null },
+        { name: 'Glimmora ScanVista', path: '/platforms/scanvista', desc: 'Intelligent document understanding — English & Arabic OCR.', icon: Icons.Doc, badge: null },
       ]
     },
     {
@@ -109,11 +112,18 @@ function Navbar() {
         { name: 'Film Glimmora',    path: '/platforms/film',          desc: 'Cinema & entertainment intelligence.',                      icon: Icons.Film,     badge: 'Soon' },
         { name: 'Elan Glimmora',    path: '/platforms/elan',          desc: 'Travel & luxury intelligence ecosystem.',                   icon: Icons.Plane,    badge: 'Soon' },
         { name: 'Glimmora Reach',   path: '/platforms/reach',         desc: 'Multi-channel enterprise outreach platform.',               icon: Icons.Globe,    badge: 'Soon' },
-        { name: 'AEGIS Glimmora',   path: '/platforms/aegis-defense', desc: 'Defense & military simulation intelligence.',               icon: Icons.Military, badge: 'Soon' },
         { name: 'Glimmora Nidhi',   path: '/platforms/nidhi',         desc: 'Financial intelligence & advisory platform.',              icon: Icons.Layers,   badge: 'Soon' },
         { name: 'Cyber Glimmora',   path: '/platforms/cyber',         desc: '24/7 cybersecurity & sovereign threat intelligence.',      icon: Icons.Lock,     badge: 'Soon' },
       ]
     },
+  ]
+
+  const ascendPlatforms = [
+    { name: 'ASCEND Defense',       path: '/platforms/ascend-defense',       desc: 'Military combat simulation & tactical training.',     icon: Icons.Military },
+    { name: 'ASCEND Vitalis',       path: '/platforms/ascend-vitalis',       desc: 'Medical simulation & clinical training.',             icon: Icons.Heart },
+    { name: 'ASCEND Aero',          path: '/platforms/ascend-aero',          desc: 'Flight simulation & aviation safety.',                icon: Icons.Plane },
+    { name: 'ASCEND Manufacturing', path: '/platforms/ascend-manufacturing', desc: 'Factory simulation & industrial safety.',             icon: Icons.Building },
+    { name: 'ASCEND Energy',        path: '/platforms/ascend-energy',        desc: 'Energy operations & safety simulation.',              icon: Icons.Layers },
   ]
 
   const industriesMenu = [
@@ -228,7 +238,7 @@ function Navbar() {
                       </ul>
                     </div>
 
-                    {/* Coming Soon — spans 2 columns, 2-col inner grid */}
+                    {/* Coming Soon — 2-col inner grid */}
                     <div className="col-span-2 space-y-4 pl-8 border-l border-gray-100">
                       <h3 className="text-xs font-semibold text-gray-400 uppercase tracking-wider">
                         {platformsMenu[1].title}
@@ -252,6 +262,48 @@ function Navbar() {
                             </Link>
                           </li>
                         ))}
+
+                        {/* Glimmora ASCEND — hover to show overlay above */}
+                        <li
+                          className="col-span-2 relative"
+                          onMouseEnter={() => setAscendHover(true)}
+                          onMouseLeave={() => setAscendHover(false)}
+                        >
+                          <div className="group block p-3 -mx-3 hover:bg-gray-50 transition-colors cursor-pointer">
+                            <div className="flex items-start">
+                              <div className="flex-shrink-0 mt-1"><Icons.Layers /></div>
+                              <div className="ml-4 flex-1">
+                                <div className="flex items-center gap-1.5 flex-wrap">
+                                  <p className="text-sm font-medium text-gray-900 group-hover:text-brand-maroon leading-tight">Glimmora ASCEND</p>
+                                  <span className="text-[9px] font-semibold bg-amber-100 text-amber-700 px-1.5 py-0.5">Training</span>
+                                  <svg className={`w-3.5 h-3.5 text-gray-400 ml-auto transition-transform ${ascendHover ? '-rotate-90' : ''}`} fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+                                  </svg>
+                                </div>
+                                <p className="mt-1 text-xs text-gray-500">AI-powered training & simulation ecosystem.</p>
+                              </div>
+                            </div>
+                          </div>
+
+                          {/* ASCEND overlay — appears above the item */}
+                          <div className={`absolute bottom-full left-0 right-0 mb-1 bg-white shadow-xl border border-gray-100 rounded-lg p-5 z-50 transition-all duration-200 ${ascendHover ? 'opacity-100 visible translate-y-0' : 'opacity-0 invisible translate-y-2 pointer-events-none'}`}>
+                            <h4 className="text-xs font-semibold text-gray-400 uppercase tracking-wider mb-3 flex items-center gap-2">
+                              Glimmora ASCEND Platforms
+                              <span className="text-[9px] font-semibold bg-amber-100 text-amber-700 px-1.5 py-0.5 normal-case tracking-normal">Training &amp; Simulation</span>
+                            </h4>
+                            <div className="grid grid-cols-2 gap-x-6 gap-y-1">
+                              {ascendPlatforms.map((item) => (
+                                <Link key={item.path} to={item.path} onClick={() => { setActiveMegaMenu(null); setAscendHover(false) }} className="group flex items-start gap-3 p-2.5 -mx-1 hover:bg-gray-50 transition-colors rounded">
+                                  <div className="flex-shrink-0 mt-0.5"><item.icon /></div>
+                                  <div>
+                                    <p className="text-sm font-medium text-gray-900 group-hover:text-brand-maroon leading-tight">{item.name}</p>
+                                    <p className="text-xs text-gray-500 mt-0.5">{item.desc}</p>
+                                  </div>
+                                </Link>
+                              ))}
+                            </div>
+                          </div>
+                        </li>
                       </ul>
                     </div>
                   </div>
@@ -386,6 +438,23 @@ function Navbar() {
                           {item.badge && <span className="text-[10px] font-semibold bg-brand-maroon/10 text-brand-maroon px-2 py-0.5">Soon</span>}
                         </Link>
                       ))
+                    )}
+                    {/* ASCEND sub-section */}
+                    <button onClick={() => setMobileAscendOpen(!mobileAscendOpen)} className="w-full flex justify-between items-center text-base font-semibold text-gray-800 py-2 mt-1">
+                      <span className="flex items-center gap-2">Glimmora ASCEND <span className="text-[10px] font-semibold bg-amber-100 text-amber-700 px-2 py-0.5">Training</span></span>
+                      <svg className={`w-4 h-4 transform transition-transform ${mobileAscendOpen ? 'rotate-180' : ''}`} fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+                      </svg>
+                    </button>
+                    {mobileAscendOpen && (
+                      <div className="pl-4 space-y-2 border-l-2 border-amber-200">
+                        {ascendPlatforms.map((item) => (
+                          <Link key={item.path} to={item.path} className="flex items-center justify-between py-2 text-gray-600 hover:text-brand-maroon text-sm" onClick={() => setIsMobileMenuOpen(false)}>
+                            <span>{item.name}</span>
+                            <span className="text-[10px] font-semibold bg-amber-100 text-amber-700 px-2 py-0.5">Soon</span>
+                          </Link>
+                        ))}
+                      </div>
                     )}
                   </div>
                 )}

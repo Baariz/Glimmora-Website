@@ -1,4 +1,5 @@
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
+import emailjs from '@emailjs/browser'
 
 function BookDemoForm({ title = "Book a Demo", subtitle = "See how Glimmora can transform your enterprise operations" }) {
   const [formData, setFormData] = useState({
@@ -13,6 +14,11 @@ function BookDemoForm({ title = "Book a Demo", subtitle = "See how Glimmora can 
 
   const [errors, setErrors] = useState({})
   const [isSubmitted, setIsSubmitted] = useState(false)
+  const [isSending, setIsSending] = useState(false)
+
+  useEffect(() => {
+    emailjs.init('usx7JhywGy63cCrKc')
+  }, [])
 
   const validateEmail = (email) => {
     return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)
@@ -28,7 +34,7 @@ function BookDemoForm({ title = "Book a Demo", subtitle = "See how Glimmora can 
     }
   }
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault()
     const newErrors = {}
 
@@ -47,23 +53,35 @@ function BookDemoForm({ title = "Book a Demo", subtitle = "See how Glimmora can 
       return
     }
 
-    // Simulate form submission
-    console.log('Form submitted:', formData)
-    setIsSubmitted(true)
-
-    // Reset form after 3 seconds
-    setTimeout(() => {
-      setFormData({
-        firstName: '',
-        lastName: '',
-        email: '',
-        company: '',
-        phone: '',
-        jobTitle: '',
-        message: '',
+    setIsSending(true)
+    try {
+      await emailjs.send('service_wxj1uz3', 'template_kj44vfa', {
+        from_name: `${formData.firstName} ${formData.lastName}`,
+        from_email: formData.email,
+        company: formData.company,
+        phone: formData.phone || 'N/A',
+        job_title: formData.jobTitle || 'N/A',
+        message: formData.message || 'Demo request - no additional message',
       })
-      setIsSubmitted(false)
-    }, 3000)
+      setIsSubmitted(true)
+      setTimeout(() => {
+        setFormData({
+          firstName: '',
+          lastName: '',
+          email: '',
+          company: '',
+          phone: '',
+          jobTitle: '',
+          message: '',
+        })
+        setIsSubmitted(false)
+      }, 3000)
+    } catch (err) {
+      console.error('EmailJS error:', err)
+      alert('Something went wrong. Please try again.')
+    } finally {
+      setIsSending(false)
+    }
   }
 
   if (isSubmitted) {
@@ -213,8 +231,8 @@ function BookDemoForm({ title = "Book a Demo", subtitle = "See how Glimmora can 
           />
         </div>
 
-        <button type="submit" className="btn-primary w-full text-lg py-4">
-          Request a Demo
+        <button type="submit" disabled={isSending} className="btn-primary w-full text-lg py-4 disabled:opacity-60">
+          {isSending ? 'Sending...' : 'Request a Demo'}
         </button>
 
         <p className="text-sm text-gray-500 text-center">

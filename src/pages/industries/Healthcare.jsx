@@ -36,6 +36,14 @@ const PLATFORMS = [
     path: '/platforms/cyber',
     soon: true,
   },
+  {
+    name: 'Glimmora ASCEND Vitalis',
+    badge: 'Training Platform',
+    desc: 'Medical simulation, clinical training, and healthcare workforce development. AI-driven scenarios for surgical procedures, emergency response, and patient care.',
+    modules: ['Surgical Simulation', 'Clinical Scenario Engine', 'Emergency Response Training', 'Certification Tracking'],
+    path: '/platforms/ascend-vitalis',
+    soon: true,
+  },
 ]
 
 export default function Healthcare() {

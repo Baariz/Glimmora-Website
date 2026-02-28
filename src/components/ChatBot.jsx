@@ -1,6 +1,6 @@
 import React, { useState, useRef, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { MessageSquare, X, Send, Loader2, CheckCircle } from 'lucide-react';
+import { MessageSquare, X, Send, Loader2, CheckCircle, Mic, MicOff } from 'lucide-react';
 import emailjs from '@emailjs/browser';
 
 // --- BRAND CONFIG ---
@@ -53,7 +53,7 @@ CONTACT FORM — STRICT RULES:
 ---
 
 COMPANY OVERVIEW:
-Glimmora International (formerly Baarez Technology Solutions, founded 2017) is an AI-native enterprise technology company. Positioning: "The Intelligence Behind the Enterprise." They build purpose-built AI platforms for regulated industries.
+Glimmora International (previously known as Baarez Technology Solutions) is an AI-native enterprise technology company. Positioning: "The Intelligence Behind the Enterprise." They build purpose-built AI platforms for regulated industries.
 
 CEO & Managing Director: Mr. Santosh Kharje (20+ years in enterprise tech & digital transformation, led 100+ complex projects across MENA).
 
@@ -61,9 +61,9 @@ Core Values: Strategic Persistence, Transparency, Excellence.
 Pillars: Quality, Cost, Delivery. "Customers are the heart of everything we do."
 Vision: "To become the preferred technology partner for distinguished private and public sector organizations."
 
-Stats: Founded 2017, 100+ Enterprise Clients, Active in India, US, Qatar, Dubai, Singapore, Latvia.
+Stats: 100+ Enterprise Clients, Active in India, US, Qatar, Dubai, Singapore, Latvia.
 
-Technology Partners: Oracle, AWS, Google Cloud, Fujitsu, Palo Alto Networks, Newgen, RSA Security, AlgoSec.
+Technology Partners: Oracle, AWS, Google Cloud, Fujitsu, Palo Alto Networks, Newgen.
 
 ---
 
@@ -102,7 +102,7 @@ PLATFORMS (12+ total):
    Target: Hospitality COOs, Revenue Managers, General Managers, Hotel Groups.
    Key metrics: 15% RevPAR increase, 30% direct booking growth, 60% front desk workload reduction, 25% cost savings.
 
-3. **AI OCR ScanVista** — Document Intelligence (LIVE)
+3. **Glimmora ScanVista** — Document Intelligence (LIVE)
    Intelligent document understanding powered by AI. Reads, classifies, and extracts data from complex documents in English and Arabic. Used for KYC, contracts, invoices, regulatory evidence.
    Capabilities: English & Arabic OCR, NLP classification, KYC & contract analysis, metadata tagging, evidence extraction.
    Applications: Invoice processing (3-way matching, PO validation), digital archiving (full text search, redaction), forms processing (handwriting recognition, checkbox detection).
@@ -149,6 +149,25 @@ PLATFORMS (12+ total):
 
 12. **Glimmora Nidhi** — Financial & Wealth Intelligence (Coming Soon)
     AI intelligence for financial services and wealth management.
+
+=== GLIMMORA ASCEND — TRAINING & SIMULATION ECOSYSTEM ===
+
+Glimmora ASCEND is the master umbrella for industry-specific training and simulation platforms. Each ASCEND platform delivers AI-powered, immersive training for its domain:
+
+13. **Glimmora ASCEND Defense** — Military & Defense Training Simulation (Coming Soon)
+    AI-powered combat simulation, tactical training, and mission readiness for armed forces and defense agencies.
+
+14. **Glimmora ASCEND Vitalis** — Healthcare Training & Simulation (Coming Soon)
+    Medical simulation, clinical training, and healthcare workforce development using AI-driven scenarios.
+
+15. **Glimmora ASCEND Aero** — Aviation & Aerospace Training (Coming Soon)
+    Flight simulation, aviation safety training, and aerospace workforce readiness platform.
+
+16. **Glimmora ASCEND Manufacturing** — Industrial Training & Safety (Coming Soon)
+    Factory floor simulation, safety training, and manufacturing workforce development.
+
+17. **Glimmora ASCEND Energy** — Energy Sector Training (Coming Soon)
+    Oil & gas, renewable energy, and utilities training simulation platform.
 
 ---
 
@@ -269,7 +288,7 @@ const LeadForm = ({ onSubmitted, onSkip }) => {
           <option value="">What are you interested in?</option>
           <option value="Glimmora VerifAI">Glimmora VerifAI (GRC)</option>
           <option value="Glimmora Hospitality">Glimmora Hospitality</option>
-          <option value="AI OCR ScanVista">AI OCR ScanVista</option>
+          <option value="Glimmora ScanVista">Glimmora ScanVista</option>
           <option value="Glimmora Cyber">Glimmora Cyber</option>
           <option value="GlimmoraTeam">GlimmoraTeam</option>
           <option value="Design Glimmora">Design Glimmora</option>
@@ -304,11 +323,15 @@ const ChatBot = () => {
   const [inputValue, setInputValue] = useState('');
   const [isLoading, setIsLoading] = useState(false);
   const [showSuggestions, setShowSuggestions] = useState(true);
+  // Initialize EmailJS once
+  useEffect(() => { emailjs.init(EMAIL_CONFIG.PUBLIC_KEY); }, []);
   const [formShownId, setFormShownId] = useState(null); // track which message has form
   const [formSubmitted, setFormSubmitted] = useState(false);
+  const [isListening, setIsListening] = useState(false);
 
   const messagesEndRef = useRef(null);
   const inputRef = useRef(null);
+  const recognitionRef = useRef(null);
 
   useEffect(() => {
     messagesEndRef.current?.scrollIntoView({ behavior: 'smooth' });
@@ -430,6 +453,40 @@ const ChatBot = () => {
         content: "No worries! You can always reach us at **info@baarez.com** or **+971 501371105**. What else can I help you with?",
       },
     ]);
+  };
+
+  // Voice input using Web Speech API
+  const toggleVoice = () => {
+    const SpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecognition;
+    if (!SpeechRecognition) {
+      setMessages(prev => [...prev, { id: Date.now(), role: 'assistant', content: "Voice input isn't supported in this browser. Try Chrome or Edge!" }]);
+      return;
+    }
+
+    if (isListening) {
+      recognitionRef.current?.stop();
+      setIsListening(false);
+      return;
+    }
+
+    const recognition = new SpeechRecognition();
+    recognition.lang = 'en-US';
+    recognition.interimResults = false;
+    recognition.maxAlternatives = 1;
+    recognitionRef.current = recognition;
+
+    recognition.onstart = () => setIsListening(true);
+    recognition.onresult = (event) => {
+      const transcript = event.results[0][0].transcript;
+      setInputValue(transcript);
+      setIsListening(false);
+      // Auto-send after voice capture
+      setTimeout(() => handleSend(transcript), 200);
+    };
+    recognition.onerror = () => setIsListening(false);
+    recognition.onend = () => setIsListening(false);
+
+    recognition.start();
   };
 
   // Render message content — handles bold, line breaks, and strips [CONTACT_FORM] tag
@@ -557,6 +614,14 @@ const ChatBot = () => {
                   className="flex-1 bg-gray-50 border border-gray-200 rounded-lg px-4 py-2.5 text-sm focus:outline-none focus:ring-1 focus:border-[#70564b] transition-all disabled:opacity-50"
                   style={{ '--tw-ring-color': BRAND.colors.primary }}
                 />
+                <button
+                  type="button"
+                  onClick={toggleVoice}
+                  disabled={isLoading}
+                  className={`p-2.5 rounded-lg transition-all shadow-sm flex items-center justify-center min-w-[42px] shrink-0 ${isListening ? 'bg-red-500 text-white animate-pulse' : 'bg-gray-100 text-gray-500 hover:bg-gray-200'}`}
+                >
+                  {isListening ? <MicOff size={18} /> : <Mic size={18} />}
+                </button>
                 <button
                   type="submit"
                   disabled={!inputValue.trim() || isLoading}

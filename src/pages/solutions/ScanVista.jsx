@@ -175,7 +175,7 @@ const ScanVista = () => {
           {/* Left: Text */}
           <div className="relative z-10">
             <div className="inline-block px-3 py-1 bg-[#70564b]/10 text-[#70564b] text-xs font-bold uppercase tracking-widest mb-6 rounded-sm">
-              AI OCR ScanVista
+              Glimmora ScanVista
             </div>
             
             <h1 className="text-3xl md:text-4xl font-bold tracking-tight mb-6 text-[#2E2A28] leading-tight">
@@ -225,7 +225,7 @@ const ScanVista = () => {
               <div className="w-20 h-20 bg-[#70564b] rounded-full mx-auto flex items-center justify-center shadow-lg mb-6 text-white animate-pulse">
                 <Icons.Lightning className="w-10 h-10" />
               </div>
-              <h3 className="text-xl font-bold text-[#2E2A28] mb-2">2. ScanVista Core</h3>
+              <h3 className="text-xl font-bold text-[#2E2A28] mb-2">2. Glimmora ScanVista Core</h3>
               <p className="text-sm text-gray-600">AI Recognition, Field Mapping, Validation.</p>
               {/* Connector */}
               <div className="hidden lg:block absolute top-1/2 -right-6 w-12 h-[2px] bg-gray-200"></div>
@@ -320,7 +320,7 @@ const ScanVista = () => {
                 <Icons.Globe className="w-10 h-10 text-gray-400 mb-6" />
                 <h3 className="text-xl font-bold text-[#2E2A28] mb-3">Bilingual Core</h3>
                 <p className="text-gray-600 leading-relaxed text-sm">
-                  Built natively for <strong>English & Arabic</strong>. Most OCR tools fail at right-to-left text; ScanVista excels at it.
+                  Built natively for <strong>English & Arabic</strong>. Most OCR tools fail at right-to-left text; Glimmora ScanVista excels at it.
                 </p>
               </div>
               <div className="mt-8 pt-8 border-t border-gray-100">
@@ -394,7 +394,7 @@ const ScanVista = () => {
                   <div>
                     <h3 className="text-xl font-bold text-[#2E2A28] mb-4">Invoice Processing</h3>
                     <p className="text-gray-600 leading-relaxed mb-6">
-                      Finance teams use ScanVista to automate Accounts Payable. Drop in a PDF invoice, and get back vendor name, invoice date, line items, and tax amounts instantly.
+                      Finance teams use Glimmora ScanVista to automate Accounts Payable. Drop in a PDF invoice, and get back vendor name, invoice date, line items, and tax amounts instantly.
                     </p>
                     <ul className="space-y-2 text-sm font-bold text-[#70564b]">
                       <li className="flex items-center gap-2"><Icons.CheckCircle className="w-4 h-4" /> 3-Way Matching</li>
@@ -493,7 +493,7 @@ const ScanVista = () => {
           <div className="relative z-10">
             <h2 className="text-4xl font-bold text-[#2E2A28] mb-6">Eliminate the paper backlog.</h2>
             <p className="text-sm text-gray-500 mb-10">
-              See how ScanVista can digitize your operations with speed and accuracy.
+              See how Glimmora ScanVista can digitize your operations with speed and accuracy.
             </p>
             <Link 
               to="/contact" 

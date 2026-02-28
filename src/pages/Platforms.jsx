@@ -37,11 +37,11 @@ const ALL_PLATFORMS = [
     color: '#70564b',
   },
   {
-    name: 'AI OCR ScanVista',
-    short: 'ScanVista',
+    name: 'Glimmora ScanVista',
+    short: 'Glimmora ScanVista',
     category: 'Document Intelligence',
     tagline: 'Intelligent Document Understanding',
-    desc: 'Turn unstructured documents into decision-ready data. ScanVista uses AI to read, classify, and extract data from complex files in English and Arabic — powering KYC, contract analysis, and regulatory evidence collection.',
+    desc: 'Turn unstructured documents into decision-ready data. Glimmora ScanVista uses AI to read, classify, and extract data from complex files in English and Arabic — powering KYC, contract analysis, and regulatory evidence collection.',
     modules: ['English & Arabic OCR', 'NLP Document Classification', 'KYC & Contract Analysis', 'Automated Metadata Tagging', 'Regulatory Evidence Extraction'],
     path: '/platforms/scanvista',
     status: 'live',
@@ -179,6 +179,71 @@ const ALL_PLATFORMS = [
     outcome: 'Governed execution with validated, evidence-backed outcomes',
     color: '#70564b',
   },
+  {
+    name: 'Glimmora ASCEND Defense',
+    short: 'ASCEND Defense',
+    category: 'Training & Simulation',
+    tagline: 'AI-Powered Combat Simulation & Tactical Training',
+    desc: 'AI-powered combat simulation, tactical training, and mission readiness platform for armed forces and defense agencies. Immersive scenario-based training with real-time performance analytics.',
+    modules: ['Combat Simulation Engine', 'Tactical Training AI', 'Mission Readiness Analytics', 'Terrain Modeling', 'After-Action Review', 'Multi-Domain Warfare Sim'],
+    path: '/platforms/ascend-defense',
+    status: 'soon',
+    target: 'Armed Forces, Defense Agencies, Military Training Centers',
+    outcome: 'Enhanced mission readiness & training effectiveness',
+    color: '#70564b',
+  },
+  {
+    name: 'Glimmora ASCEND Vitalis',
+    short: 'ASCEND Vitalis',
+    category: 'Training & Simulation',
+    tagline: 'AI-Driven Medical Simulation & Clinical Training',
+    desc: 'Medical simulation, clinical training, and healthcare workforce development using AI-driven scenarios. From surgical simulations to emergency response training.',
+    modules: ['Surgical Simulation', 'Clinical Scenario Engine', 'Emergency Response Training', 'Patient Interaction AI', 'Performance Analytics', 'Certification Tracking'],
+    path: '/platforms/ascend-vitalis',
+    status: 'soon',
+    target: 'Hospitals, Medical Schools, Healthcare Training Centers',
+    outcome: 'Improved clinical competency & patient outcomes',
+    color: '#956e5d',
+  },
+  {
+    name: 'Glimmora ASCEND Aero',
+    short: 'ASCEND Aero',
+    category: 'Training & Simulation',
+    tagline: 'Flight Simulation & Aviation Safety Intelligence',
+    desc: 'Flight simulation, aviation safety training, and aerospace workforce readiness platform. AI-powered scenario generation for pilot training, crew resource management, and maintenance procedures.',
+    modules: ['Flight Simulation Engine', 'Crew Resource Management', 'Aviation Safety Training', 'Maintenance Procedure Sim', 'Performance Analytics', 'Regulatory Compliance Training'],
+    path: '/platforms/ascend-aero',
+    status: 'soon',
+    target: 'Airlines, Aviation Academies, Aerospace Organizations',
+    outcome: 'Enhanced pilot proficiency & safety compliance',
+    color: '#5f4940',
+  },
+  {
+    name: 'Glimmora ASCEND Manufacturing',
+    short: 'ASCEND Mfg',
+    category: 'Training & Simulation',
+    tagline: 'Factory Floor Simulation & Safety Intelligence',
+    desc: 'Factory floor simulation, safety training, and manufacturing workforce development. AI-powered scenarios for assembly line operations, hazard response, and quality control procedures.',
+    modules: ['Factory Simulation Engine', 'Safety Protocol Training', 'Quality Control Sim', 'Hazard Response Training', 'Equipment Operation Sim', 'Workforce Analytics'],
+    path: '/platforms/ascend-manufacturing',
+    status: 'soon',
+    target: 'Manufacturing Plants, Industrial Training Centers, Safety Organizations',
+    outcome: 'Reduced workplace incidents & improved productivity',
+    color: '#4a3830',
+  },
+  {
+    name: 'Glimmora ASCEND Energy',
+    short: 'ASCEND Energy',
+    category: 'Training & Simulation',
+    tagline: 'Energy Operations Simulation & Safety Training',
+    desc: 'Oil & gas, renewable energy, and utilities training simulation platform. AI-powered scenarios for drilling operations, plant safety, grid management, and emergency response.',
+    modules: ['Drilling Simulation', 'Plant Safety Training', 'Grid Management Sim', 'Emergency Response AI', 'Environmental Compliance', 'Workforce Certification'],
+    path: '/platforms/ascend-energy',
+    status: 'soon',
+    target: 'Oil & Gas Companies, Utilities, Renewable Energy Firms',
+    outcome: 'Enhanced operational safety & regulatory compliance',
+    color: '#70564b',
+  },
 ]
 
 const FILTERS = ['All', 'Live', 'Coming Soon']
@@ -211,12 +276,12 @@ export default function Platforms() {
                 Global Intelligence<br />Platforms
               </h1>
               <p className="text-xl text-gray-600 mb-8 leading-relaxed">
-                12+ purpose-built AI platforms for every industry. Each platform is a category leader — together, they form the world's most comprehensive enterprise AI ecosystem.
+                17+ purpose-built AI platforms for every industry. Each platform is a category leader — together, they form the world's most comprehensive enterprise AI ecosystem.
               </p>
               <div className="flex flex-wrap gap-8">
                 {[
                   { value: '3', label: 'Live Platforms' },
-                  { value: '9+', label: 'Launching Soon' },
+                  { value: '14+', label: 'Launching Soon' },
                   { value: '8+', label: 'Industries Served' },
                 ].map((stat) => (
                   <div key={stat.label}>

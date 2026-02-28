@@ -1,4 +1,4 @@
-import React, { useState, useRef } from 'react';
+import React, { useState, useRef, useEffect } from 'react';
 import emailjs from '@emailjs/browser';
 import { motion } from 'framer-motion';
 
@@ -38,6 +38,7 @@ const WhitePaper = () => {
   const formRef = useRef();
   const [loading, setLoading] = useState(false);
   const [success, setSuccess] = useState(false);
+  useEffect(() => { emailjs.init('usx7JhywGy63cCrKc'); }, []);
   const [selectedCountryCode, setSelectedCountryCode] = useState("+1");
 
   const [formData, setFormData] = useState({

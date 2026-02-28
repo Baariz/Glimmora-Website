@@ -70,7 +70,7 @@ const solutionCategories = [
         name: 'AI GRC Platform',
         target: "Chief Risk Officers",
         outcome: "Reduce audit prep time by 40%",
-        synergy: "ScanVista → GRC → Audit",
+        synergy: "Glimmora ScanVista → GRC → Audit",
         desc: 'Unified governance, risk management, and compliance automation.',
         path: '/solutions/grc',
         icon: Icons.Shield,
@@ -106,7 +106,7 @@ const solutionCategories = [
     items: [
       {
         id: 'scanvista',
-        name: 'AI OCR ScanVista',
+        name: 'Glimmora ScanVista',
         target: "Ops & Compliance Leads",
         outcome: "Process docs in seconds",
         synergy: "Extracts data for all platforms",
@@ -164,7 +164,7 @@ const comparisonData = [
   { name: "AI GRC", owner: "Chief Risk Officer", focus: "Enterprise Governance", outcome: "Unified Risk View", deployment: "Cloud / On-Prem" },
   { name: "AI TPRM", owner: "Vendor Managers", focus: "Third-Party Risk", outcome: "Vendor Health Score", deployment: "Cloud Only" },
   { name: "Internal Audit", owner: "Chief Audit Exec", focus: "Audit Execution", outcome: "Audit Trail & Reporting", deployment: "Cloud / On-Prem" },
-  { name: "ScanVista", owner: "IT / Ops Leads", focus: "Data Extraction (OCR)", outcome: "Digitized Documents", deployment: "API / Cloud" },
+  { name: "Glimmora ScanVista", owner: "IT / Ops Leads", focus: "Data Extraction (OCR)", outcome: "Digitized Documents", deployment: "API / Cloud" },
   { name: "Glimmora", owner: "Hospitality COOs", focus: "Revenue & Ops", outcome: "RevPAR Growth", deployment: "Cloud Platform" }
 ];
 

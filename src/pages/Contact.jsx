@@ -443,7 +443,7 @@ const Contact = () => {
                       <option value="AI GRC Platform">AI GRC Platform</option>
                       <option value="AI TPRM Platform">AI TPRM Platform</option>
                       <option value="Al Internal Audit Platform">Al Internal Audit Platform</option>
-                      <option value="AI OCR ScanVista">AI OCR ScanVista</option>
+                      <option value="Glimmora ScanVista">Glimmora ScanVista</option>
                       <option value="Automation Services">Automation Services</option>
                       <option value="Remote Consulting Services">Remote Consulting Services</option>
                       <option value="Microsoft ERP">Microsoft ERP</option>

@@ -1,6 +1,7 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import { motion, useInView } from 'framer-motion'
 import { useRef } from 'react'
+import emailjs from '@emailjs/browser'
 
 const fadeUp = { hidden: { opacity: 0, y: 30 }, visible: { opacity: 1, y: 0, transition: { duration: 0.6 } } }
 const stagger = { hidden: {}, visible: { transition: { staggerChildren: 0.12 } } }
@@ -153,6 +154,11 @@ export default function InterestSection({
 }) {
   const [email, setEmail] = useState('')
   const [submitted, setSubmitted] = useState(false)
+  const [sending, setSending] = useState(false)
+
+  useEffect(() => {
+    emailjs.init('usx7JhywGy63cCrKc')
+  }, [])
 
   const resolvedHeading   = heading     || `AI Intelligence for ${industryName}`
   const resolvedFormTitle = formTitle   || `Explore ${industryName} Intelligence`
@@ -203,7 +209,26 @@ export default function InterestSection({
                   </div>
                 ) : (
                   <form
-                    onSubmit={(e) => { e.preventDefault(); if (email) { setSubmitted(true); setEmail('') } }}
+                    onSubmit={async (e) => {
+                      e.preventDefault()
+                      if (!email || sending) return
+                      setSending(true)
+                      try {
+                        await emailjs.send('service_wxj1uz3', 'template_kj44vfa', {
+                          from_name: 'Interest Form',
+                          from_email: email,
+                          industry: industryName,
+                          message: `Interest inquiry from ${email} for ${industryName} intelligence solutions.`,
+                        })
+                        setSubmitted(true)
+                        setEmail('')
+                      } catch (err) {
+                        console.error('EmailJS error:', err)
+                        alert('Something went wrong. Please try again.')
+                      } finally {
+                        setSending(false)
+                      }
+                    }}
                     className="flex flex-col sm:flex-row gap-3"
                   >
                     <input
@@ -214,8 +239,8 @@ export default function InterestSection({
                       required
                       className="flex-1 bg-white border border-gray-200 text-gray-900 placeholder:text-gray-400 px-4 py-3 outline-none focus:border-[#956e5d] transition-colors text-sm"
                     />
-                    <button type="submit" className="btn-primary px-6 py-3 text-sm whitespace-nowrap">
-                      Get in Touch
+                    <button type="submit" disabled={sending} className="btn-primary px-6 py-3 text-sm whitespace-nowrap disabled:opacity-60">
+                      {sending ? 'Sending...' : 'Get in Touch'}
                     </button>
                   </form>
                 )}

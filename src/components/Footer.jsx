@@ -24,7 +24,7 @@ function Footer() {
 
   const platforms = [
     { name: 'Glimmora VerifAI', path: '/platforms/verifai' },
-    { name: 'AI OCR ScanVista', path: '/platforms/scanvista' },
+    { name: 'Glimmora ScanVista', path: '/platforms/scanvista' },
     { name: 'Glimmora Hospitality', path: '/platforms/hospitality' },
     { name: 'AEGIS Glimmora', path: '/platforms/aegis-defense' },
   ]

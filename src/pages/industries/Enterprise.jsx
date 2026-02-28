@@ -46,6 +46,14 @@ const PLATFORMS = [
     path: '/platforms/reach',
     live: false,
   },
+  {
+    name: 'Glimmora ASCEND Manufacturing',
+    badge: 'Training Platform',
+    desc: 'Factory floor simulation and industrial safety training for enterprise manufacturing operations.',
+    modules: ['Factory Simulation', 'Safety Protocol Training', 'Quality Control Sim', 'Equipment Operations'],
+    path: '/platforms/ascend-manufacturing',
+    soon: true,
+  },
 ]
 
 const OUTCOMES = [

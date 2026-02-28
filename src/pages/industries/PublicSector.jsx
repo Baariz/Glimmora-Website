@@ -52,6 +52,14 @@ const PLATFORMS = [
     path: '/platforms/team',
     soon: true,
   },
+  {
+    name: 'Glimmora ASCEND Defense',
+    badge: 'Training Platform',
+    desc: 'AI-powered military simulation and training for government defense agencies. Sovereign deployment with classified scenario options.',
+    modules: ['Combat Simulation', 'Tactical Training AI', 'Mission Readiness', 'After-Action Review'],
+    path: '/platforms/ascend-defense',
+    soon: true,
+  },
 ]
 
 export default function PublicSector() {

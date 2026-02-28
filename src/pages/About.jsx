@@ -29,7 +29,7 @@ const About = () => {
         </h1>
         <p className="text-gray-500 text-sm font-light leading-relaxed max-w-lg mb-10">
           Glimmora International is not just a consultancy; we are an innovation house.
-          Since 2017, we have specialized in delivering AI-native governance, risk, and compliance solutions
+          We specialize in delivering AI-native governance, risk, and compliance solutions
           for regulated industries across MENA, building trust through transparency and technical excellence.
         </p>
 
@@ -70,91 +70,51 @@ const About = () => {
   </div>
 </section>
 
-      {/* BRAND EVOLUTION: Baarez → Glimmora International */}
-      <section className="py-24 bg-[#F5F3F1] relative overflow-hidden">
-        {/* Subtle background pattern */}
+      {/* BRAND: Baarez is Glimmora */}
+      <section className="py-20 bg-[#F5F3F1] relative overflow-hidden">
         <div className="absolute inset-0 bg-[linear-gradient(rgba(112,86,75,0.02)_1px,transparent_1px),linear-gradient(90deg,rgba(112,86,75,0.02)_1px,transparent_1px)] bg-[size:40px_40px]"></div>
 
         <div className="max-w-5xl mx-auto px-6 lg:px-12 relative z-10">
 
-          {/* Section header */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
-            className="text-center mb-16"
+            className="text-center mb-12"
           >
-            <span className="text-[#70564b] text-xs font-bold uppercase tracking-[0.4em] mb-4 block">Our Evolution</span>
+            <span className="text-[#70564b] text-xs font-bold uppercase tracking-[0.4em] mb-4 block">Our Identity</span>
             <h2 className="text-2xl md:text-3xl font-bold text-[#2E2A28] leading-tight">
-              A New Chapter. The Same Commitment.
+              Same Team. Same Trust. A Broader Vision.
             </h2>
           </motion.div>
 
-          {/* Transition visual */}
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.8, delay: 0.2 }}
-            className="flex flex-col md:flex-row items-center justify-center gap-8 md:gap-6 mb-16"
-          >
-            {/* Old brand — Baarez */}
-            <div className="flex-1 max-w-xs flex flex-col items-center md:items-end">
-              <div className="grayscale opacity-40 mb-3">
-                <img src="/logo.png" alt="Baarez Technology Solutions" className="h-16 md:h-20 object-contain" />
-              </div>
-              <p className="text-sm font-semibold text-gray-400">Baarez Technology Solutions</p>
-              <p className="text-xs text-gray-400 italic mt-1">Est. 2017</p>
-            </div>
-
-            {/* Arrow transition */}
-            <div className="flex flex-col items-center gap-2 px-6">
-              <div className="hidden md:block w-28 h-[2px] bg-gradient-to-r from-gray-300 via-[#70564b] to-[#70564b] relative">
-                <div className="absolute right-0 top-1/2 -translate-y-1/2 w-0 h-0 border-l-[8px] border-l-[#70564b] border-t-[5px] border-t-transparent border-b-[5px] border-b-transparent"></div>
-              </div>
-              <div className="md:hidden h-14 w-[2px] bg-gradient-to-b from-gray-300 via-[#70564b] to-[#70564b] relative">
-                <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-0 h-0 border-t-[8px] border-t-[#70564b] border-l-[5px] border-l-transparent border-r-[5px] border-r-transparent"></div>
-              </div>
-              <span className="text-[9px] font-bold uppercase tracking-widest text-[#70564b]">Evolved</span>
-            </div>
-
-            {/* New brand — Glimmora International */}
-            <div className="flex-1 max-w-xs flex flex-col items-center md:items-start">
-              <div className="mb-3">
-                <img src="/Glimmora_logo_icon_fit.png" alt="Glimmora International" className="h-16 md:h-20 object-contain" />
-              </div>
-              <p className="text-sm font-bold text-[#2E2A28]">Glimmora International</p>
-              <p className="text-xs text-[#70564b] font-semibold mt-1">AI-Native Enterprise Platform</p>
-            </div>
-          </motion.div>
-
-          {/* Supporting message */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            transition={{ duration: 0.6, delay: 0.4 }}
+            transition={{ duration: 0.6, delay: 0.2 }}
             className="max-w-3xl mx-auto"
           >
             <div className="bg-white border border-gray-100 p-8 md:p-10 shadow-sm relative overflow-hidden">
-              {/* Accent line */}
               <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-[#956e5d] to-[#70564b]"></div>
+
+              <div className="flex items-center gap-4 mb-8 justify-center">
+                <img src="/logo.png" alt="Baarez Technology Solutions" className="h-12 md:h-14 object-contain opacity-40 grayscale" />
+                <span className="text-lg font-bold text-[#70564b]">=</span>
+                <img src="/Glimmora_logo_icon_fit.png" alt="Glimmora International" className="h-12 md:h-14 object-contain" />
+              </div>
 
               <div className="grid md:grid-cols-3 gap-8">
                 <div className="md:col-span-2">
                   <p className="text-sm text-gray-600 leading-relaxed mb-4">
-                    What began in 2017 as <span className="font-semibold text-gray-500">Baarez Technology Solutions</span> — a focused GRC consultancy — has grown into something far more ambitious. Today, as <span className="font-semibold text-[#70564b]">Glimmora International</span>, we are building the AI-native operating system for enterprise governance across regulated industries.
+                    <span className="font-semibold text-gray-500">Baarez Technology Solutions</span> is now <span className="font-semibold text-[#70564b]">Glimmora International</span>. Our name reflects a broader vision — building the AI-native operating system for enterprise governance across regulated industries worldwide.
                   </p>
                   <p className="text-sm text-gray-600 leading-relaxed">
-                    Our name has changed, but our DNA remains: precision, transparency, and relentless dedication to client outcomes. Every relationship we built, every trust we earned — it all carries forward.
+                    Our DNA remains: precision, transparency, and relentless dedication to client outcomes. Every relationship we built, every trust we earned — it all carries forward.
                   </p>
                 </div>
                 <div className="flex flex-col justify-center gap-4 border-l border-gray-100 pl-8">
-                  <div>
-                    <p className="text-2xl font-bold text-[#70564b]">2017</p>
-                    <p className="text-[10px] text-gray-400 uppercase tracking-widest font-bold">Founded</p>
-                  </div>
                   <div>
                     <p className="text-2xl font-bold text-[#70564b]">100+</p>
                     <p className="text-[10px] text-gray-400 uppercase tracking-widest font-bold">Enterprise Clients</p>
@@ -162,6 +122,10 @@ const About = () => {
                   <div>
                     <p className="text-2xl font-bold text-[#70564b]">MENA</p>
                     <p className="text-[10px] text-gray-400 uppercase tracking-widest font-bold">Region Focus</p>
+                  </div>
+                  <div>
+                    <p className="text-2xl font-bold text-[#70564b]">6+</p>
+                    <p className="text-[10px] text-gray-400 uppercase tracking-widest font-bold">Global Markets</p>
                   </div>
                 </div>
               </div>
@@ -201,7 +165,7 @@ const About = () => {
             <div className="w-full lg:w-5/12">
               <div className="relative">
                 <img 
-                  src={CEO_IMAGE} 
+                  src="/ceo.JPG"
                   alt="Mr. Santosh Kharje" 
                   className="w-full grayscale hover:grayscale-0 transition-all duration-1000 shadow-[30px_30px_0px_0px_rgba(112,86,75,1)]"
                 />

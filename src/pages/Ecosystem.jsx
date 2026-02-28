@@ -34,8 +34,8 @@ const PLATFORMS = [
     color: '#70564b',
   },
   {
-    name: 'AI OCR ScanVista',
-    short: 'ScanVista',
+    name: 'Glimmora ScanVista',
+    short: 'Glimmora ScanVista',
     industry: 'Document Intelligence',
     desc: 'Intelligent document understanding powered by AI. Reads, classifies, and extracts data from complex documents in English and Arabic — for KYC, contracts, and regulatory evidence.',
     modules: ['English & Arabic OCR', 'NLP Classification', 'KYC & Contract Analysis', 'Metadata Tagging', 'Evidence Extraction'],
@@ -143,6 +143,56 @@ const PLATFORMS = [
     status: 'soon',
     color: '#70564b',
   },
+  {
+    name: 'Glimmora ASCEND Defense',
+    short: 'ASCEND Defense',
+    industry: 'Military & Defense Training',
+    desc: 'AI-powered combat simulation, tactical training, and mission readiness.',
+    modules: ['Combat Simulation', 'Tactical Training AI', 'Mission Readiness', 'After-Action Review'],
+    path: '/platforms/ascend-defense',
+    status: 'soon',
+    color: '#70564b',
+  },
+  {
+    name: 'Glimmora ASCEND Vitalis',
+    short: 'ASCEND Vitalis',
+    industry: 'Healthcare Training & Simulation',
+    desc: 'Medical simulation, clinical training, and healthcare workforce development.',
+    modules: ['Surgical Simulation', 'Clinical Scenarios', 'Emergency Response', 'Certification Tracking'],
+    path: '/platforms/ascend-vitalis',
+    status: 'soon',
+    color: '#956e5d',
+  },
+  {
+    name: 'Glimmora ASCEND Aero',
+    short: 'ASCEND Aero',
+    industry: 'Aviation & Aerospace Training',
+    desc: 'Flight simulation, aviation safety training, and aerospace readiness.',
+    modules: ['Flight Simulation', 'Crew Management', 'Aviation Safety', 'Maintenance Sim'],
+    path: '/platforms/ascend-aero',
+    status: 'soon',
+    color: '#5f4940',
+  },
+  {
+    name: 'Glimmora ASCEND Manufacturing',
+    short: 'ASCEND Mfg',
+    industry: 'Industrial Training & Safety',
+    desc: 'Factory floor simulation, safety training, and manufacturing workforce development.',
+    modules: ['Factory Simulation', 'Safety Training', 'Quality Control', 'Equipment Operations'],
+    path: '/platforms/ascend-manufacturing',
+    status: 'soon',
+    color: '#4a3830',
+  },
+  {
+    name: 'Glimmora ASCEND Energy',
+    short: 'ASCEND Energy',
+    industry: 'Energy Sector Training',
+    desc: 'Energy operations simulation and safety training for oil & gas, renewables, and utilities.',
+    modules: ['Drilling Simulation', 'Plant Safety', 'Grid Management', 'Emergency Response'],
+    path: '/platforms/ascend-energy',
+    status: 'soon',
+    color: '#70564b',
+  },
 ]
 
 const ARCHITECTURE_LAYERS = [
@@ -234,14 +284,17 @@ function EcosystemVisual() {
   const platforms = [
     { name: 'Glimmora Hospitality', tag: 'Live', tagCls: 'bg-green-50 text-green-600',  dot: 'bg-green-500' },
     { name: 'Glimmora VerifAI',     tag: 'Live', tagCls: 'bg-green-50 text-green-600',  dot: 'bg-green-500' },
-    { name: 'AI OCR ScanVista',     tag: 'Live', tagCls: 'bg-green-50 text-green-600',  dot: 'bg-green-500' },
+    { name: 'Glimmora ScanVista',     tag: 'Live', tagCls: 'bg-green-50 text-green-600',  dot: 'bg-green-500' },
     { name: 'Glimmora Reach',       tag: 'Soon', tagCls: 'bg-amber-50 text-amber-600',  dot: 'bg-amber-400' },
-    { name: 'AEGIS Glimmora',       tag: 'Soon', tagCls: 'bg-amber-50 text-amber-600',  dot: 'bg-amber-400' },
     { name: 'Cyber Glimmora',       tag: 'Soon', tagCls: 'bg-amber-50 text-amber-600',  dot: 'bg-amber-400' },
-    { name: 'Moda Glimmora',        tag: 'Dev',  tagCls: 'bg-gray-50 text-gray-400',    dot: 'bg-gray-300'  },
-    { name: 'Design Glimmora',      tag: 'Dev',  tagCls: 'bg-gray-50 text-gray-400',    dot: 'bg-gray-300'  },
-    { name: 'GlimmoraTeam™',        tag: 'Dev',  tagCls: 'bg-gray-50 text-gray-400',    dot: 'bg-gray-300'  },
-    { name: '+ 3 more in pipeline', tag: '',     tagCls: '',                             dot: 'bg-gray-200'  },
+    { name: 'Moda Glimmora',        tag: 'Soon', tagCls: 'bg-amber-50 text-amber-600',  dot: 'bg-amber-400' },
+    { name: 'Design Glimmora',      tag: 'Soon', tagCls: 'bg-amber-50 text-amber-600',  dot: 'bg-amber-400' },
+    { name: 'GlimmoraTeam',         tag: 'Soon', tagCls: 'bg-amber-50 text-amber-600',  dot: 'bg-amber-400' },
+    { name: 'ASCEND Defense',       tag: 'Soon', tagCls: 'bg-amber-50 text-amber-600',  dot: 'bg-amber-400' },
+    { name: 'ASCEND Vitalis',       tag: 'Soon', tagCls: 'bg-amber-50 text-amber-600',  dot: 'bg-amber-400' },
+    { name: 'ASCEND Aero',          tag: 'Soon', tagCls: 'bg-amber-50 text-amber-600',  dot: 'bg-amber-400' },
+    { name: 'ASCEND Manufacturing', tag: 'Soon', tagCls: 'bg-amber-50 text-amber-600',  dot: 'bg-amber-400' },
+    { name: 'ASCEND Energy',        tag: 'Soon', tagCls: 'bg-amber-50 text-amber-600',  dot: 'bg-amber-400' },
   ]
 
   return (
@@ -256,7 +309,7 @@ function EcosystemVisual() {
         animate={{ opacity: 1 }}
         transition={{ delay: 0.1, duration: 0.5 }}
       >
-        12 Platforms · Active Ecosystem
+        17 Platforms · Active Ecosystem
       </motion.p>
 
       {/* Platform cards */}
@@ -311,7 +364,7 @@ export default function Ecosystem() {
                   </span>
                 </h1>
                 <p className="text-xl text-gray-600 mb-8 leading-relaxed">
-                  12+ AI-native platforms. 8+ industries. One unified intelligence layer designed to power the modern world — from enterprise boardrooms to defense command centers.
+                  17+ AI-native platforms. 8+ industries. One unified intelligence layer designed to power the modern world — from enterprise boardrooms to defense command centers.
                 </p>
                 <div className="flex flex-wrap gap-4">
                   <Link to="/contact" className="btn-primary px-8 py-4">
@@ -428,7 +481,7 @@ export default function Ecosystem() {
             <motion.div variants={fadeUp} className="text-center mb-16">
               <p className="text-sm font-semibold tracking-widest uppercase text-brand-maroon mb-3">All Platforms</p>
               <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-5">
-                12+ Platforms.<br />One Ecosystem.
+                17+ Platforms.<br />One Ecosystem.
               </h2>
             </motion.div>
 
