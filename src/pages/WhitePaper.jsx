@@ -109,8 +109,8 @@ const WhitePaper = () => {
 
   if (success) {
     return (
-        <div className="min-h-screen bg-white pt-32 pb-20 flex items-center justify-center">
-            <div className="max-w-md w-full bg-green-50 p-8 rounded-xl border border-green-200 text-center">
+        <div className="min-h-screen bg-white pt-32 pb-20 flex items-center justify-center px-4 sm:px-6">
+            <div className="max-w-md w-full bg-green-50 p-6 sm:p-8 rounded-xl border border-green-200 text-center">
                 <div className="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-4 text-green-600">
                     <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7"></path></svg>
                 </div>
@@ -129,27 +129,27 @@ const WhitePaper = () => {
     <div className="min-h-screen bg-[#fdfbf9] pt-24 pb-20">
       
       {/* Header Background Strip */}
-      <div className="bg-[#2E2A28] text-white py-16 mb-12 relative overflow-hidden">
+      <div className="bg-[#2E2A28] text-white py-10 md:py-16 mb-8 md:mb-12 relative overflow-hidden">
         <div className="absolute top-0 right-0 w-[400px] h-[400px] bg-[#70564b]/10 rounded-full blur-[100px] pointer-events-none translate-x-1/2 -translate-y-1/2"></div>
-        <div className="max-w-7xl mx-auto px-6 relative z-10 text-center">
-            <h1 className="text-3xl md:text-5xl font-bold mb-4">GRC in the Age of AI</h1>
-            <p className="text-lg text-gray-300 max-w-2xl mx-auto">Strategic insights for regulated enterprises.</p>
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 relative z-10 text-center">
+            <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold mb-4">GRC in the Age of AI</h1>
+            <p className="text-base md:text-lg text-gray-300 max-w-2xl mx-auto">Strategic insights for regulated enterprises.</p>
         </div>
       </div>
 
-      <div className="max-w-7xl mx-auto px-6">
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 md:gap-10 lg:gap-12 items-start">
             
             {/* LEFT COLUMN: Content */}
             <div className="lg:col-span-7 space-y-8">
                 <div>
                     <span className="text-[#70564b] font-bold uppercase tracking-widest text-xs">White Paper</span>
-                    <h2 className="text-3xl md:text-4xl font-bold text-[#2E2A28] mt-2 mb-6">
+                    <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-[#2E2A28] mt-2 mb-6">
                         A Framework for Strong GRC in a Digitally Evolving World
                     </h2>
                     <div className="w-20 h-1 bg-[#70564b] mb-8"></div>
                     
-                    <div className="prose prose-lg text-gray-600 leading-relaxed">
+                    <div className="prose prose-base md:prose-lg text-gray-600 leading-relaxed">
                         <p className="mb-6">
                             As AI continues to evolve at an unprecedented pace, governments worldwide are rushing to introduce frameworks that unlock its potential while keeping rising risks in check.
                         </p>
@@ -165,7 +165,7 @@ const WhitePaper = () => {
                     </div>
                 </div>
 
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mt-8">
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6 mt-6 md:mt-8">
                     <div className="bg-white p-6 rounded-lg border border-gray-100 shadow-sm">
                         <div className="w-10 h-10 bg-[#70564b]/10 rounded-lg flex items-center justify-center text-[#70564b] mb-4">
                             <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.5" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"></path></svg>
@@ -193,7 +193,7 @@ const WhitePaper = () => {
 
             {/* RIGHT COLUMN: Form */}
             <div className="lg:col-span-5">
-                <div className="bg-white rounded-xl shadow-[0_20px_50px_rgba(0,0,0,0.1)] border border-gray-200 p-6 md:p-8 sticky top-28">
+                <div className="bg-white rounded-xl shadow-[0_20px_50px_rgba(0,0,0,0.1)] border border-gray-200 p-4 sm:p-6 md:p-8 sticky top-28">
                     <h3 className="text-2xl font-bold text-[#2E2A28] mb-6 border-b border-gray-100 pb-4">
                         Get your copy
                     </h3>
@@ -201,7 +201,7 @@ const WhitePaper = () => {
                     <form ref={formRef} onSubmit={handleSubmit} className="space-y-4">
                         
                         {/* Name Fields */}
-                        <div className="grid grid-cols-2 gap-4">
+                        <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                             <div>
                                 <label className="block text-xs font-semibold text-gray-700 uppercase mb-1">First Name *</label>
                                 <input 

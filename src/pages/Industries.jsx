@@ -162,7 +162,7 @@ export default function Industries() {
     <main className="pt-24">
 
       {/* HERO — light background */}
-      <section className="py-20 bg-[#F5F3F1] relative overflow-hidden">
+      <section className="py-12 md:py-16 lg:py-20 bg-[#F5F3F1] relative overflow-hidden">
         <div className="absolute inset-0" style={{
           backgroundImage: `linear-gradient(rgba(112,86,75,0.06) 1px, transparent 1px), linear-gradient(90deg, rgba(112,86,75,0.06) 1px, transparent 1px)`,
           backgroundSize: '60px 60px',
@@ -172,23 +172,23 @@ export default function Industries() {
         <div className="section-container relative z-10">
           <AnimatedSection>
             <motion.div variants={fadeUp} className="max-w-3xl">
-              <span className="inline-block text-xs font-semibold tracking-widest uppercase bg-[#70564b]/10 text-[#70564b] px-4 py-2 mb-6" style={{ borderRadius: 0 }}>
+              <span className="inline-block text-xs font-semibold tracking-widest uppercase bg-[#70564b]/10 text-[#70564b] px-4 py-2 mb-4 md:mb-6" style={{ borderRadius: 0 }}>
                 Industry Intelligence
               </span>
-              <h1 className="text-5xl md:text-6xl font-bold text-gray-900 mb-6 leading-tight">
+              <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 mb-4 md:mb-6 leading-tight">
                 Purpose-Built Intelligence<br />
                 <span className="text-transparent bg-clip-text" style={{ backgroundImage: 'linear-gradient(135deg, #70564b, #956e5d)' }}>
                   for Every Industry
                 </span>
               </h1>
-              <p className="text-xl text-gray-600 mb-8 leading-relaxed">
+              <p className="text-base md:text-lg lg:text-xl text-gray-600 mb-6 md:mb-8 leading-relaxed">
                 Glimmora doesn't deploy generic AI. Every industry gets purpose-built intelligence platforms with sector-specific modules, compliance frameworks, and operational expertise.
               </p>
-              <div className="flex flex-wrap gap-6">
+              <div className="flex flex-wrap gap-4 md:gap-6">
                 {[{ value: '8+', label: 'Industries Served' }, { value: '12+', label: 'AI Platforms' }, { value: '6', label: 'Global Offices' }].map((s) => (
                   <div key={s.label}>
-                    <p className="text-3xl font-bold text-[#70564b]">{s.value}</p>
-                    <p className="text-sm text-gray-500 mt-1">{s.label}</p>
+                    <p className="text-2xl md:text-3xl font-bold text-[#70564b]">{s.value}</p>
+                    <p className="text-xs md:text-sm text-gray-500 mt-1">{s.label}</p>
                   </div>
                 ))}
               </div>
@@ -198,14 +198,14 @@ export default function Industries() {
       </section>
 
       {/* PHILOSOPHY */}
-      <section className="py-16 bg-white border-b border-gray-100">
+      <section className="py-10 md:py-12 lg:py-16 bg-white border-b border-gray-100">
         <div className="section-container">
           <AnimatedSection>
             <motion.div variants={fadeUp} className="max-w-4xl mx-auto text-center">
-              <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-4">
+              <h2 className="text-xl sm:text-2xl md:text-3xl font-bold text-gray-900 mb-3 md:mb-4">
                 Industry Solutions → Platform Modules
               </h2>
-              <p className="text-gray-600 text-lg leading-relaxed">
+              <p className="text-gray-600 text-base md:text-lg leading-relaxed">
                 Each industry page maps real-world challenges to specific Glimmora platform solutions. We don't offer the same software to every sector — we build dedicated intelligence layers for each one.
               </p>
             </motion.div>
@@ -214,10 +214,10 @@ export default function Industries() {
       </section>
 
       {/* INDUSTRIES GRID */}
-      <section className="py-20 bg-[#F5F3F1]">
+      <section className="py-12 md:py-16 lg:py-20 bg-[#F5F3F1]">
         <div className="section-container">
           <AnimatedSection>
-            <motion.div variants={stagger} className="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <motion.div variants={stagger} className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-5 lg:gap-6">
               {INDUSTRIES.map((industry) => (
                 <motion.div key={industry.name} variants={fadeUp}>
                   <Link
@@ -225,31 +225,31 @@ export default function Industries() {
                     className="group flex flex-col bg-white shadow-sm hover:shadow-xl transition-all duration-300 hover:-translate-y-1 h-full border border-gray-100 hover:border-transparent"
                   >
                     {/* Colored header band */}
-                    <div className="p-6" style={{ borderTop: `3px solid ${industry.color}` }}>
-                      <div className="flex items-start gap-4">
+                    <div className="p-4 md:p-5 lg:p-6" style={{ borderTop: `3px solid ${industry.color}` }}>
+                      <div className="flex items-start gap-3 md:gap-4">
                         <div
-                          className="w-14 h-14 flex items-center justify-center flex-shrink-0 transition-all duration-300 group-hover:scale-110"
+                          className="w-10 h-10 md:w-12 md:h-12 lg:w-14 lg:h-14 flex items-center justify-center flex-shrink-0 transition-all duration-300 group-hover:scale-110"
                           style={{ background: `${industry.color}15`, color: industry.color }}
                         >
                           {industry.icon}
                         </div>
-                        <div>
-                          <h3 className="text-xl font-bold text-gray-900 group-hover:text-brand-maroon transition-colors">{industry.name}</h3>
-                          <p className="text-sm mt-0.5" style={{ color: industry.color }}>{industry.tagline}</p>
+                        <div className="min-w-0">
+                          <h3 className="text-base md:text-lg lg:text-xl font-bold text-gray-900 group-hover:text-brand-maroon transition-colors">{industry.name}</h3>
+                          <p className="text-xs md:text-sm mt-0.5" style={{ color: industry.color }}>{industry.tagline}</p>
                         </div>
                       </div>
                     </div>
 
                     {/* Content */}
-                    <div className="flex-1 px-6 pb-6">
-                      <p className="text-gray-600 text-sm leading-relaxed mb-5">{industry.desc}</p>
+                    <div className="flex-1 px-4 pb-4 md:px-5 md:pb-5 lg:px-6 lg:pb-6">
+                      <p className="text-gray-600 text-xs md:text-sm leading-relaxed mb-4 md:mb-5">{industry.desc}</p>
 
                       {/* Challenges */}
-                      <div className="mb-5">
+                      <div className="mb-4 md:mb-5">
                         <p className="text-xs font-semibold text-gray-400 uppercase tracking-wide mb-2">Key Challenges</p>
-                        <div className="flex flex-wrap gap-2">
+                        <div className="flex flex-wrap gap-1.5 md:gap-2">
                           {industry.challenges.map((c) => (
-                            <span key={c} className="text-xs bg-gray-100 text-gray-600 px-3 py-1">{c}</span>
+                            <span key={c} className="text-[10px] md:text-xs bg-gray-100 text-gray-600 px-2 py-0.5 md:px-3 md:py-1">{c}</span>
                           ))}
                         </div>
                       </div>
@@ -257,16 +257,16 @@ export default function Industries() {
                       {/* Platforms */}
                       <div>
                         <p className="text-xs font-semibold text-gray-400 uppercase tracking-wide mb-2">Glimmora Platforms</p>
-                        <div className="flex flex-wrap gap-2">
+                        <div className="flex flex-wrap gap-1.5 md:gap-2">
                           {industry.platforms.map((p) => (
-                            <span key={p.name} className="text-xs font-medium px-3 py-1" style={{ background: `${industry.color}15`, color: industry.color }}>
+                            <span key={p.name} className="text-[10px] md:text-xs font-medium px-2 py-0.5 md:px-3 md:py-1" style={{ background: `${industry.color}15`, color: industry.color }}>
                               ✓ {p.name}
                             </span>
                           ))}
                         </div>
                       </div>
 
-                      <div className="mt-5 flex items-center text-sm font-semibold" style={{ color: industry.color }}>
+                      <div className="mt-4 md:mt-5 flex items-center text-xs md:text-sm font-semibold" style={{ color: industry.color }}>
                         <span>Explore {industry.name} Solutions</span>
                         <svg className="w-4 h-4 ml-1 group-hover:translate-x-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
@@ -282,19 +282,19 @@ export default function Industries() {
       </section>
 
       {/* CTA */}
-      <section className="py-20 bg-white">
+      <section className="py-12 md:py-16 lg:py-20 bg-white">
         <div className="section-container text-center">
           <AnimatedSection>
             <motion.div variants={fadeUp}>
-              <h2 className="text-4xl font-bold text-gray-900 mb-5">Find Your Industry Intelligence Layer</h2>
-              <p className="text-lg text-gray-600 max-w-2xl mx-auto mb-10">
+              <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-gray-900 mb-4 md:mb-5">Find Your Industry Intelligence Layer</h2>
+              <p className="text-base md:text-lg text-gray-600 max-w-2xl mx-auto mb-8 md:mb-10">
                 Our strategic team will design a custom intelligence roadmap tailored to your industry's regulatory, operational, and competitive challenges.
               </p>
-              <div className="flex flex-wrap justify-center gap-4">
-                <Link to="/contact" className="btn-primary px-8 py-4">
+              <div className="flex flex-wrap justify-center gap-3 md:gap-4">
+                <Link to="/contact" className="btn-primary px-6 py-3 md:px-8 md:py-4 text-sm md:text-base">
                   Request Strategic Demo
                 </Link>
-                <Link to="/ecosystem" className="btn-secondary px-8 py-4">
+                <Link to="/ecosystem" className="btn-secondary px-6 py-3 md:px-8 md:py-4 text-sm md:text-base">
                   View Full Ecosystem
                 </Link>
               </div>

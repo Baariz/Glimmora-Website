@@ -486,7 +486,7 @@ const ARCHITECTURE_SECTION = {
    =================================================================== */
 
 const Section = ({ className = "", children }) => (
-  <section className={`relative w-full px-6 md:px-12 lg:px-24 ${className}`}>
+  <section className={`relative w-full px-4 sm:px-6 md:px-12 lg:px-24 ${className}`}>
     {children}
   </section>
 )
@@ -504,7 +504,7 @@ const FadeIn = ({ children, delay = 0, className = "" }) => (
 )
 
 const Button = ({ children, to = "/", variant = "primary", className = "" }) => {
-  const base = "inline-flex items-center justify-center px-8 py-4 text-lg font-bold transition-all duration-300 transform hover:-translate-y-1"
+  const base = "inline-flex items-center justify-center px-6 py-3 sm:px-8 sm:py-4 text-base sm:text-lg font-bold transition-all duration-300 transform hover:-translate-y-1"
   const variants = {
     primary: `bg-[#70564b] text-white hover:bg-[#5f4940] shadow-xl shadow-[#70564b]/20`,
     secondary: `bg-white border-2 border-[#70564b] text-[#70564b] hover:bg-gray-50`,
@@ -576,7 +576,7 @@ function Home() {
 {/* ================================================================= */}
 {/* GLIMMORA HERO — SPLIT LAYOUT, WHITE + BEIGE, ENTERPRISE GRADE   */}
 {/* ================================================================= */}
-<section className="relative flex items-center mt-12 bg-white overflow-hidden">
+<section className="relative flex items-center mt-16 md:mt-12 bg-white overflow-hidden">
 
   {/* BACKGROUND: White-to-beige gradient + abstract geometric shapes at 5–8% opacity */}
   <div className="absolute inset-0 pointer-events-none">
@@ -610,7 +610,7 @@ function Home() {
         </div>
 
         {/* Headline */}
-        <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-[3 rem] font-bold text-[#2E2A28] leading-[1.08] tracking-tight">
+        <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-[3rem] font-bold text-[#2E2A28] leading-[1.08] tracking-tight">
           The Intelligence layer <br/>
           <span className="text-[#70564b]"> for the Modern World</span>
         </h1>
@@ -748,27 +748,6 @@ function Home() {
 </section>
 
 
-{/* --- BAAREZ = GLIMMORA STRIP --- */}
-<section className="w-full bg-white border-y border-[#70564b]/15 relative overflow-hidden">
-  <div className="absolute inset-0 bg-[linear-gradient(135deg,rgba(112,86,75,0.03)_0%,transparent_60%)]" />
-  <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-12 py-8 relative z-10">
-    <div className="flex flex-col md:flex-row items-center gap-6 md:gap-10">
-
-      <div className="flex items-center gap-4 shrink-0">
-        <img src="/logo.png" alt="Baarez Technology Solutions" className="h-10 md:h-12 w-auto object-contain opacity-40 grayscale" />
-        <span className="text-lg font-bold text-[#70564b]">=</span>
-        <img src="/Glimmora_logo_icon_fit.png" alt="Glimmora International" className="h-10 md:h-12 w-auto object-contain" />
-      </div>
-
-      <div className="flex-1 text-center md:text-left">
-        <p className="text-sm text-gray-500 leading-relaxed max-w-md mx-auto md:mx-0">
-          <span className="font-semibold text-gray-600">Baarez Technology Solutions</span> is now <span className="font-semibold text-[#70564b]">Glimmora International</span>. Same team, same trust, a broader vision.
-        </p>
-      </div>
-
-    </div>
-  </div>
-</section>
 
 
 
@@ -800,8 +779,8 @@ function Home() {
 
           <div className="relative w-full overflow-hidden">
             {/* Gradient Fade Masks on Edges */}
-            <div className="absolute left-0 top-0 bottom-0 w-32 bg-gradient-to-r from-white to-transparent z-10 pointer-events-none"></div>
-            <div className="absolute right-0 top-0 bottom-0 w-32 bg-gradient-to-l from-white to-transparent z-10 pointer-events-none"></div>
+            <div className="absolute left-0 top-0 bottom-0 w-16 sm:w-32 bg-gradient-to-r from-white to-transparent z-10 pointer-events-none"></div>
+            <div className="absolute right-0 top-0 bottom-0 w-16 sm:w-32 bg-gradient-to-l from-white to-transparent z-10 pointer-events-none"></div>
 
             {/* Scrolling Track */}
             <div className="flex w-max animate-marquee hover:[animation-play-state:paused]">
@@ -812,11 +791,11 @@ function Home() {
                     <div key={i} className="flex items-center">
                       
                       {/* Logo */}
-                      <div className="px-12 group cursor-pointer">
-                        <img 
-                          src={logo.url} 
-                          alt={logo.name} 
-                          className="h-12 md:h-12 w-auto object-contain opacity-80 group-hover:opacity-100 group-hover:scale-110 transition-all duration-300" 
+                      <div className="px-6 sm:px-8 md:px-12 group cursor-pointer">
+                        <img
+                          src={logo.url}
+                          alt={logo.name}
+                          className="h-8 sm:h-10 md:h-12 w-auto object-contain opacity-80 group-hover:opacity-100 group-hover:scale-110 transition-all duration-300"
                         />
                       </div>
 
@@ -840,7 +819,7 @@ function Home() {
       <h2 className="text-[#70564b] font-bold uppercase tracking-widest text-xs mb-3">
         The Governance Gap
       </h2>
-      <h3 className="text-3xl md:text-4xl font-bold text-slate-900">
+      <h3 className="text-2xl sm:text-3xl md:text-4xl font-bold text-slate-900">
         Stop managing risk in silos.
       </h3>
       <p className="mt-4 text-sm text-slate-500">
@@ -962,7 +941,7 @@ function Home() {
       {/* Left: Context */}
       <div className="lg:col-span-5">
         <span className="text-xs font-bold text-[#70564b] uppercase tracking-[0.2em] mb-3 block">Intelligence Ecosystem</span>
-        <h2 className="text-3xl md:text-4xl font-bold text-[#2E2A28] mb-4">
+        <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-[#2E2A28] mb-4">
           12+ Platforms. One Unified Ecosystem.
         </h2>
         <p className="text-sm text-gray-500 leading-relaxed mb-6">
@@ -980,7 +959,7 @@ function Home() {
       <div className="lg:col-span-7 space-y-4">
 
         {/* Live Platforms */}
-        <div className="grid grid-cols-3 gap-3">
+        <div className="grid grid-cols-1 sm:grid-cols-3 gap-3">
           {[
             { name: 'Glimmora VerifAI', desc: 'Enterprise GRC & Compliance', to: '/platforms/verifai', status: 'Live' },
             { name: 'Glimmora ScanVista', desc: 'Intelligent Document Understanding', to: '/platforms/scanvista', status: 'Live' },
@@ -998,7 +977,7 @@ function Home() {
         </div>
 
         {/* Coming Soon Modules Teaser */}
-        <div className="grid grid-cols-2 gap-3">
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
           {[
             { name: "Cyber Glimmora", desc: "24/7 SOC & Threat Intelligence", to: "/platforms/cyber" },
             { name: "AEGIS Glimmora", desc: "Defense & Military Simulation", to: "/platforms/aegis-defense" },
@@ -1029,17 +1008,17 @@ function Home() {
   <Section>
     
     {/* Section Header */}
-    <div className="flex flex-col md:flex-row items-end justify-between mb-12 gap-6">
+    <div className="flex flex-col md:flex-row items-start md:items-end justify-between mb-8 md:mb-12 gap-4 md:gap-6">
       <div>
         <h2 className="text-xs font-bold uppercase tracking-[0.2em] text-[#70564b] mb-2">
           {BAAREZ_CONFIG.services.title}
         </h2>
-        <h3 className="text-3xl md:text-4xl font-bold text-[#2E2A28]">
+        <h3 className="text-2xl sm:text-3xl md:text-4xl font-bold text-[#2E2A28]">
           Strategic Capabilities.
         </h3>
       </div>
       <div className="hidden md:block h-[1px] bg-gray-200 flex-1 mx-8 mb-2"></div>
-      <div className="text-right">
+      <div className="text-left md:text-right">
         <span className="text-xl text-[#70564b] font-mono font-bold">06</span>
         <span className="text-gray-400 text-xs uppercase tracking-wider ml-2">Core Modules</span>
       </div>
@@ -1051,7 +1030,7 @@ function Home() {
       
       {/* RIGHT PANEL: Navigation */}
       {/* Mobile: w-full. Desktop: Fixed w-[350px]. */}
-      <div className="w-full lg:w-[350px] flex flex-col bg-white border-b lg:border-b-0 lg:border-l border-gray-200 overflow-y-auto custom-scrollbar lg:h-full max-h-[300px] lg:max-h-full">
+      <div className="w-full lg:w-[350px] flex flex-col bg-white border-b lg:border-b-0 lg:border-l border-gray-200 overflow-y-auto custom-scrollbar lg:h-full max-h-[250px] sm:max-h-[300px] lg:max-h-full">
         {BAAREZ_CONFIG.services.tabs.map((service, index) => {
           const isActive = activeService === index;
           const IconComponent = service.icon || Icons.Default;
@@ -1099,7 +1078,7 @@ function Home() {
 
       {/* LEFT PANEL: Content Viewport */}
       {/* Mobile: Relative height. Desktop: Flex-1 relative. */}
-      <div className="w-full lg:flex-1 relative overflow-hidden bg-[#fdfbf9] min-h-[500px] lg:min-h-0">
+      <div className="w-full lg:flex-1 relative overflow-hidden bg-[#fdfbf9] min-h-[400px] sm:min-h-[500px] lg:min-h-0">
         <AnimatePresence mode="wait">
           <motion.div
             key={activeService}
@@ -1118,7 +1097,7 @@ function Home() {
             </div>
 
             {/* Content Text */}
-            <div className="p-8 md:p-12 w-full lg:w-1/2 flex flex-col justify-center relative z-10">
+            <div className="p-5 sm:p-8 md:p-12 w-full lg:w-1/2 flex flex-col justify-center relative z-10">
               <motion.div
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
@@ -1199,12 +1178,12 @@ function Home() {
 </div>
       {/* --- METHODOLOGY (DARK SECTION) --- */}
      {/* --- METHODOLOGY (UNIFIED WORKFLOW STRIP) --- */}
-      <div className="py-24 bg-gray-50 border-t border-gray-200 relative overflow-hidden">
+      <div className="py-16 md:py-20 lg:py-24 bg-gray-50 border-t border-gray-200 relative overflow-hidden">
         <Section>
           <div className="max-w-6xl mx-auto">
             
             {/* Header - Centered & Minimal */}
-            <div className="text-center mb-16">
+            <div className="text-center mb-10 md:mb-16">
                <FadeIn>
                   <h2 className="text-xs font-bold uppercase tracking-[0.2em] text-[#70564b] mb-3">Our Process</h2>
                   <h3 className="text-3xl md:text-4xl font-bold text-[#70564b] mb-4">
@@ -1222,7 +1201,7 @@ function Home() {
                 <div className="grid md:grid-cols-3 divide-y md:divide-y-0 md:divide-x divide-gray-100">
                   
                   {BAAREZ_CONFIG.methodology.steps.map((step, i) => (
-                    <div key={i} className="group relative p-8 md:p-10 hover:bg-[#fdfbf9] transition-colors duration-500">
+                    <div key={i} className="group relative p-6 sm:p-8 md:p-10 hover:bg-[#fdfbf9] transition-colors duration-500">
                        {/* Top Decorative Line */}
                        <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-[#70564b] to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
                        
@@ -1260,7 +1239,7 @@ function Home() {
 
       {/* --- SOVEREIGN COMPLIANCE --- */}
 
-<div className="section-brand-bg py-24 text-white relative overflow-hidden">
+<div className="section-brand-bg py-16 md:py-20 lg:py-24 text-white relative overflow-hidden">
 
   {/* Background: Technical Circuit/Node Pattern */}
   <div className="absolute inset-0 bg-[linear-gradient(rgba(255,255,255,0.05)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.05)_1px,transparent_1px)] bg-[size:60px_60px] opacity-40"></div>
@@ -1272,7 +1251,7 @@ function Home() {
     <div className="relative z-10 flex flex-col items-center">
 
       {/* Header */}
-      <div className="text-center max-w-4xl mb-16">
+      <div className="text-center max-w-4xl mb-10 md:mb-16">
         <FadeIn>
           <div className="inline-flex items-center gap-2 px-4 py-1.5 bg-white/10 backdrop-blur-md rounded-full border border-white/20 mb-6">
             <ARCHITECTURE_SECTION.badge.icon className="w-4 h-4 text-white/80" />
@@ -1281,7 +1260,7 @@ function Home() {
             </span>
           </div>
 
-          <h2 className="text-3xl md:text-4xl font-bold mb-6 leading-tight">
+          <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-6 leading-tight">
             {ARCHITECTURE_SECTION.headline.primary}{" "}
             <br className="hidden md:block" />
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-white to-gray-400">
@@ -1301,7 +1280,7 @@ function Home() {
           const IconComponent = card.icon
           return (
             <FadeIn key={i} delay={0.2 + i * 0.1} className="h-full">
-              <div className="h-full bg-white/5 backdrop-blur-sm border border-white/10 p-8 rounded-2xl hover:bg-white/10 hover:border-[#70564b]/50 transition-all duration-300 group flex flex-col relative overflow-hidden">
+              <div className="h-full bg-white/5 backdrop-blur-sm border border-white/10 p-5 sm:p-6 lg:p-8 rounded-2xl hover:bg-white/10 hover:border-[#70564b]/50 transition-all duration-300 group flex flex-col relative overflow-hidden">
                 
                 {/* Hover Glow Effect */}
                 <div className="absolute top-0 right-0 w-24 h-24 bg-[#70564b]/20 blur-2xl rounded-full translate-x-12 -translate-y-12 group-hover:translate-x-8 group-hover:-translate-y-8 transition-transform duration-500"></div>
@@ -1336,7 +1315,7 @@ function Home() {
       {/* Left: Header */}
       <div className="lg:col-span-4">
         <span className="text-xs font-bold text-[#70564b] uppercase tracking-[0.2em] mb-3 block">Regional Specialization</span>
-        <h2 className="text-3xl md:text-4xl font-bold text-[#2E2A28] mb-4">
+        <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-[#2E2A28] mb-4">
           Built for MENA & Sovereign Markets
         </h2>
         <p className="text-sm text-gray-500 leading-relaxed mb-6">
@@ -1419,9 +1398,9 @@ function Home() {
 </section>
 
       {/* --- INDUSTRIES CARDS --- */}
-      <div className="py-32 bg-gray-50">
+      <div className="py-16 md:py-24 lg:py-32 bg-gray-50">
         <Section>
-          <div className="flex flex-col md:flex-row justify-between items-end mb-16">
+          <div className="flex flex-col md:flex-row justify-between items-start md:items-end mb-10 md:mb-16">
             <div>
               <h2 className="text-xs font-bold uppercase tracking-[0.2em] text-[#70564b] mb-4">Industries</h2>
               <h3 className="text-3xl md:text-4xl font-bold text-[#2E2A28]">{BAAREZ_CONFIG.industries.title}</h3>
@@ -1440,7 +1419,7 @@ function Home() {
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
             {BAAREZ_CONFIG.industries.cards.map((card, i) => (
               <FadeIn key={i} delay={i * 0.1}>
-                <div className="group relative h-[500px] overflow-hidden cursor-pointer shadow-lg hover:shadow-2xl transition-shadow duration-500 rounded-lg">
+                <div className="group relative h-[400px] sm:h-[450px] lg:h-[500px] overflow-hidden cursor-pointer shadow-lg hover:shadow-2xl transition-shadow duration-500 rounded-lg">
                   <div className="absolute inset-0 bg-gray-900">
                     <img
                       src={card.image}
@@ -1450,8 +1429,8 @@ function Home() {
                   </div>
                   <div className="absolute inset-0 bg-gradient-to-t from-[#70564b] via-[#70564b]/50 to-transparent opacity-90"></div>
 
-                  <div className="absolute bottom-0 left-0 p-8 w-full z-10">
-                    <div className="w-14 h-14 bg-white/20 backdrop-blur-sm border border-white/30 text-white flex items-center justify-center mb-6 shadow-lg group-hover:-translate-y-2 transition-transform duration-300">
+                  <div className="absolute bottom-0 left-0 p-5 sm:p-6 lg:p-8 w-full z-10">
+                    <div className="w-12 h-12 sm:w-14 sm:h-14 bg-white/20 backdrop-blur-sm border border-white/30 text-white flex items-center justify-center mb-4 sm:mb-6 shadow-lg group-hover:-translate-y-2 transition-transform duration-300">
                       <card.icon className="w-7 h-7" />
                     </div>
                     <h3 className="text-xl font-bold text-white mb-2">{card.title}</h3>
@@ -1498,7 +1477,7 @@ function Home() {
             Enterprise Connectivity
           </h2>
 
-          <h3 className="text-3xl md:text-4xl font-bold text-[#2E2A28] mb-6 leading-tight">
+          <h3 className="text-2xl sm:text-3xl md:text-4xl font-bold text-[#2E2A28] mb-6 leading-tight">
             Built to Fit Your Existing Enterprise Stack
           </h3>
 
@@ -1619,7 +1598,7 @@ function Home() {
               <Icons.TrendingUp className="w-6 h-6" />
             </div>
 
-            <h2 className="text-3xl md:text-4xl font-bold mb-3 text-[#70564b]">
+            <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-3 text-[#70564b]">
               Measurable Enterprise Impact
             </h2>
 
@@ -1653,7 +1632,7 @@ function Home() {
                   {/* Decorative corner accent */}
                   <div className="absolute top-0 right-0 w-12 h-12 bg-[#70564b]/5 rounded-bl-full -mr-6 -mt-6 group-hover:bg-[#70564b]/10 transition-colors"></div>
 
-                  <div className="text-4xl font-bold text-[#70564b] mb-2 relative z-10 font-mono tracking-tighter">
+                  <div className="text-3xl sm:text-4xl font-bold text-[#70564b] mb-2 relative z-10 font-mono tracking-tighter">
                     {stat.val}
                   </div>
 
@@ -1703,22 +1682,22 @@ function Home() {
 </div>
 
     
-<section className="w-full bg-slate-50 border-t border-slate-200 py-20">
+<section className="w-full bg-slate-50 border-t border-slate-200 py-14 md:py-20">
   <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 
-    <div className="text-center mb-12">
+    <div className="text-center mb-8 md:mb-12">
       <h2 className="text-xs font-bold uppercase tracking-[0.2em] text-[#70564b] mb-3">
         Find Your Intelligence Layer
       </h2>
-      <h3 className="text-3xl md:text-4xl font-bold text-[#2E2A28]">
+      <h3 className="text-2xl sm:text-3xl md:text-4xl font-bold text-[#2E2A28]">
         Explore Glimmora by what matters to you
       </h3>
     </div>
 
-    <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+    <div className="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8">
 
       {/* 1. By Platform */}
-      <a href="/platforms" className="group bg-white p-8 rounded-xl shadow-sm border border-gray-100 hover:border-[#70564b] hover:shadow-lg transition-all duration-300 text-center flex flex-col items-center relative overflow-hidden">
+      <a href="/platforms" className="group bg-white p-6 sm:p-8 rounded-xl shadow-sm border border-gray-100 hover:border-[#70564b] hover:shadow-lg transition-all duration-300 text-center flex flex-col items-center relative overflow-hidden">
         <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-[#70564b] to-[#956e5d] opacity-0 group-hover:opacity-100 transition-opacity"></div>
         <div className="flex flex-wrap justify-center gap-2 mb-4">
           {['CISOs', 'CROs', 'COOs', 'CTOs'].map((persona, i) => (
@@ -1739,7 +1718,7 @@ function Home() {
       </a>
 
       {/* 2. By Industry */}
-      <a href="/industries" className="group bg-white p-8 rounded-xl shadow-sm border border-gray-100 hover:border-[#70564b] hover:shadow-lg transition-all duration-300 text-center flex flex-col items-center relative overflow-hidden">
+      <a href="/industries" className="group bg-white p-6 sm:p-8 rounded-xl shadow-sm border border-gray-100 hover:border-[#70564b] hover:shadow-lg transition-all duration-300 text-center flex flex-col items-center relative overflow-hidden">
         <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-[#70564b] to-[#4a3830] opacity-0 group-hover:opacity-100 transition-opacity"></div>
         <div className="flex flex-wrap justify-center gap-2 mb-4">
           {['Enterprise', 'Defense', 'Hospitality', 'Healthcare'].map((persona, i) => (
@@ -1760,7 +1739,7 @@ function Home() {
       </a>
 
       {/* 3. Full Ecosystem */}
-      <a href="/ecosystem" className="group bg-white p-8 rounded-xl shadow-sm border border-gray-100 hover:border-[#2E2A28] hover:shadow-lg transition-all duration-300 text-center flex flex-col items-center relative overflow-hidden">
+      <a href="/ecosystem" className="group bg-white p-6 sm:p-8 rounded-xl shadow-sm border border-gray-100 hover:border-[#2E2A28] hover:shadow-lg transition-all duration-300 text-center flex flex-col items-center relative overflow-hidden">
         <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-[#2E2A28] to-[#555] opacity-0 group-hover:opacity-100 transition-opacity"></div>
         <div className="flex flex-wrap justify-center gap-2 mb-4">
           {['Strategic Leaders', 'Enterprise Architects', 'Boards'].map((persona, i) => (
@@ -1802,7 +1781,7 @@ function Home() {
 
               {/* Text Content */}
               <div className="relative z-10 text-center md:text-left">
-                <h2 className="text-3xl md:text-4xl font-bold text-[#2E2A28] mb-2 tracking-tight">
+                <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-[#2E2A28] mb-2 tracking-tight">
                   {BAAREZ_CONFIG.cta.headline}
                 </h2>
                 <p className="text-sm text-gray-500 font-light max-w-lg leading-relaxed">
@@ -1839,7 +1818,7 @@ function Home() {
                   
                   {/* Left: Text Context */}
                   <div className="text-center md:text-left md:w-1/3">
-                     <h2 className="text-3xl md:text-4xl font-bold text-[#2E2A28] mb-2">Customer Reviews</h2>
+                     <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-[#2E2A28] mb-2">Customer Reviews</h2>
                      <p className="text-sm text-gray-500 leading-relaxed">
                         Trusted by government entities and global enterprises. Our partners do not just use Glimmora; they rely on it.
                      </p>

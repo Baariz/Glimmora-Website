@@ -305,8 +305,8 @@ const Contact = () => {
     <div className="bg-[#FCFCFC] font-sans text-[#2E2A28] selection:bg-[#70564b] selection:text-white pt-32 overflow-x-hidden">
       
       {/* 1. SECTION: HEADER & CONTEXT */}
-      <section className="bg-white py-16 border-b border-gray-100">
-        <div className="max-w-7xl mx-auto px-6 lg:px-12">
+      <section className="bg-white py-10 md:py-16 border-b border-gray-100">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-12">
           <div className="max-w-3xl">
             <motion.div 
               initial={{ opacity: 0, x: -20 }}
@@ -316,7 +316,7 @@ const Contact = () => {
               <span className="w-8 h-[1px] bg-[#70564b]"></span>
               <span className="text-xs text-[#70564b] font-bold uppercase tracking-[0.3em]">Engagement Hub</span>
             </motion.div>
-            <h1 className="text-3xl md:text-4xl font-bold text-[#70564b] leading-tight mb-8">
+            <h1 className="text-2xl sm:text-3xl md:text-4xl font-bold text-[#70564b] leading-tight mb-8">
               Reach us for Comprehensive <br /> IT Services.
             </h1>
             <p className="text-gray-500 text-sm font-light leading-relaxed">
@@ -328,16 +328,16 @@ const Contact = () => {
       </section>
 
       {/* 2. SECTION: THE BAAREZ INTERACTION GRID */}
-      <section className="py-24">
-        <div className="max-w-7xl mx-auto px-6 lg:px-12">
-          <div className="grid lg:grid-cols-12 gap-20">
+      <section className="py-12 md:py-16 lg:py-24">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-12">
+          <div className="grid lg:grid-cols-12 gap-10 lg:gap-20">
             
             {/* LEFT SIDE: THINKING VISIBLE & BENEFITS */}
             <div className="lg:col-span-4 space-y-12">
-              <div className="bg-[#70564b] p-10 text-white shadow-2xl relative">
+              <div className="bg-[#70564b] p-6 sm:p-8 lg:p-10 text-white shadow-2xl relative">
                 <p className="text-xs text-white/60 font-bold uppercase tracking-widest mb-4 italic">Direct Connection</p>
                 <h3 className="text-xl font-bold mb-2 text-white">Call us at:</h3>
-                <p className="text-3xl font-light tracking-tighter text-white">+971 501371105</p>
+                <p className="text-2xl sm:text-3xl font-light tracking-tighter text-white">+971 501371105</p>
                 <p className="text-xl font-light tracking-tighter text-white/80">info@baarez.com</p>
               </div>
 
@@ -357,9 +357,9 @@ const Contact = () => {
               </div>
 
               {/* Thinking Visible Process */}
-              <div className="bg-white p-10 border-l-4 border-[#70564b] shadow-sm">
-                <h4 className="text-xs text-[#70564b] font-bold uppercase tracking-widest mb-10">What happens next?</h4>
-                <div className="space-y-10">
+              <div className="bg-white p-6 sm:p-8 lg:p-10 border-l-4 border-[#70564b] shadow-sm">
+                <h4 className="text-xs text-[#70564b] font-bold uppercase tracking-widest mb-6 sm:mb-8 lg:mb-10">What happens next?</h4>
+                <div className="space-y-6 sm:space-y-8 lg:space-y-10">
                   {[
                     { s: "1", t: "Coordination", d: "We schedule a call at your convenience." },
                     { s: "2", t: "Discovery", d: "A deep-dive consulting and discovery meeting." },
@@ -381,7 +381,7 @@ const Contact = () => {
 
             {/* RIGHT SIDE: CONSULTATION FORM */}
             <div className="lg:col-span-8">
-              <div className="bg-white p-8 lg:p-14 border border-gray-100 shadow-xl">
+              <div className="bg-white p-4 sm:p-6 md:p-8 lg:p-14 border border-gray-100 shadow-xl">
                 <div className="mb-12">
                   <h3 className="text-xl font-bold text-[#70564b] mb-2">Schedule a Demo</h3>
                   <div className="h-[2px] w-12 bg-[#70564b]"></div>
@@ -489,8 +489,8 @@ const Contact = () => {
       </section>
 
       {/* 4. FOOTER IDENTIFIER */}
-      <footer className="py-12 bg-white border-t border-gray-50 text-center">
-         <p className="text-gray-300 text-xs uppercase tracking-[0.5em] font-bold">
+      <footer className="py-8 md:py-12 bg-white border-t border-gray-50 text-center">
+         <p className="text-gray-300 text-xs uppercase tracking-[0.2em] sm:tracking-[0.5em] font-bold">
            Doha • Technology • Ownership
          </p>
       </footer>

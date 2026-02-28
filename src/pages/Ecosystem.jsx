@@ -339,7 +339,7 @@ export default function Ecosystem() {
     <main className="pt-24">
 
       {/* HERO — light background */}
-      <section className="py-20 bg-[#F5F3F1] relative overflow-hidden">
+      <section className="py-12 md:py-16 lg:py-20 bg-[#F5F3F1] relative overflow-hidden">
         <div className="absolute inset-0"
           style={{
             backgroundImage: `linear-gradient(rgba(112,86,75,0.06) 1px, transparent 1px), linear-gradient(90deg, rgba(112,86,75,0.06) 1px, transparent 1px)`,
@@ -349,28 +349,28 @@ export default function Ecosystem() {
         <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-[#70564b] opacity-5 rounded-full blur-[120px] pointer-events-none" />
 
         <div className="section-container relative z-10">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 xl:gap-20 items-center">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 md:gap-12 xl:gap-20 items-center">
 
             {/* LEFT: Content */}
             <AnimatedSection>
               <motion.div variants={fadeUp}>
-                <span className="inline-block text-xs font-semibold tracking-widest uppercase bg-[#70564b]/10 text-[#70564b] px-4 py-2 mb-6" style={{ borderRadius: 0 }}>
+                <span className="inline-block text-xs font-semibold tracking-widest uppercase bg-[#70564b]/10 text-[#70564b] px-4 py-2 mb-4 md:mb-6" style={{ borderRadius: 0 }}>
                   Global Intelligence Ecosystem
                 </span>
-                <h1 className="text-5xl md:text-6xl font-bold text-gray-900 mb-6 leading-tight">
+                <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 mb-4 md:mb-6 leading-tight">
                   The Glimmora<br />
                   <span className="text-transparent bg-clip-text" style={{ backgroundImage: 'linear-gradient(135deg, #70564b, #956e5d)' }}>
                     Intelligence Ecosystem
                   </span>
                 </h1>
-                <p className="text-xl text-gray-600 mb-8 leading-relaxed">
+                <p className="text-base md:text-lg lg:text-xl text-gray-600 mb-6 md:mb-8 leading-relaxed">
                   17+ AI-native platforms. 8+ industries. One unified intelligence layer designed to power the modern world — from enterprise boardrooms to defense command centers.
                 </p>
-                <div className="flex flex-wrap gap-4">
-                  <Link to="/contact" className="btn-primary px-8 py-4">
+                <div className="flex flex-wrap gap-3 md:gap-4">
+                  <Link to="/contact" className="btn-primary px-6 py-3 md:px-8 md:py-4 text-sm md:text-base">
                     Request Strategic Demo
                   </Link>
-                  <Link to="/platforms" className="border-2 border-[#70564b]/40 text-[#70564b] hover:bg-[#70564b]/5 font-semibold px-8 py-4 transition-all duration-200 inline-flex items-center" style={{ borderRadius: 0 }}>
+                  <Link to="/platforms" className="border-2 border-[#70564b]/40 text-[#70564b] hover:bg-[#70564b]/5 font-semibold px-6 py-3 md:px-8 md:py-4 text-sm md:text-base transition-all duration-200 inline-flex items-center" style={{ borderRadius: 0 }}>
                     View All Platforms
                   </Link>
                 </div>
@@ -387,10 +387,10 @@ export default function Ecosystem() {
       </section>
 
       {/* POSITIONING */}
-      <section className="py-16 bg-white border-b border-gray-100">
+      <section className="py-10 md:py-12 lg:py-16 bg-white border-b border-gray-100">
         <div className="section-container">
           <AnimatedSection>
-            <motion.div variants={stagger} className="grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
+            <motion.div variants={stagger} className="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-6 lg:gap-8 text-center">
               {[
                 {
                   title: 'Global Intelligence Ecosystem',
@@ -420,7 +420,7 @@ export default function Ecosystem() {
                   ),
                 },
               ].map((item) => (
-                <motion.div key={item.title} variants={fadeUp} className="p-8 bg-[#F5F3F1]">
+                <motion.div key={item.title} variants={fadeUp} className="p-5 md:p-6 lg:p-8 bg-[#F5F3F1]">
                   <div className="w-14 h-14 bg-[#70564b]/10 flex items-center justify-center text-[#70564b] mx-auto mb-5">
                     {item.icon}
                   </div>
@@ -434,38 +434,38 @@ export default function Ecosystem() {
       </section>
 
       {/* ARCHITECTURE LAYERS */}
-      <section className="py-24 bg-[#F5F3F1]">
+      <section className="py-12 md:py-16 lg:py-24 bg-[#F5F3F1]">
         <div className="section-container">
           <AnimatedSection>
-            <motion.div variants={fadeUp} className="text-center mb-16">
+            <motion.div variants={fadeUp} className="text-center mb-8 md:mb-12 lg:mb-16">
               <p className="text-sm font-semibold tracking-widest uppercase text-brand-maroon mb-3">Architecture</p>
-              <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-5">
+              <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 mb-4 md:mb-5">
                 The Intelligence Stack
               </h2>
-              <p className="text-lg text-gray-600 max-w-2xl mx-auto">
+              <p className="text-base md:text-lg text-gray-600 max-w-2xl mx-auto">
                 Four architectural layers that enable Glimmora to operate as a unified intelligence ecosystem across every industry.
               </p>
             </motion.div>
 
-            <motion.div variants={stagger} className="space-y-4 max-w-4xl mx-auto">
+            <motion.div variants={stagger} className="space-y-3 md:space-y-4 max-w-4xl mx-auto">
               {ARCHITECTURE_LAYERS.map((layer, i) => (
                 <motion.div
                   key={layer.name}
                   variants={fadeUp}
-                  className="flex gap-6 bg-white p-6 shadow-sm border border-gray-100 hover:shadow-md transition-shadow"
+                  className="flex gap-3 md:gap-4 lg:gap-6 bg-white p-4 md:p-5 lg:p-6 shadow-sm border border-gray-100 hover:shadow-md transition-shadow"
                 >
                   <div className="flex-shrink-0">
                     <div
-                      className="w-14 h-14 flex items-center justify-center text-white font-bold text-lg"
+                      className="w-10 h-10 md:w-12 md:h-12 lg:w-14 lg:h-14 flex items-center justify-center text-white font-bold text-sm md:text-base lg:text-lg"
                       style={{ background: `linear-gradient(135deg, ${layer.color}, ${layer.color}cc)` }}
                     >
                       {i + 1}
                     </div>
                   </div>
-                  <div>
+                  <div className="min-w-0">
                     <p className="text-xs font-semibold text-brand-maroon uppercase tracking-wide mb-1">{layer.layer}</p>
-                    <h3 className="text-xl font-bold text-gray-900 mb-2">{layer.name}</h3>
-                    <p className="text-gray-600 leading-relaxed">{layer.desc}</p>
+                    <h3 className="text-base md:text-lg lg:text-xl font-bold text-gray-900 mb-1 md:mb-2">{layer.name}</h3>
+                    <p className="text-sm md:text-base text-gray-600 leading-relaxed">{layer.desc}</p>
                   </div>
                 </motion.div>
               ))}
@@ -475,27 +475,27 @@ export default function Ecosystem() {
       </section>
 
       {/* ALL PLATFORMS */}
-      <section className="py-24 bg-white">
+      <section className="py-12 md:py-16 lg:py-24 bg-white">
         <div className="section-container">
           <AnimatedSection>
-            <motion.div variants={fadeUp} className="text-center mb-16">
+            <motion.div variants={fadeUp} className="text-center mb-8 md:mb-12 lg:mb-16">
               <p className="text-sm font-semibold tracking-widest uppercase text-brand-maroon mb-3">All Platforms</p>
-              <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-5">
+              <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 mb-4 md:mb-5">
                 17+ Platforms.<br />One Ecosystem.
               </h2>
             </motion.div>
 
-            <motion.div variants={stagger} className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            <motion.div variants={stagger} className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-5 lg:gap-6">
               {PLATFORMS.map((platform) => (
                 <motion.div key={platform.name} variants={fadeUp}>
                   <Link
                     to={platform.path}
-                    className="group block bg-white border border-gray-100 p-8 shadow-sm hover:shadow-xl transition-all duration-300 hover:-translate-y-1 h-full"
+                    className="group block bg-white border border-gray-100 p-5 md:p-6 lg:p-8 shadow-sm hover:shadow-xl transition-all duration-300 hover:-translate-y-1 h-full"
                   >
-                    <div className="flex items-center justify-between mb-5">
-                      <div>
+                    <div className="flex items-center justify-between mb-4 md:mb-5">
+                      <div className="min-w-0 mr-2">
                         <p className="text-xs font-semibold text-gray-400 uppercase tracking-wide mb-1">{platform.industry}</p>
-                        <h3 className="text-xl font-bold text-gray-900 group-hover:text-brand-maroon transition-colors">{platform.name}</h3>
+                        <h3 className="text-base md:text-lg lg:text-xl font-bold text-gray-900 group-hover:text-brand-maroon transition-colors">{platform.name}</h3>
                       </div>
                       {platform.status === 'live' ? (
                         <span className="text-[10px] font-bold bg-green-50 text-green-600 px-2.5 py-1 flex items-center gap-1 whitespace-nowrap">
@@ -536,30 +536,30 @@ export default function Ecosystem() {
       </section>
 
       {/* WHY THE GLIMMORA ECOSYSTEM — replaces Cross-Industry section */}
-      <section className="py-24 bg-[#F5F3F1]">
+      <section className="py-12 md:py-16 lg:py-24 bg-[#F5F3F1]">
         <div className="section-container">
           <AnimatedSection>
-            <motion.div variants={fadeUp} className="text-center mb-16">
+            <motion.div variants={fadeUp} className="text-center mb-8 md:mb-12 lg:mb-16">
               <p className="text-sm font-semibold tracking-widest uppercase text-brand-maroon mb-3">The Glimmora Advantage</p>
-              <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-5">
+              <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 mb-4 md:mb-5">
                 Built Different.<br />Built to Last.
               </h2>
-              <p className="text-lg text-gray-600 max-w-2xl mx-auto">
+              <p className="text-base md:text-lg text-gray-600 max-w-2xl mx-auto">
                 Six principles that separate the Glimmora ecosystem from every other enterprise software platform in the market.
               </p>
             </motion.div>
 
-            <motion.div variants={stagger} className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            <motion.div variants={stagger} className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-5 lg:gap-6">
               {DIFFERENTIATORS.map((item) => (
                 <motion.div
                   key={item.title}
                   variants={fadeUp}
-                  className="bg-white p-8 border border-gray-100 shadow-sm hover:shadow-md transition-shadow group"
+                  className="bg-white p-5 md:p-6 lg:p-8 border border-gray-100 shadow-sm hover:shadow-md transition-shadow group"
                 >
-                  <div className="w-12 h-12 bg-[#70564b]/10 flex items-center justify-center text-[#70564b] mb-6 group-hover:bg-[#70564b] group-hover:text-white transition-all duration-300">
+                  <div className="w-12 h-12 bg-[#70564b]/10 flex items-center justify-center text-[#70564b] mb-4 md:mb-6 group-hover:bg-[#70564b] group-hover:text-white transition-all duration-300">
                     {item.icon}
                   </div>
-                  <h3 className="text-lg font-bold text-gray-900 mb-3">{item.title}</h3>
+                  <h3 className="text-base md:text-lg font-bold text-gray-900 mb-2 md:mb-3">{item.title}</h3>
                   <p className="text-gray-600 text-sm leading-relaxed">{item.desc}</p>
                 </motion.div>
               ))}
@@ -569,19 +569,19 @@ export default function Ecosystem() {
       </section>
 
       {/* CTA */}
-      <section className="py-20 bg-white">
+      <section className="py-12 md:py-16 lg:py-20 bg-white">
         <div className="section-container text-center">
           <AnimatedSection>
             <motion.div variants={fadeUp}>
-              <h2 className="text-4xl font-bold text-gray-900 mb-5">
+              <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-gray-900 mb-4 md:mb-5">
                 Ready to Deploy the Intelligence Layer?
               </h2>
-              <p className="text-lg text-gray-600 max-w-2xl mx-auto mb-10">
+              <p className="text-base md:text-lg text-gray-600 max-w-2xl mx-auto mb-8 md:mb-10">
                 Speak with our strategic team to understand which platforms fit your industry and how Glimmora's ecosystem can transform your organization.
               </p>
-              <div className="flex flex-wrap justify-center gap-4">
-                <Link to="/contact" className="btn-primary px-8 py-4">Request Strategic Demo</Link>
-                <Link to="/industries" className="btn-secondary px-8 py-4">Explore Industries</Link>
+              <div className="flex flex-wrap justify-center gap-3 md:gap-4">
+                <Link to="/contact" className="btn-primary px-6 py-3 md:px-8 md:py-4 text-sm md:text-base">Request Strategic Demo</Link>
+                <Link to="/industries" className="btn-secondary px-6 py-3 md:px-8 md:py-4 text-sm md:text-base">Explore Industries</Link>
               </div>
             </motion.div>
           </AnimatedSection>

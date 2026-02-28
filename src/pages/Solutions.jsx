@@ -196,7 +196,7 @@ const SolutionCard = ({ item }) => {
   return (
     <Link 
       to={item.path}
-      className="group relative flex flex-col h-full bg-white p-6 rounded-lg shadow-[0_2px_15px_-3px_rgba(0,0,0,0.07)] hover:shadow-2xl hover:-translate-y-1 transition-all duration-300 border-l-4 border-transparent hover:border-[#70564b]"
+      className="group relative flex flex-col h-full bg-white p-5 sm:p-6 rounded-lg shadow-[0_2px_15px_-3px_rgba(0,0,0,0.07)] hover:shadow-2xl hover:-translate-y-1 transition-all duration-300 border-l-4 border-transparent hover:border-[#70564b]"
     >
       {/* Header: Icon & Badge */}
       <div className="flex justify-between items-start mb-6">
@@ -250,19 +250,19 @@ const Solutions = () => {
     <div className="min-h-screen bg-[#f8f9fa] font-sans text-gray-900 pt-20">
       
       {/* --- 1. HERO SECTION (UPDATED FOR REGULATED INDUSTRIES) --- */}
-      <section className="relative bg-white py-20 lg:py-24 border-b border-gray-200 overflow-hidden">
+      <section className="relative bg-white py-12 md:py-16 lg:py-24 border-b border-gray-200 overflow-hidden">
         <div className="absolute inset-0 bg-[linear-gradient(rgba(0,0,0,0.03)_1px,transparent_1px),linear-gradient(90deg,rgba(0,0,0,0.03)_1px,transparent_1px)] bg-[size:60px_60px]"></div>
         <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-[#70564b]/5 rounded-full blur-[100px] pointer-events-none translate-x-1/3 -translate-y-1/3"></div>
 
-        <div className="max-w-7xl mx-auto px-6 relative z-10">
-            <div className="grid lg:grid-cols-2 gap-16 items-center">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 relative z-10">
+            <div className="grid lg:grid-cols-2 gap-8 md:gap-12 lg:gap-16 items-center">
                 {/* Left: Text */}
                 <div>
                     <h4 className="text-[#70564b] font-bold uppercase tracking-widest text-xs mb-4 flex items-center gap-2">
                         <span className="w-8 h-[2px] bg-[#70564b]"></span>
                         Enterprise Catalog
                     </h4>
-                    <h1 className="text-3xl md:text-4xl font-bold tracking-tight text-[#2E2A28] mb-6 leading-[1.1]">
+                    <h1 className="text-2xl sm:text-3xl md:text-4xl font-bold tracking-tight text-[#2E2A28] mb-6 leading-[1.1]">
                         AI-Native Governance for <br/>
                         <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#70564b] to-[#70564b]">Regulated Industries</span>
                     </h1>
@@ -288,11 +288,11 @@ const Solutions = () => {
                 </div>
 
                 {/* Right: UI Composition */}
-                <div className="relative h-[400px] w-full flex items-center justify-center lg:justify-end">
-                    <div className="absolute w-[350px] h-[350px] border border-[#70564b]/10 rounded-full animate-[spin_60s_linear_infinite]"></div>
-                    <div className="absolute w-[250px] h-[250px] border border-[#70564b]/20 rounded-full border-dashed animate-[spin_40s_linear_infinite_reverse]"></div>
+                <div className="relative h-[300px] sm:h-[350px] lg:h-[400px] w-full flex items-center justify-center lg:justify-end">
+                    <div className="absolute w-[250px] sm:w-[300px] lg:w-[350px] h-[250px] sm:h-[300px] lg:h-[350px] border border-[#70564b]/10 rounded-full animate-[spin_60s_linear_infinite]"></div>
+                    <div className="absolute w-[180px] sm:w-[220px] lg:w-[250px] h-[180px] sm:h-[220px] lg:h-[250px] border border-[#70564b]/20 rounded-full border-dashed animate-[spin_40s_linear_infinite_reverse]"></div>
                     
-                    <div className="relative z-10 w-80 md:w-96 bg-white rounded-xl shadow-2xl border border-gray-200 overflow-hidden transform -rotate-3 translate-y-4 hover:rotate-0 hover:translate-y-0 transition-all duration-500 cursor-default">
+                    <div className="relative z-10 w-64 sm:w-80 md:w-96 bg-white rounded-xl shadow-2xl border border-gray-200 overflow-hidden transform -rotate-3 translate-y-4 hover:rotate-0 hover:translate-y-0 transition-all duration-500 cursor-default">
                         <div className="bg-gray-50 border-b border-gray-100 p-3 flex items-center gap-2">
                             <div className="w-2.5 h-2.5 rounded-full bg-red-400"></div>
                             <div className="w-2.5 h-2.5 rounded-full bg-yellow-400"></div>
@@ -315,9 +315,9 @@ const Solutions = () => {
       </section>
 
       {/* --- 2. PROBLEM-SOLUTION STRIP (NEW) --- */}
-      <section className="bg-white border-b border-gray-100 py-12">
-        <div className="max-w-7xl mx-auto px-6">
-            <div className="grid grid-cols-1 md:grid-cols-4 gap-6">
+      <section className="bg-white border-b border-gray-100 py-8 md:py-12">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6">
+            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-4 sm:gap-6">
                 {[
                     { problem: "Fragmented Risk Tools", solved: "Unified GRC Platform" },
                     { problem: "Manual Vendor Audits", solved: "AI-Driven TPRM" },
@@ -335,9 +335,9 @@ const Solutions = () => {
       </section>
 
       {/* --- 3. VALUE STRIP --- */}
-      <section className="py-10 bg-white border-b border-gray-100">
-        <div className="max-w-7xl mx-auto px-6">
-            <div className="flex flex-col md:flex-row justify-between items-center gap-8 text-center md:text-left">
+      <section className="py-8 md:py-10 bg-white border-b border-gray-100">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6">
+            <div className="flex flex-col md:flex-row justify-between items-center gap-6 md:gap-8 text-center md:text-left">
                 <div className="flex items-center gap-4">
                     <div className="w-10 h-10 rounded-full bg-gray-50 flex items-center justify-center border border-gray-100 shrink-0"><Icons.Layers className="w-5 h-5 text-[#70564b]" /></div>
                     <div><h4 className="font-bold text-gray-900 text-sm">Compliance Architecture</h4><p className="text-xs text-gray-500 mt-0.5">Hosted on compliant infra to support SOC 2 & ISO controls.</p></div>
@@ -357,8 +357,8 @@ const Solutions = () => {
       </section>
 
       {/* --- 4. SOLUTIONS GRID --- */}
-      <section className="py-24 bg-[#f8f9fa]">
-        <div className="max-w-7xl mx-auto px-6 space-y-20">
+      <section className="py-12 md:py-16 lg:py-24 bg-[#f8f9fa]">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 space-y-12 md:space-y-16 lg:space-y-20">
           {solutionCategories.map((category, idx) => (
             <div key={idx}>
               <div className="flex flex-col md:flex-row md:items-end justify-between mb-10 gap-4">
@@ -381,14 +381,14 @@ const Solutions = () => {
       </section>
 
       {/* --- 5. COMPARISON SECTION (NEW) --- */}
-      <section className="py-20 bg-white border-y border-gray-200">
-        <div className="max-w-7xl mx-auto px-6">
-          <div className="text-center mb-12">
+      <section className="py-12 md:py-16 lg:py-20 bg-white border-y border-gray-200">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6">
+          <div className="text-center mb-8 md:mb-12">
             <h2 className="text-xs text-[#70564b] font-bold uppercase tracking-widest mb-3">Quick View</h2>
-            <h3 className="text-xl font-bold text-[#2E2A28]">Compare Platforms at a Glance</h3>
+            <h3 className="text-lg sm:text-xl font-bold text-[#2E2A28]">Compare Platforms at a Glance</h3>
           </div>
-          <div className="overflow-x-auto bg-white rounded-xl shadow-sm border border-gray-200">
-            <table className="w-full text-left border-collapse">
+          <div className="overflow-x-auto bg-white rounded-xl shadow-sm border border-gray-200 -mx-4 sm:mx-0">
+            <table className="w-full text-left border-collapse min-w-[700px]">
               <thead>
                 <tr className="bg-gray-50 border-b border-gray-200 text-xs uppercase tracking-wider text-gray-500 font-semibold">
                   <th className="p-5">Platform</th><th className="p-5">Primary Owner</th><th className="p-5">Core Focus</th><th className="p-5">Key Outcome</th><th className="p-5">Deployment</th>
@@ -411,19 +411,19 @@ const Solutions = () => {
       </section>
 
       {/* --- 6. CASE STUDIES --- */}
-      <section className="py-20 bg-[#fafafa] border-b border-gray-200">
-        <div className="max-w-7xl mx-auto px-6">
+      <section className="py-12 md:py-16 lg:py-20 bg-[#fafafa] border-b border-gray-200">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6">
             <div className="flex flex-col md:flex-row items-end justify-between mb-10 gap-4">
                 <div>
                     <h2 className="text-xs text-[#70564b] font-bold uppercase tracking-widest mb-3">Proven Outcomes</h2>
                     <h3 className="text-xl font-bold text-[#2E2A28]">See Glimmora in Action</h3>
                 </div>
             </div>
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
                 {caseStudies.map((study) => (
-                    <Link key={study.id} to={study.link} className="group bg-white p-6 rounded-lg border border-gray-200 hover:border-[#70564b] hover:shadow-lg transition-all duration-300 flex flex-col">
+                    <Link key={study.id} to={study.link} className="group bg-white p-5 sm:p-6 rounded-lg border border-gray-200 hover:border-[#70564b] hover:shadow-lg transition-all duration-300 flex flex-col">
                         <div className="mb-4"><span className="inline-block px-3 py-1 bg-gray-100 text-[#70564b] text-xs font-bold uppercase tracking-wide rounded-full">{study.industry}</span></div>
-                        <h4 className="text-xl font-bold text-[#2E2A28] mb-2 leading-tight group-hover:text-[#70564b] transition-colors">{study.outcome}</h4>
+                        <h4 className="text-lg sm:text-xl font-bold text-[#2E2A28] mb-2 leading-tight group-hover:text-[#70564b] transition-colors">{study.outcome}</h4>
                         <p className="text-gray-500 text-sm mb-6 flex-grow">{study.desc}</p>
                         <div className="flex items-center text-sm font-bold text-[#70564b] mt-auto"><span className="mr-2">Explore Solution</span><Icons.ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" /></div>
                     </Link>
@@ -433,14 +433,14 @@ const Solutions = () => {
       </section>
 
       {/* --- 7. FINAL CTA --- */}
-      <section className="py-24 bg-white">
-        <div className="max-w-5xl mx-auto px-6">
-            <div className="relative bg-white rounded-2xl p-10 md:p-14 border border-gray-200 shadow-[0_20px_60px_-15px_rgba(0,0,0,0.05)] overflow-hidden text-center">
+      <section className="py-12 md:py-16 lg:py-24 bg-white">
+        <div className="max-w-5xl mx-auto px-4 sm:px-6">
+            <div className="relative bg-white rounded-2xl p-6 sm:p-8 md:p-14 border border-gray-200 shadow-[0_20px_60px_-15px_rgba(0,0,0,0.05)] overflow-hidden text-center">
                 <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-[#70564b] via-[#70564b] to-[#70564b]"></div>
                 <div className="absolute -top-24 -right-24 w-64 h-64 bg-[#70564b]/5 rounded-full blur-3xl pointer-events-none"></div>
                 <div className="absolute -bottom-24 -left-24 w-64 h-64 bg-[#70564b]/5 rounded-full blur-3xl pointer-events-none"></div>
                 <div className="relative z-10">
-                    <h2 className="text-3xl md:text-4xl font-bold text-[#2E2A28] mb-4">Find the right fit for your enterprise.</h2>
+                    <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-[#2E2A28] mb-4">Find the right fit for your enterprise.</h2>
                     <p className="text-sm text-gray-500 mb-8 max-w-2xl mx-auto font-light">Unsure which platform aligns with your compliance needs? Our solution architects can provide a tailored roadmap.</p>
                     <div className="flex flex-col sm:flex-row justify-center gap-4">
                         <Link to="/contact" className="inline-flex items-center justify-center px-8 py-3.5 text-base font-bold text-white bg-[#70564b] rounded hover:bg-[#5f4940] transition-colors shadow-lg shadow-[#70564b]/20">Talk to an Expert</Link>

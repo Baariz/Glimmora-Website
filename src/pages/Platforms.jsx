@@ -261,7 +261,7 @@ export default function Platforms() {
     <main className="pt-24">
 
       {/* HERO — light background */}
-      <section className="py-20 bg-[#F5F3F1] relative overflow-hidden">
+      <section className="py-12 md:py-16 lg:py-20 bg-[#F5F3F1] relative overflow-hidden">
         <div className="absolute inset-0 opacity-50" style={{
           backgroundImage: `radial-gradient(circle at 2px 2px, rgba(112,86,75,0.12) 1px, transparent 0)`,
           backgroundSize: '40px 40px',
@@ -269,24 +269,24 @@ export default function Platforms() {
         <div className="section-container relative z-10">
           <AnimatedSection>
             <motion.div variants={fadeUp} className="max-w-3xl">
-              <span className="inline-block text-xs font-semibold tracking-widest uppercase bg-[#70564b]/10 text-[#70564b] px-4 py-2 mb-6" style={{ borderRadius: 0 }}>
+              <span className="inline-block text-xs font-semibold tracking-widest uppercase bg-[#70564b]/10 text-[#70564b] px-4 py-2 mb-4 md:mb-6" style={{ borderRadius: 0 }}>
                 Intelligence Platforms
               </span>
-              <h1 className="text-5xl md:text-6xl font-bold text-gray-900 mb-6 leading-tight">
+              <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 mb-4 md:mb-6 leading-tight">
                 Global Intelligence<br />Platforms
               </h1>
-              <p className="text-xl text-gray-600 mb-8 leading-relaxed">
+              <p className="text-base md:text-lg lg:text-xl text-gray-600 mb-6 md:mb-8 leading-relaxed">
                 17+ purpose-built AI platforms for every industry. Each platform is a category leader — together, they form the world's most comprehensive enterprise AI ecosystem.
               </p>
-              <div className="flex flex-wrap gap-8">
+              <div className="flex flex-wrap gap-5 md:gap-8">
                 {[
                   { value: '3', label: 'Live Platforms' },
                   { value: '14+', label: 'Launching Soon' },
                   { value: '8+', label: 'Industries Served' },
                 ].map((stat) => (
                   <div key={stat.label}>
-                    <p className="text-3xl font-bold text-[#70564b]">{stat.value}</p>
-                    <p className="text-sm text-gray-500 mt-1">{stat.label}</p>
+                    <p className="text-2xl md:text-3xl font-bold text-[#70564b]">{stat.value}</p>
+                    <p className="text-xs md:text-sm text-gray-500 mt-1">{stat.label}</p>
                   </div>
                 ))}
               </div>
@@ -296,17 +296,17 @@ export default function Platforms() {
       </section>
 
       {/* FILTER + GRID */}
-      <section className="py-20 bg-white">
+      <section className="py-12 md:py-16 lg:py-20 bg-white">
         <div className="section-container">
 
           {/* Filter Tabs */}
-          <div className="flex flex-wrap justify-center gap-3 mb-14">
+          <div className="flex flex-wrap justify-center gap-2 md:gap-3 mb-8 md:mb-10 lg:mb-14">
             {FILTERS.map((f) => (
               <button
                 key={f}
                 onClick={() => setFilter(f)}
                 style={{ borderRadius: 0 }}
-                className={`px-6 py-2.5 text-sm font-semibold transition-all duration-300 border ${
+                className={`px-4 py-2 md:px-6 md:py-2.5 text-xs md:text-sm font-semibold transition-all duration-300 border ${
                   filter === f
                     ? 'bg-[#70564b] text-white border-[#70564b]'
                     : 'bg-white text-gray-600 border-gray-200 hover:border-[#70564b] hover:text-[#70564b]'
@@ -320,7 +320,7 @@ export default function Platforms() {
             ))}
           </div>
 
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 md:gap-5 lg:gap-6">
             {filtered.map((platform) => (
               <motion.div
                 key={platform.name}
@@ -333,12 +333,12 @@ export default function Platforms() {
                   className="group flex flex-col bg-white border border-gray-100 overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 hover:-translate-y-1 h-full"
                 >
                   {/* Colored top bar + header */}
-                  <div className="p-6 border-b border-gray-50" style={{ borderTop: `3px solid ${platform.color}` }}>
-                    <div className="flex items-start justify-between gap-4">
-                      <div>
+                  <div className="p-4 md:p-5 lg:p-6 border-b border-gray-50" style={{ borderTop: `3px solid ${platform.color}` }}>
+                    <div className="flex items-start justify-between gap-3 md:gap-4">
+                      <div className="min-w-0">
                         <p className="text-xs font-semibold uppercase tracking-wide mb-1" style={{ color: platform.color }}>{platform.category}</p>
-                        <h3 className="text-xl font-bold text-gray-900 group-hover:text-brand-maroon transition-colors">{platform.name}</h3>
-                        <p className="text-sm text-gray-400 mt-0.5">{platform.tagline}</p>
+                        <h3 className="text-base md:text-lg lg:text-xl font-bold text-gray-900 group-hover:text-brand-maroon transition-colors">{platform.name}</h3>
+                        <p className="text-xs md:text-sm text-gray-400 mt-0.5">{platform.tagline}</p>
                       </div>
                       <div className="flex-shrink-0 mt-1">
                         {platform.status === 'live' ? (
@@ -355,11 +355,11 @@ export default function Platforms() {
                   </div>
 
                   {/* Content */}
-                  <div className="flex-1 p-6">
-                    <p className="text-sm text-gray-600 leading-relaxed mb-5">{platform.desc}</p>
+                  <div className="flex-1 p-4 md:p-5 lg:p-6">
+                    <p className="text-xs md:text-sm text-gray-600 leading-relaxed mb-4 md:mb-5">{platform.desc}</p>
 
                     {/* Outcome highlight */}
-                    <div className="flex items-center gap-2 mb-5 p-3 bg-[#F5F3F1]">
+                    <div className="flex items-center gap-2 mb-4 md:mb-5 p-2.5 md:p-3 bg-[#F5F3F1]">
                       <svg className="w-4 h-4 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" style={{ color: platform.color }}>
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6" />
                       </svg>
@@ -367,19 +367,19 @@ export default function Platforms() {
                     </div>
 
                     {/* Modules */}
-                    <div className="flex flex-wrap gap-1.5 mb-5">
+                    <div className="flex flex-wrap gap-1.5 mb-4 md:mb-5">
                       {platform.modules.slice(0, 3).map((mod) => (
-                        <span key={mod} className="text-xs bg-gray-100 text-gray-600 px-2.5 py-1">{mod}</span>
+                        <span key={mod} className="text-[10px] md:text-xs bg-gray-100 text-gray-600 px-2 py-0.5 md:px-2.5 md:py-1">{mod}</span>
                       ))}
                       {platform.modules.length > 3 && (
-                        <span className="text-xs px-2.5 py-1" style={{ background: `${platform.color}18`, color: platform.color }}>
+                        <span className="text-[10px] md:text-xs px-2 py-0.5 md:px-2.5 md:py-1" style={{ background: `${platform.color}18`, color: platform.color }}>
                           +{platform.modules.length - 3} more
                         </span>
                       )}
                     </div>
 
                     {/* Target */}
-                    <p className="text-xs text-gray-400 mb-4">{platform.target}</p>
+                    <p className="text-[10px] md:text-xs text-gray-400 mb-3 md:mb-4">{platform.target}</p>
 
                     <div className="flex items-center text-sm font-semibold" style={{ color: platform.color }}>
                       <span>Explore {platform.short}</span>
@@ -396,19 +396,19 @@ export default function Platforms() {
       </section>
 
       {/* CTA */}
-      <section className="py-20 bg-[#F5F3F1]">
+      <section className="py-12 md:py-16 lg:py-20 bg-[#F5F3F1]">
         <div className="section-container text-center">
           <AnimatedSection>
             <motion.div variants={fadeUp}>
-              <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-5">
+              <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-gray-900 mb-4 md:mb-5">
                 Not sure which platform fits your industry?
               </h2>
-              <p className="text-lg text-gray-600 max-w-2xl mx-auto mb-10">
+              <p className="text-base md:text-lg text-gray-600 max-w-2xl mx-auto mb-8 md:mb-10">
                 Our strategic team will identify the right intelligence layer for your organization and design a custom deployment roadmap.
               </p>
-              <div className="flex flex-wrap justify-center gap-4">
-                <Link to="/contact" className="btn-primary px-8 py-4">Request Strategic Demo</Link>
-                <Link to="/industries" className="btn-secondary px-8 py-4">Browse by Industry</Link>
+              <div className="flex flex-wrap justify-center gap-3 md:gap-4">
+                <Link to="/contact" className="btn-primary px-6 py-3 md:px-8 md:py-4 text-sm md:text-base">Request Strategic Demo</Link>
+                <Link to="/industries" className="btn-secondary px-6 py-3 md:px-8 md:py-4 text-sm md:text-base">Browse by Industry</Link>
               </div>
             </motion.div>
           </AnimatedSection>

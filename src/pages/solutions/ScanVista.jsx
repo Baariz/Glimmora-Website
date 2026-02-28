@@ -169,8 +169,8 @@ const ScanVista = () => {
     <div className="min-h-screen bg-white font-sans text-[#2E2A28] selection:bg-[#70564b] selection:text-white">
       
       {/* --- 1. HERO: (Kept the Same, Updated Visual) --- */}
-      <section className="relative px-8 lg:px-20 py-24 max-w-[1800px] mx-auto bg-[#fdfbf9] border-b border-gray-100 overflow-hidden">
-        <div className="grid lg:grid-cols-2 gap-16 items-center">
+      <section className="relative px-4 sm:px-6 md:px-8 lg:px-20 py-16 md:py-20 lg:py-24 max-w-[1800px] mx-auto bg-[#fdfbf9] border-b border-gray-100 overflow-hidden">
+        <div className="grid lg:grid-cols-2 gap-8 md:gap-12 lg:gap-16 items-center">
           
           {/* Left: Text */}
           <div className="relative z-10">
@@ -205,9 +205,9 @@ const ScanVista = () => {
       </section>
 
       {/* --- 2. DEFINITION: The "Process Stream" Layout --- */}
-      <section className="py-24 px-8 lg:px-20 bg-white">
+      <section className="py-16 md:py-20 lg:py-24 px-4 sm:px-6 md:px-8 lg:px-20 bg-white">
         <div className="max-w-[1400px] mx-auto">
-          <div className="grid lg:grid-cols-3 gap-12 items-center">
+          <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 md:gap-10 lg:gap-12 items-center">
             
             {/* Step 1: Input */}
             <div className="relative p-8 border border-gray-100 rounded-2xl bg-gray-50 text-center">
@@ -221,7 +221,7 @@ const ScanVista = () => {
             </div>
 
             {/* Step 2: Engine */}
-            <div className="relative p-10 border border-[#70564b]/20 rounded-2xl bg-[#70564b]/5 text-center shadow-lg transform scale-105 z-10">
+            <div className="relative p-8 md:p-10 border border-[#70564b]/20 rounded-2xl bg-[#70564b]/5 text-center shadow-lg transform lg:scale-105 z-10">
               <div className="w-20 h-20 bg-[#70564b] rounded-full mx-auto flex items-center justify-center shadow-lg mb-6 text-white animate-pulse">
                 <Icons.Lightning className="w-10 h-10" />
               </div>
@@ -245,42 +245,42 @@ const ScanVista = () => {
       </section>
 
       {/* --- 3. THE PROBLEM: The "Bottleneck Bar" Layout --- */}
-      <section className="py-24 px-8 lg:px-20 bg-[#f9fafb]">
+      <section className="py-16 md:py-20 lg:py-24 px-4 sm:px-6 md:px-8 lg:px-20 bg-[#f9fafb]">
         <div className="max-w-[1200px] mx-auto">
-          <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-4xl font-bold text-[#2E2A28] mb-4">The Manual Bottleneck</h2>
+          <div className="text-center mb-10 md:mb-16">
+            <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold text-[#2E2A28] mb-4">The Manual Bottleneck</h2>
             <p className="text-gray-500 text-sm">Where human speed limits business growth.</p>
           </div>
 
-          <div className="bg-white p-12 rounded-2xl border border-gray-200 shadow-sm relative overflow-hidden">
+          <div className="bg-white p-6 sm:p-8 md:p-12 rounded-2xl border border-gray-200 shadow-sm relative overflow-hidden">
             {/* Background Stripe */}
             <div className="absolute top-0 left-0 w-2 h-full bg-[#70564b]"></div>
-            
-            <div className="grid md:grid-cols-3 gap-12 divide-y md:divide-y-0 md:divide-x divide-gray-100">
-              <div className="text-center md:text-left">
-                <div className="flex items-center gap-3 mb-4 text-[#70564b]">
+
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-12 divide-y md:divide-y-0 md:divide-x divide-gray-100">
+              <div className="text-center md:text-left pt-6 md:pt-0 first:pt-0">
+                <div className="flex items-center justify-center md:justify-start gap-3 mb-4 text-[#70564b]">
                   <Icons.Clock className="w-6 h-6" />
                   <span className="font-bold uppercase tracking-wider text-xs">Speed</span>
                 </div>
-                <h3 className="text-4xl font-light text-[#2E2A28] mb-2">3 Days</h3>
+                <h3 className="text-3xl md:text-4xl font-light text-[#2E2A28] mb-2">3 Days</h3>
                 <p className="text-sm text-gray-500">Average time to manually process complex invoices.</p>
               </div>
 
-              <div className="text-center md:text-left md:pl-12">
-                <div className="flex items-center gap-3 mb-4 text-[#70564b]">
+              <div className="text-center md:text-left md:pl-12 pt-6 md:pt-0">
+                <div className="flex items-center justify-center md:justify-start gap-3 mb-4 text-[#70564b]">
                   <Icons.Alert className="w-6 h-6" />
                   <span className="font-bold uppercase tracking-wider text-xs">Accuracy</span>
                 </div>
-                <h3 className="text-4xl font-light text-[#2E2A28] mb-2">4% Error</h3>
+                <h3 className="text-3xl md:text-4xl font-light text-[#2E2A28] mb-2">4% Error</h3>
                 <p className="text-sm text-gray-500">Manual keystroke error rate in data entry.</p>
               </div>
 
-              <div className="text-center md:text-left md:pl-12">
-                <div className="flex items-center gap-3 mb-4 text-[#70564b]">
+              <div className="text-center md:text-left md:pl-12 pt-6 md:pt-0">
+                <div className="flex items-center justify-center md:justify-start gap-3 mb-4 text-[#70564b]">
                   <Icons.Layers className="w-6 h-6" />
                   <span className="font-bold uppercase tracking-wider text-xs">Scale</span>
                 </div>
-                <h3 className="text-4xl font-light text-[#2E2A28] mb-2">Limited</h3>
+                <h3 className="text-3xl md:text-4xl font-light text-[#2E2A28] mb-2">Limited</h3>
                 <p className="text-sm text-gray-500">Cannot scale without hiring more staff.</p>
               </div>
             </div>
@@ -289,17 +289,17 @@ const ScanVista = () => {
       </section>
 
       {/* --- 4. THE SOLUTION: The "Masonry Grid" Layout --- */}
-      <section id="features" className="py-24 px-8 lg:px-20 bg-white">
+      <section id="features" className="py-16 md:py-20 lg:py-24 px-4 sm:px-6 md:px-8 lg:px-20 bg-white">
         <div className="max-w-[1400px] mx-auto">
-          <div className="mb-20">
-            <h2 className="text-4xl font-bold text-[#2E2A28]">Platform Capabilities</h2>
+          <div className="mb-12 md:mb-16 lg:mb-20">
+            <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold text-[#2E2A28]">Platform Capabilities</h2>
             <div className="h-1 w-20 bg-[#70564b] mt-4"></div>
           </div>
 
-          <div className="grid md:grid-cols-3 gap-6">
-            
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+
             {/* Feature 1: Large Card (Spans 2 cols) */}
-            <div className="md:col-span-2 bg-[#fdfbf9] p-10 rounded-xl border border-gray-100 flex flex-col md:flex-row gap-8 items-center group hover:border-[#70564b] transition-colors">
+            <div className="md:col-span-2 bg-[#fdfbf9] p-6 sm:p-8 md:p-10 rounded-xl border border-gray-100 flex flex-col md:flex-row gap-6 md:gap-8 items-center group hover:border-[#70564b] transition-colors">
               <div className="flex-1">
                 <div className="w-12 h-12 bg-white rounded-lg flex items-center justify-center text-[#70564b] shadow-sm mb-6">
                   <Icons.Lightning className="w-6 h-6" />
@@ -315,7 +315,7 @@ const ScanVista = () => {
             </div>
 
             {/* Feature 2: Tall Card */}
-            <div className="md:row-span-2 bg-white p-10 rounded-xl border border-gray-200 hover:shadow-xl transition-shadow flex flex-col justify-between">
+            <div className="md:row-span-2 bg-white p-6 sm:p-8 md:p-10 rounded-xl border border-gray-200 hover:shadow-xl transition-shadow flex flex-col justify-between">
               <div>
                 <Icons.Globe className="w-10 h-10 text-gray-400 mb-6" />
                 <h3 className="text-xl font-bold text-[#2E2A28] mb-3">Bilingual Core</h3>
@@ -353,14 +353,14 @@ const ScanVista = () => {
       </section>
 
       {/* --- 5. USE CASES: The "Interactive Tabs" Layout --- */}
-      <section className="py-24 bg-[#fdfbf9] border-y border-gray-100">
-        <div className="max-w-[1200px] mx-auto px-8 lg:px-20">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl md:text-4xl font-bold text-[#2E2A28]">Applications</h2>
+      <section className="py-16 md:py-20 lg:py-24 bg-[#fdfbf9] border-y border-gray-100">
+        <div className="max-w-[1200px] mx-auto px-4 sm:px-6 md:px-8 lg:px-20">
+          <div className="text-center mb-8 md:mb-12">
+            <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold text-[#2E2A28]">Applications</h2>
           </div>
 
           {/* Tabs Navigation */}
-          <div className="flex flex-wrap justify-center gap-4 mb-12">
+          <div className="flex flex-wrap justify-center gap-3 md:gap-4 mb-8 md:mb-12">
             {[
               { id: 'invoice', label: 'Finance & AP' },
               { id: 'legal', label: 'Legal & HR' },
@@ -381,7 +381,7 @@ const ScanVista = () => {
           </div>
 
           {/* Tab Content */}
-          <div className="bg-white rounded-2xl border border-gray-200 p-8 md:p-16 shadow-sm min-h-[300px] flex items-center">
+          <div className="bg-white rounded-2xl border border-gray-200 p-5 sm:p-8 md:p-16 shadow-sm min-h-[250px] md:min-h-[300px] flex items-center">
             <AnimatePresence mode="wait">
               {activeTab === 'invoice' && (
                 <motion.div 
@@ -389,7 +389,7 @@ const ScanVista = () => {
                   initial={{ opacity: 0, y: 10 }}
                   animate={{ opacity: 1, y: 0 }}
                   exit={{ opacity: 0, y: -10 }}
-                  className="grid md:grid-cols-2 gap-12 items-center w-full"
+                  className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12 items-center w-full"
                 >
                   <div>
                     <h3 className="text-xl font-bold text-[#2E2A28] mb-4">Invoice Processing</h3>
@@ -413,7 +413,7 @@ const ScanVista = () => {
                   initial={{ opacity: 0, y: 10 }}
                   animate={{ opacity: 1, y: 0 }}
                   exit={{ opacity: 0, y: -10 }}
-                  className="grid md:grid-cols-2 gap-12 items-center w-full"
+                  className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12 items-center w-full"
                 >
                   <div>
                     <h3 className="text-xl font-bold text-[#2E2A28] mb-4">Digital Archiving</h3>
@@ -437,7 +437,7 @@ const ScanVista = () => {
                   initial={{ opacity: 0, y: 10 }}
                   animate={{ opacity: 1, y: 0 }}
                   exit={{ opacity: 0, y: -10 }}
-                  className="grid md:grid-cols-2 gap-12 items-center w-full"
+                  className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12 items-center w-full"
                 >
                   <div>
                     <h3 className="text-xl font-bold text-[#2E2A28] mb-4">Forms Processing</h3>
@@ -460,23 +460,23 @@ const ScanVista = () => {
       </section>
 
       {/* --- 6. BENEFITS: The "Bold Metrics" Strip --- */}
-      <section className="py-20 section-brand-bg text-white">
-        <div className="max-w-[1400px] mx-auto px-8 lg:px-20">
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-12 text-center">
+      <section className="py-12 md:py-16 lg:py-20 section-brand-bg text-white">
+        <div className="max-w-[1400px] mx-auto px-4 sm:px-6 md:px-8 lg:px-20">
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-6 md:gap-8 lg:gap-12 text-center">
             <div>
-              <div className="text-5xl font-bold mb-2">80%</div>
+              <div className="text-3xl md:text-4xl lg:text-5xl font-bold mb-2">80%</div>
               <div className="text-xs uppercase tracking-widest opacity-70">Faster Processing</div>
             </div>
             <div>
-              <div className="text-5xl font-bold mb-2">50%</div>
+              <div className="text-3xl md:text-4xl lg:text-5xl font-bold mb-2">50%</div>
               <div className="text-xs uppercase tracking-widest opacity-70">Cost Reduction</div>
             </div>
             <div>
-              <div className="text-5xl font-bold mb-2">99%</div>
+              <div className="text-3xl md:text-4xl lg:text-5xl font-bold mb-2">99%</div>
               <div className="text-xs uppercase tracking-widest opacity-70">Data Accuracy</div>
             </div>
             <div>
-              <div className="text-5xl font-bold mb-2">24/7</div>
+              <div className="text-3xl md:text-4xl lg:text-5xl font-bold mb-2">24/7</div>
               <div className="text-xs uppercase tracking-widest opacity-70">Availability</div>
             </div>
           </div>
@@ -484,20 +484,20 @@ const ScanVista = () => {
       </section>
 
       {/* --- 7. CTA: The "Floating Card" --- */}
-      <section className="py-32 px-8 lg:px-20 bg-white">
-        <div className="max-w-4xl mx-auto bg-white border border-gray-200 p-12 lg:p-16 rounded-2xl shadow-2xl text-center relative overflow-hidden">
+      <section className="py-16 md:py-24 lg:py-32 px-4 sm:px-6 md:px-8 lg:px-20 bg-white">
+        <div className="max-w-4xl mx-auto bg-white border border-gray-200 p-6 sm:p-8 md:p-12 lg:p-16 rounded-2xl shadow-2xl text-center relative overflow-hidden">
           {/* Decor */}
           <div className="absolute top-0 right-0 w-32 h-32 bg-[#70564b]/10 rounded-full blur-3xl"></div>
           <div className="absolute bottom-0 left-0 w-32 h-32 bg-[#70564b]/10 rounded-full blur-3xl"></div>
           
           <div className="relative z-10">
-            <h2 className="text-4xl font-bold text-[#2E2A28] mb-6">Eliminate the paper backlog.</h2>
-            <p className="text-sm text-gray-500 mb-10">
+            <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold text-[#2E2A28] mb-4 md:mb-6">Eliminate the paper backlog.</h2>
+            <p className="text-sm text-gray-500 mb-6 md:mb-10">
               See how Glimmora ScanVista can digitize your operations with speed and accuracy.
             </p>
             <Link 
               to="/contact" 
-              className="inline-block px-12 py-5 bg-[#70564b] text-white font-bold text-sm uppercase tracking-widest hover:bg-[#5f4940] transition-colors rounded-sm shadow-lg"
+              className="inline-block px-8 md:px-12 py-4 md:py-5 bg-[#70564b] text-white font-bold text-sm uppercase tracking-widest hover:bg-[#5f4940] transition-colors rounded-sm shadow-lg"
             >
               Book A Demo
             </Link>

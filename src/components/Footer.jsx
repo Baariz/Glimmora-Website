@@ -54,7 +54,7 @@ function Footer() {
       <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-[#70564b] via-[#4a3830] to-[#70564b]"></div>
       <div className="absolute top-0 right-0 w-[600px] h-[600px] bg-[#70564b] opacity-5 rounded-full blur-[120px] pointer-events-none translate-x-1/3 -translate-y-1/3"></div>
 
-      <div className="max-w-7xl mx-auto px-6 pt-16 pb-8 relative z-10">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 pt-12 sm:pt-16 pb-8 relative z-10">
 
         {/* --- Main Footer Grid --- */}
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-8 mb-16">

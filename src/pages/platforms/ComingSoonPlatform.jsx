@@ -126,7 +126,7 @@ export function ComingSoonPlatform({ platform }) {
     <main className="pt-24">
 
       {/* ── HERO: two-column ── */}
-      <section className="py-20 bg-[#F5F3F1] relative overflow-hidden">
+      <section className="py-12 md:py-16 lg:py-20 bg-[#F5F3F1] relative overflow-hidden">
         <div
           className="absolute inset-0 opacity-20"
           style={{
@@ -134,19 +134,19 @@ export function ComingSoonPlatform({ platform }) {
             backgroundSize: '48px 48px',
           }}
         />
-        <div className="absolute top-1/3 right-0 w-[500px] h-[500px] bg-[#70564b] opacity-[0.06] rounded-full blur-[140px] pointer-events-none" />
-        <div className="absolute bottom-0 left-0 w-[400px] h-[400px] bg-[#956e5d] opacity-[0.04] rounded-full blur-[100px] pointer-events-none" />
+        <div className="absolute top-1/3 right-0 w-[300px] md:w-[500px] h-[300px] md:h-[500px] bg-[#70564b] opacity-[0.06] rounded-full blur-[140px] pointer-events-none" />
+        <div className="absolute bottom-0 left-0 w-[250px] md:w-[400px] h-[250px] md:h-[400px] bg-[#956e5d] opacity-[0.04] rounded-full blur-[100px] pointer-events-none" />
 
         <div className="section-container relative z-10">
 
           {/* Breadcrumb */}
-          <div className="flex items-center gap-2 text-gray-400 text-sm mb-12">
+          <div className="flex items-center gap-2 text-gray-400 text-sm mb-6 md:mb-8 lg:mb-12">
             <Link to="/platforms" className="hover:text-gray-900 transition-colors">Platforms</Link>
             <span>/</span>
             <span className="text-gray-900">{platform.name}</span>
           </div>
 
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 xl:gap-20 items-center">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 md:gap-12 xl:gap-20 items-center">
 
             {/* ── LEFT: Content ── */}
             <motion.div
@@ -155,7 +155,7 @@ export function ComingSoonPlatform({ platform }) {
               variants={stagger}
             >
               {/* Badge row */}
-              <motion.div variants={fadeUp} className="flex flex-wrap items-center gap-3 mb-8">
+              <motion.div variants={fadeUp} className="flex flex-wrap items-center gap-3 mb-5 md:mb-8">
                 <span className="inline-block text-xs font-semibold tracking-widest uppercase bg-[#70564b]/10 text-[#70564b] px-4 py-2">
                   {platform.category}
                 </span>
@@ -167,7 +167,7 @@ export function ComingSoonPlatform({ platform }) {
               {/* Title */}
               <motion.h1
                 variants={fadeUp}
-                className="text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 mb-4 leading-tight"
+                className="text-3xl md:text-5xl lg:text-6xl font-bold text-gray-900 mb-4 leading-tight"
               >
                 {platform.displayName}
               </motion.h1>
@@ -176,12 +176,12 @@ export function ComingSoonPlatform({ platform }) {
                 {platform.tagline}
               </motion.p>
 
-              <motion.p variants={fadeUp} className="text-base text-gray-600 mb-8 leading-relaxed">
+              <motion.p variants={fadeUp} className="text-sm md:text-base text-gray-600 mb-6 md:mb-8 leading-relaxed">
                 {platform.desc}
               </motion.p>
 
               {/* Modules */}
-              <motion.div variants={fadeUp} className="mb-8">
+              <motion.div variants={fadeUp} className="mb-6 md:mb-8">
                 <p className="text-xs font-semibold text-gray-400 uppercase tracking-widest mb-3">
                   Planned Modules
                 </p>

@@ -10,24 +10,24 @@ const About = () => {
     <div className="bg-[#FCFCFC] font-sans text-[#2E2A28] selection:bg-[#70564b] selection:text-white overflow-x-hidden">
       
       {/* 1. ARCHITECTURAL HERO (Identity Focus) */}
- <section className="relative pt-44 pb-32 border-b border-gray-100 bg-white">
+ <section className="relative pt-28 pb-16 md:pt-36 md:pb-24 lg:pt-44 lg:pb-32 border-b border-gray-100 bg-white">
   <div className="max-w-7xl mx-auto px-6 lg:px-12">
-    <div className="grid lg:grid-cols-2 gap-20 items-center">
+    <div className="grid lg:grid-cols-2 gap-10 md:gap-14 lg:gap-20 items-center">
       <motion.div 
         initial={{ opacity: 0, y: 30 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.8 }}
       >
-        <div className="flex items-center gap-4 mb-8">
-          <span className="text-[#70564b] text-xs font-bold uppercase tracking-[0.5em]">Identity 01.</span>
-          <div className="h-[1px] w-20 bg-[#70564b]"></div>
+        <div className="flex items-center gap-4 mb-6 lg:mb-8">
+          <span className="text-[#70564b] text-xs font-bold uppercase tracking-[0.3em] md:tracking-[0.5em]">Identity 01.</span>
+          <div className="h-[1px] w-12 md:w-20 bg-[#70564b]"></div>
         </div>
-        <h1 className="text-3xl md:text-4xl font-bold text-[#70564b] leading-[1.1] tracking-tight mb-10">
+        <h1 className="text-2xl sm:text-3xl md:text-4xl font-bold text-[#70564b] leading-[1.1] tracking-tight mb-6 md:mb-10">
           The Intelligence <br />
           Behind the <br />
           <span className="text-gray-300 italic">Enterprise.</span>
         </h1>
-        <p className="text-gray-500 text-sm font-light leading-relaxed max-w-lg mb-10">
+        <p className="text-gray-500 text-sm font-light leading-relaxed max-w-lg mb-6 md:mb-10">
           Glimmora International is not just a consultancy; we are an innovation house.
           We specialize in delivering AI-native governance, risk, and compliance solutions
           for regulated industries across MENA, building trust through transparency and technical excellence.
@@ -70,75 +70,11 @@ const About = () => {
   </div>
 </section>
 
-      {/* BRAND: Baarez is Glimmora */}
-      <section className="py-20 bg-[#F5F3F1] relative overflow-hidden">
-        <div className="absolute inset-0 bg-[linear-gradient(rgba(112,86,75,0.02)_1px,transparent_1px),linear-gradient(90deg,rgba(112,86,75,0.02)_1px,transparent_1px)] bg-[size:40px_40px]"></div>
-
-        <div className="max-w-5xl mx-auto px-6 lg:px-12 relative z-10">
-
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6 }}
-            className="text-center mb-12"
-          >
-            <span className="text-[#70564b] text-xs font-bold uppercase tracking-[0.4em] mb-4 block">Our Identity</span>
-            <h2 className="text-2xl md:text-3xl font-bold text-[#2E2A28] leading-tight">
-              Same Team. Same Trust. A Broader Vision.
-            </h2>
-          </motion.div>
-
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6, delay: 0.2 }}
-            className="max-w-3xl mx-auto"
-          >
-            <div className="bg-white border border-gray-100 p-8 md:p-10 shadow-sm relative overflow-hidden">
-              <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-[#956e5d] to-[#70564b]"></div>
-
-              <div className="flex items-center gap-4 mb-8 justify-center">
-                <img src="/logo.png" alt="Baarez Technology Solutions" className="h-12 md:h-14 object-contain opacity-40 grayscale" />
-                <span className="text-lg font-bold text-[#70564b]">=</span>
-                <img src="/Glimmora_logo_icon_fit.png" alt="Glimmora International" className="h-12 md:h-14 object-contain" />
-              </div>
-
-              <div className="grid md:grid-cols-3 gap-8">
-                <div className="md:col-span-2">
-                  <p className="text-sm text-gray-600 leading-relaxed mb-4">
-                    <span className="font-semibold text-gray-500">Baarez Technology Solutions</span> is now <span className="font-semibold text-[#70564b]">Glimmora International</span>. Our name reflects a broader vision — building the AI-native operating system for enterprise governance across regulated industries worldwide.
-                  </p>
-                  <p className="text-sm text-gray-600 leading-relaxed">
-                    Our DNA remains: precision, transparency, and relentless dedication to client outcomes. Every relationship we built, every trust we earned — it all carries forward.
-                  </p>
-                </div>
-                <div className="flex flex-col justify-center gap-4 border-l border-gray-100 pl-8">
-                  <div>
-                    <p className="text-2xl font-bold text-[#70564b]">100+</p>
-                    <p className="text-[10px] text-gray-400 uppercase tracking-widest font-bold">Enterprise Clients</p>
-                  </div>
-                  <div>
-                    <p className="text-2xl font-bold text-[#70564b]">MENA</p>
-                    <p className="text-[10px] text-gray-400 uppercase tracking-widest font-bold">Region Focus</p>
-                  </div>
-                  <div>
-                    <p className="text-2xl font-bold text-[#70564b]">6+</p>
-                    <p className="text-[10px] text-gray-400 uppercase tracking-widest font-bold">Global Markets</p>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </motion.div>
-
-        </div>
-      </section>
 
       {/* 2. OUR DNA: THE CORE PILLARS (The Approach) */}
-      <section className="py-32 bg-white">
+      <section className="py-16 md:py-24 lg:py-32 bg-white">
         <div className="max-w-7xl mx-auto px-6 lg:px-12">
-          <div className="mb-24 max-w-2xl">
+          <div className="mb-12 md:mb-16 lg:mb-24 max-w-2xl">
             <h2 className="text-xs text-[#70564b] font-bold uppercase tracking-[0.3em] mb-4">The Glimmora Way</h2>
             <h3 className="text-xl font-bold text-[#70564b]">Precision in execution, consistency in results.</h3>
           </div>
@@ -148,9 +84,9 @@ const About = () => {
               { title: "Transparency", desc: "Openness and honesty at every stage. Full visibility into project status, risks, and decisions. We build solutions based on trust and dedicated determination." },
               { title: "Excellence", desc: "A constant aim for 100% client satisfaction through rigorous quality controls and continuous improvement, ensuring every project leaves a lasting legacy." }
             ].map((pillar, i) => (
-              <div key={i} className="p-12 border-r border-gray-100 last:border-r-0 hover:bg-[#fafafa] transition-colors group">
-                <span className="text-[#70564b] text-xs font-mono block mb-8">0{i+1} ———</span>
-                <h4 className="text-xl font-bold text-[#70564b] mb-6">{pillar.title}</h4>
+              <div key={i} className="p-6 sm:p-8 md:p-10 lg:p-12 border-b md:border-b-0 md:border-r border-gray-100 last:border-b-0 last:border-r-0 hover:bg-[#fafafa] transition-colors group">
+                <span className="text-[#70564b] text-xs font-mono block mb-4 md:mb-6 lg:mb-8">0{i+1} ———</span>
+                <h4 className="text-lg md:text-xl font-bold text-[#70564b] mb-4 md:mb-6">{pillar.title}</h4>
                 <p className="text-gray-500 text-sm leading-relaxed">{pillar.desc}</p>
               </div>
             ))}
@@ -159,21 +95,21 @@ const About = () => {
       </section>
 
       {/* 3. CEO LEADERSHIP (Mr. Santosh Kharje - First) */}
-      <section className="py-32 bg-[#F9F9F9]">
+      <section className="py-16 md:py-24 lg:py-32 bg-[#F9F9F9]">
         <div className="max-w-7xl mx-auto px-6 lg:px-12">
-          <div className="flex flex-col lg:flex-row gap-24 items-center">
+          <div className="flex flex-col lg:flex-row gap-10 md:gap-16 lg:gap-24 items-center">
             <div className="w-full lg:w-5/12">
               <div className="relative">
-                <img 
+                <img
                   src="/ceo.JPG"
-                  alt="Mr. Santosh Kharje" 
-                  className="w-full grayscale hover:grayscale-0 transition-all duration-1000 shadow-[30px_30px_0px_0px_rgba(112,86,75,1)]"
+                  alt="Mr. Santosh Kharje"
+                  className="w-full grayscale hover:grayscale-0 transition-all duration-1000 shadow-[15px_15px_0px_0px_rgba(112,86,75,1)] md:shadow-[20px_20px_0px_0px_rgba(112,86,75,1)] lg:shadow-[30px_30px_0px_0px_rgba(112,86,75,1)]"
                 />
               </div>
             </div>
             <div className="w-full lg:w-7/12">
-              <span className="text-[#70564b] text-xs font-bold uppercase tracking-[0.5em] mb-6 block">Leadership / CEO</span>
-              <h3 className="text-3xl md:text-4xl font-bold text-[#70564b] mb-8">Mr. Santosh Kharje</h3>
+              <span className="text-[#70564b] text-xs font-bold uppercase tracking-[0.3em] md:tracking-[0.5em] mb-4 md:mb-6 block">Leadership / CEO</span>
+              <h3 className="text-2xl sm:text-3xl md:text-4xl font-bold text-[#70564b] mb-6 md:mb-8">Mr. Santosh Kharje</h3>
               <div className="space-y-6 text-gray-600 leading-relaxed text-sm">
                 <p>
                   "The success of Glimmora International lies deeply in our pillars of customer satisfaction practices; <strong>quality, cost, delivery</strong>. Customers are the heart of everything we do."
@@ -202,8 +138,8 @@ const About = () => {
                 </ul>
               </div>
 
-              <div className="mt-12 flex items-center gap-6">
-                 <div className="w-16 h-[1px] bg-[#70564b]"></div>
+              <div className="mt-8 md:mt-12 flex items-center gap-4 md:gap-6">
+                 <div className="w-10 md:w-16 h-[1px] bg-[#70564b]"></div>
                  <p className="text-xs font-bold text-[#70564b] uppercase tracking-widest">CEO & Managing Director</p>
               </div>
             </div>
@@ -268,13 +204,13 @@ const About = () => {
       </section> */}
 
       {/* 5. VISIBLE THINKING: THE VALUE SYSTEM */}
-      <section className="section-brand-bg py-32 relative overflow-hidden">
+      <section className="section-brand-bg py-16 md:py-24 lg:py-32 relative overflow-hidden">
         {/* Soft white ambient glow */}
         <div className="absolute top-0 right-0 w-1/2 h-full bg-white translate-x-3/4 opacity-[0.04] rounded-full blur-[120px]"></div>
         <div className="max-w-7xl mx-auto px-6 lg:px-12 relative z-10">
-          <div className="text-center mb-20">
-            <h2 className="text-xs text-white/60 font-bold uppercase tracking-[0.4em] mb-4">Our Ethical Framework</h2>
-            <h3 className="text-xl font-bold text-white">The Principles of Ownership</h3>
+          <div className="text-center mb-10 md:mb-16 lg:mb-20">
+            <h2 className="text-xs text-white/60 font-bold uppercase tracking-[0.2em] md:tracking-[0.4em] mb-4">Our Ethical Framework</h2>
+            <h3 className="text-lg md:text-xl font-bold text-white">The Principles of Ownership</h3>
           </div>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-px bg-white/10 border border-white/10">
             {[
@@ -284,8 +220,8 @@ const About = () => {
               { t: "Consistency", d: "Consistent customer-first attitude." },
               { t: "Ownership", d: "Be empowered. Be decisive." }
             ].map((v, i) => (
-              <div key={i} className="bg-white/10 p-10 hover:bg-white/20 transition-all group">
-                <h4 className="text-white font-bold text-xl mb-4 group-hover:scale-110 transition-transform origin-left">{v.t}</h4>
+              <div key={i} className="bg-white/10 p-6 sm:p-8 lg:p-10 hover:bg-white/20 transition-all group">
+                <h4 className="text-white font-bold text-lg md:text-xl mb-3 md:mb-4 group-hover:scale-110 transition-transform origin-left">{v.t}</h4>
                 <p className="text-white/70 text-xs leading-relaxed">{v.d}</p>
               </div>
             ))}
@@ -294,18 +230,18 @@ const About = () => {
       </section>
 
       {/* 6. STRATEGIC GROWTH (New Section) */}
-      <section className="py-32 bg-white">
+      <section className="py-16 md:py-24 lg:py-32 bg-white">
         <div className="max-w-7xl mx-auto px-6 lg:px-12">
-          <div className="grid lg:grid-cols-2 gap-20 items-center">
+          <div className="grid lg:grid-cols-2 gap-10 md:gap-14 lg:gap-20 items-center">
             <div>
-              <h2 className="text-3xl md:text-4xl font-bold text-[#70564b] mb-10 leading-tight">
+              <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-[#70564b] mb-6 md:mb-10 leading-tight">
                 Driving Excellence Across <br />Sector Boundaries.
               </h2>
-              <div className="space-y-12">
-                <div className="flex gap-6">
-                  <span className="text-3xl font-black text-[#70564b] opacity-20">01</span>
+              <div className="space-y-8 md:space-y-12">
+                <div className="flex gap-4 md:gap-6">
+                  <span className="text-2xl md:text-3xl font-black text-[#70564b] opacity-20">01</span>
                   <div>
-                    <h5 className="font-bold text-[#70564b] text-xl mb-2">Public Sector</h5>
+                    <h5 className="font-bold text-[#70564b] text-lg md:text-xl mb-2">Public Sector</h5>
                     <p className="text-gray-500 text-sm leading-relaxed mb-3">Helping government departments maximize their resources and drive efficiency, effectiveness, and customer service through local innovation.</p>
                     <div className="flex flex-wrap gap-2">
                       <Link to="/solutions/grc" className="text-xs text-[#70564b] underline hover:text-[#70564b]">GRC for Government</Link>
@@ -314,10 +250,10 @@ const About = () => {
                     </div>
                   </div>
                 </div>
-                <div className="flex gap-6">
-                  <span className="text-3xl font-black text-[#70564b] opacity-20">02</span>
+                <div className="flex gap-4 md:gap-6">
+                  <span className="text-2xl md:text-3xl font-black text-[#70564b] opacity-20">02</span>
                   <div>
-                    <h5 className="font-bold text-[#70564b] text-xl mb-2">Private Sector</h5>
+                    <h5 className="font-bold text-[#70564b] text-lg md:text-xl mb-2">Private Sector</h5>
                     <p className="text-gray-500 text-sm leading-relaxed mb-3">Acting as the preferred technology partner for distinguished private organizations in BFSI, healthcare, and energy sectors to drive corporate growth and regulatory excellence.</p>
                     <div className="flex flex-wrap gap-2">
                       <Link to="/solutions/grc" className="text-xs text-[#70564b] underline hover:text-[#70564b]">Banking GRC</Link>
@@ -328,10 +264,10 @@ const About = () => {
                 </div>
               </div>
             </div>
-            <div className="bg-[#fafafa] p-16 border border-gray-100 relative">
-               <div className="mb-10">
+            <div className="bg-[#fafafa] p-8 md:p-12 lg:p-16 border border-gray-100 relative">
+               <div className="mb-6 md:mb-10">
                   <h4 className="text-xs text-[#70564b] font-bold uppercase tracking-widest mb-4">Corporate Vision</h4>
-                  <p className="text-[#70564b] text-xl font-bold italic leading-relaxed">"To become the preferred technology partner for distinguished private and public sector organizations."</p>
+                  <p className="text-[#70564b] text-lg md:text-xl font-bold italic leading-relaxed">"To become the preferred technology partner for distinguished private and public sector organizations."</p>
                </div>
                <div className="w-20 h-[2px] bg-[#70564b]"></div>
             </div>
@@ -340,7 +276,7 @@ const About = () => {
       </section>
 
       {/* BECOME A PARTNER */}
-      <section className="py-32 bg-[#F5F3F1] relative overflow-hidden">
+      <section className="py-16 md:py-24 lg:py-32 bg-[#F5F3F1] relative overflow-hidden">
         <div className="absolute inset-0 bg-[linear-gradient(rgba(112,86,75,0.02)_1px,transparent_1px),linear-gradient(90deg,rgba(112,86,75,0.02)_1px,transparent_1px)] bg-[size:40px_40px]"></div>
         <div className="max-w-7xl mx-auto px-6 lg:px-12 relative z-10">
 
@@ -350,10 +286,10 @@ const About = () => {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
-            className="max-w-2xl mb-20"
+            className="max-w-2xl mb-10 md:mb-16 lg:mb-20"
           >
             <h2 className="text-xs text-[#70564b] font-bold uppercase tracking-[0.4em] mb-4">Partner with Glimmora</h2>
-            <h3 className="text-3xl md:text-4xl font-bold text-[#2E2A28] leading-tight mb-6">
+            <h3 className="text-2xl sm:text-3xl md:text-4xl font-bold text-[#2E2A28] leading-tight mb-4 md:mb-6">
               Grow Together.<br />Build the Future.
             </h3>
             <p className="text-gray-500 text-sm leading-relaxed">
@@ -362,7 +298,7 @@ const About = () => {
           </motion.div>
 
           {/* Partner Types Grid */}
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-px bg-gray-200 border border-gray-200 mb-16">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-px bg-gray-200 border border-gray-200 mb-10 md:mb-16">
             {[
               {
                 num: '01',
@@ -395,10 +331,10 @@ const About = () => {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.5, delay: i * 0.1 }}
-                className="bg-white p-10 hover:bg-[#fafafa] transition-colors group"
+                className="bg-white p-6 sm:p-8 lg:p-10 hover:bg-[#fafafa] transition-colors group"
               >
-                <span className="text-3xl font-black text-[#70564b] opacity-20 block mb-6">{type.num}</span>
-                <h4 className="text-lg font-bold text-[#70564b] mb-4 group-hover:text-[#5f4940] transition-colors">{type.title}</h4>
+                <span className="text-2xl md:text-3xl font-black text-[#70564b] opacity-20 block mb-4 md:mb-6">{type.num}</span>
+                <h4 className="text-base md:text-lg font-bold text-[#70564b] mb-3 md:mb-4 group-hover:text-[#5f4940] transition-colors">{type.title}</h4>
                 <p className="text-gray-500 text-xs leading-relaxed mb-6">{type.desc}</p>
                 <div className="border-t border-gray-100 pt-4">
                   <p className="text-[10px] font-bold text-[#70564b] uppercase tracking-widest">{type.benefit}</p>
@@ -440,7 +376,7 @@ const About = () => {
           >
             <Link
               to="/partner-on-board"
-              className="inline-flex items-center gap-3 bg-[#70564b] text-white px-12 py-4 text-xs font-bold uppercase tracking-[0.2em] hover:bg-[#5f4940] transition-all shadow-xl"
+              className="inline-flex items-center gap-3 bg-[#70564b] text-white px-8 sm:px-12 py-4 text-xs font-bold uppercase tracking-[0.15em] sm:tracking-[0.2em] hover:bg-[#5f4940] transition-all shadow-xl"
             >
               Apply to Become a Partner
               <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -453,17 +389,17 @@ const About = () => {
       </section>
 
       {/* 7. FINAL CALL TO ACTION */}
-      <section className="py-32 bg-white text-center">
+      <section className="py-16 md:py-24 lg:py-32 bg-white text-center">
         <div className="max-w-3xl mx-auto px-6">
-          <h2 className="text-xl font-bold text-[#70564b] mb-8">Looking forward for longer & stronger business relation.</h2>
-          <p className="text-gray-500 text-sm font-light mb-12 italic">
+          <h2 className="text-lg md:text-xl font-bold text-[#70564b] mb-6 md:mb-8">Looking forward for longer & stronger business relation.</h2>
+          <p className="text-gray-500 text-sm font-light mb-8 md:mb-12 italic">
             "Once again thank you for visiting the website and taking your time to read our thoughts."
           </p>
-          <div className="flex flex-col sm:flex-row justify-center gap-6">
-            <button className="bg-[#70564b] text-white px-12 py-4 text-xs font-bold uppercase tracking-[0.2em] hover:bg-[#5f4940] transition-all shadow-xl">
+          <div className="flex flex-col sm:flex-row justify-center gap-4 sm:gap-6">
+            <button className="bg-[#70564b] text-white px-8 sm:px-12 py-3.5 sm:py-4 text-xs font-bold uppercase tracking-[0.15em] sm:tracking-[0.2em] hover:bg-[#5f4940] transition-all shadow-xl">
              <Link to="/contact">Connect with our Experts</Link>
             </button>
-            <button className="border border-[#70564b] text-[#70564b] px-12 py-4 text-xs font-bold uppercase tracking-[0.2em] hover:bg-gray-50 transition-all">
+            <button className="border border-[#70564b] text-[#70564b] px-8 sm:px-12 py-3.5 sm:py-4 text-xs font-bold uppercase tracking-[0.15em] sm:tracking-[0.2em] hover:bg-gray-50 transition-all">
                <Link to="/services">View Our Services</Link>
             </button>
           </div>

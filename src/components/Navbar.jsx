@@ -172,7 +172,7 @@ function Navbar() {
             <img
               src="/Glimmora_website_logov2_fit.png"
               alt="Glimmora International"
-              className="h-52 w-52 object-contain"
+              className="h-36 w-36 sm:h-44 sm:w-44 lg:h-52 lg:w-52 object-contain"
             />
           </Link>
 

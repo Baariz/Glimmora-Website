@@ -231,10 +231,10 @@ const PartnerOnboard = () => {
     <div className="bg-[#FCFCFC] font-sans text-[#2E2A28] pt-32 min-h-screen">
       
       {/* HEADER SECTION */}
-      <section className="bg-white py-16 border-b border-gray-100 print:hidden">
-        <div className="max-w-5xl mx-auto px-6 text-center">
+      <section className="bg-white py-10 md:py-16 border-b border-gray-100 print:hidden">
+        <div className="max-w-5xl mx-auto px-4 sm:px-6 text-center">
             <span className="text-xs text-[#70564b] font-bold uppercase tracking-[0.4em] mb-4 block">Partner Application</span>
-            <h1 className="text-3xl md:text-4xl font-bold text-[#70564b] mb-6">Join the Glimmora Ecosystem</h1>
+            <h1 className="text-2xl sm:text-3xl md:text-4xl font-bold text-[#70564b] mb-6">Join the Glimmora Ecosystem</h1>
             <p className="text-gray-500 text-sm max-w-3xl mx-auto leading-relaxed">
               Complete the form below to apply for our partner program. 
             </p>
@@ -253,8 +253,8 @@ const PartnerOnboard = () => {
 
       {/* FORM SECTION */}
       <section className="py-12 md:py-20">
-        <div className="max-w-4xl mx-auto px-6">
-          <div className="bg-white border border-gray-100 shadow-xl p-8 md:p-12">
+        <div className="max-w-4xl mx-auto px-4 sm:px-6">
+          <div className="bg-white border border-gray-100 shadow-xl p-4 sm:p-6 md:p-8 lg:p-12">
             
             <form ref={formRef} onSubmit={handleSubmit}>
               
@@ -292,11 +292,11 @@ const PartnerOnboard = () => {
                     {/* PHONE NUMBER FIELD */}
                     <div className="space-y-2">
                         <label className="text-xs font-bold uppercase tracking-widest text-gray-400">Contact Number *</label>
-                        <div className="flex gap-3">
-                            <select 
-                                value={phoneCode} 
-                                onChange={(e) => setPhoneCode(e.target.value)} 
-                                className="w-28 px-2 py-3 bg-[#fcfcfc] border border-gray-100 focus:border-[#70564b] outline-none text-sm truncate"
+                        <div className="flex gap-2 sm:gap-3">
+                            <select
+                                value={phoneCode}
+                                onChange={(e) => setPhoneCode(e.target.value)}
+                                className="w-24 sm:w-28 px-2 py-3 bg-[#fcfcfc] border border-gray-100 focus:border-[#70564b] outline-none text-sm truncate"
                             >
                                 {COUNTRY_DATA.map(c => (
                                     <option key={c.name} value={c.code}>{c.code} ({c.name.substring(0,10)}..)</option>
@@ -315,7 +315,7 @@ const PartnerOnboard = () => {
                     </div>
 
                     <div className="pt-6 flex justify-end">
-                      <button type="button" onClick={handleNext} className="bg-[#70564b] text-white px-10 py-3 text-xs font-bold uppercase tracking-widest hover:bg-[#5f4940] transition-all">Next</button>
+                      <button type="button" onClick={handleNext} className="w-full sm:w-auto bg-[#70564b] text-white px-10 py-3 text-xs font-bold uppercase tracking-widest hover:bg-[#5f4940] transition-all">Next</button>
                     </div>
                   </motion.div>
                 </div>
@@ -394,9 +394,9 @@ const PartnerOnboard = () => {
                         {errors.postal_code && <p className="text-red-500 text-[10px] uppercase font-bold">{errors.postal_code}</p>}
                     </div>
 
-                    <div className="pt-6 flex justify-between">
+                    <div className="pt-6 flex flex-col-reverse sm:flex-row justify-between items-center gap-4">
                       <button type="button" onClick={prevStep} className="text-gray-400 text-xs font-bold uppercase tracking-widest hover:text-[#70564b]">Back</button>
-                      <button type="button" onClick={handleNext} className="bg-[#70564b] text-white px-10 py-3 text-xs font-bold uppercase tracking-widest hover:bg-[#5f4940] transition-all">Next</button>
+                      <button type="button" onClick={handleNext} className="w-full sm:w-auto bg-[#70564b] text-white px-10 py-3 text-xs font-bold uppercase tracking-widest hover:bg-[#5f4940] transition-all">Next</button>
                     </div>
                   </motion.div>
                 </div>
@@ -503,9 +503,9 @@ const PartnerOnboard = () => {
                         </div>
                     </div>
 
-                    <div className="pt-6 flex justify-between items-center">
+                    <div className="pt-6 flex flex-col-reverse sm:flex-row justify-between items-center gap-4">
                       <button type="button" onClick={prevStep} className="text-gray-400 text-xs font-bold uppercase tracking-widest hover:text-[#70564b]">Back</button>
-                      <button type="submit" disabled={isSubmitting} className="bg-[#70564b] text-white px-12 py-4 text-xs font-bold uppercase tracking-widest hover:bg-[#5f4940] transition-all disabled:bg-gray-400">
+                      <button type="submit" disabled={isSubmitting} className="w-full sm:w-auto bg-[#70564b] text-white px-8 sm:px-12 py-4 text-xs font-bold uppercase tracking-widest hover:bg-[#5f4940] transition-all disabled:bg-gray-400">
                         {isSubmitting ? 'Submitting Application...' : 'Submit Application'}
                       </button>
                     </div>
@@ -540,8 +540,8 @@ const PartnerOnboard = () => {
       </section>
 
       {/* FOOTER NOTICE */}
-      <footer className="py-12 bg-white border-t border-gray-50 text-center print:hidden">
-        <p className="text-gray-300 text-xs uppercase tracking-[0.5em] font-bold italic">
+      <footer className="py-8 md:py-12 bg-white border-t border-gray-50 text-center print:hidden">
+        <p className="text-gray-300 text-xs uppercase tracking-[0.2em] sm:tracking-[0.5em] font-bold italic">
           Transparency • Innovation • Partnership
         </p>
       </footer>

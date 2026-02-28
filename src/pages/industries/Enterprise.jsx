@@ -68,34 +68,34 @@ export default function Enterprise() {
     <main className="pt-24">
 
       {/* HERO */}
-      <section className="py-20 bg-[#F5F3F1] relative overflow-hidden">
+      <section className="py-12 md:py-20 bg-[#F5F3F1] relative overflow-hidden">
         <div className="absolute inset-0 opacity-10" style={{
           backgroundImage: `linear-gradient(rgba(112,86,75,0.06) 1px, transparent 1px), linear-gradient(90deg, rgba(112,86,75,0.06) 1px, transparent 1px)`,
           backgroundSize: '60px 60px',
         }} />
         <div className="section-container relative z-10">
-          <div className="flex items-center gap-2 text-gray-400 text-sm mb-8">
+          <div className="flex items-center gap-2 text-gray-400 text-sm mb-6 md:mb-8 overflow-x-auto whitespace-nowrap">
             <Link to="/industries" className="hover:text-gray-900 transition-colors">Industries</Link>
             <span>/</span>
             <span className="text-gray-900">Enterprise</span>
           </div>
           <AnimatedSection>
             <motion.div variants={fadeUp} className="max-w-3xl">
-              <span className="inline-block text-xs font-semibold tracking-widest uppercase bg-[#70564b]/10 text-[#70564b] px-4 py-2 mb-6">
+              <span className="inline-block text-xs font-semibold tracking-widest uppercase bg-[#70564b]/10 text-[#70564b] px-3 py-1.5 sm:px-4 sm:py-2 mb-4 sm:mb-6">
                 Industry: Enterprise & Regulated Organizations
               </span>
-              <h1 className="text-5xl md:text-6xl font-bold text-gray-900 mb-6 leading-tight">
+              <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 mb-4 sm:mb-6 leading-tight">
                 Enterprise Intelligence<br />
                 <span className="text-transparent bg-clip-text" style={{ backgroundImage: 'linear-gradient(135deg, #956e5d, #d4a48a)' }}>
                   for the Modern Era
                 </span>
               </h1>
-              <p className="text-xl text-gray-600 mb-10 leading-relaxed">
+              <p className="text-base sm:text-lg md:text-xl text-gray-600 mb-6 sm:mb-10 leading-relaxed">
                 Glimmora's enterprise intelligence layer replaces fragmented compliance tools with AI-native platforms that govern risk, automate compliance, and secure operations — at the speed of business.
               </p>
-              <div className="flex flex-wrap gap-4">
-                <Link to="/contact" className="btn-primary px-8 py-4">Request Strategic Demo</Link>
-                <Link to="/platforms/verifai" className="border-2 border-[#70564b]/40 text-[#70564b] hover:bg-[#70564b]/5 font-semibold px-8 py-4 transition-all duration-200 inline-flex items-center">
+              <div className="flex flex-col sm:flex-row flex-wrap gap-3 sm:gap-4">
+                <Link to="/contact" className="btn-primary px-6 sm:px-8 py-3 sm:py-4 text-center">Request Strategic Demo</Link>
+                <Link to="/platforms/verifai" className="border-2 border-[#70564b]/40 text-[#70564b] hover:bg-[#70564b]/5 font-semibold px-6 sm:px-8 py-3 sm:py-4 transition-all duration-200 inline-flex items-center justify-center">
                   Explore VerifAI
                 </Link>
               </div>
@@ -105,14 +105,14 @@ export default function Enterprise() {
       </section>
 
       {/* OUTCOMES */}
-      <section className="py-16 bg-white border-b border-gray-100">
+      <section className="py-10 md:py-16 bg-white border-b border-gray-100">
         <div className="section-container">
           <AnimatedSection>
-            <motion.div variants={stagger} className="grid grid-cols-2 md:grid-cols-4 gap-6 text-center">
+            <motion.div variants={stagger} className="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-6 text-center">
               {OUTCOMES.map((o) => (
-                <motion.div key={o.label} variants={fadeUp} className="p-6">
-                  <p className="text-4xl font-bold text-brand-maroon mb-2">{o.metric}</p>
-                  <p className="text-sm text-gray-600">{o.label}</p>
+                <motion.div key={o.label} variants={fadeUp} className="p-4 md:p-6">
+                  <p className="text-2xl sm:text-3xl md:text-4xl font-bold text-brand-maroon mb-2">{o.metric}</p>
+                  <p className="text-xs sm:text-sm text-gray-600">{o.label}</p>
                 </motion.div>
               ))}
             </motion.div>
@@ -121,18 +121,18 @@ export default function Enterprise() {
       </section>
 
       {/* CHALLENGES */}
-      <section className="py-20 bg-[#F5F3F1]">
+      <section className="py-12 md:py-20 bg-[#F5F3F1]">
         <div className="section-container">
           <AnimatedSection>
-            <motion.div variants={fadeUp} className="text-center mb-14">
+            <motion.div variants={fadeUp} className="text-center mb-8 md:mb-14">
               <p className="text-sm font-semibold tracking-widest uppercase text-brand-maroon mb-3">Enterprise Challenges</p>
-              <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-5">
+              <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-gray-900 mb-4 md:mb-5">
                 The Challenges We Solve
               </h2>
             </motion.div>
-            <motion.div variants={stagger} className="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <motion.div variants={stagger} className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6">
               {CHALLENGES.map((c) => (
-                <motion.div key={c.title} variants={fadeUp} className="bg-white rounded-2xl p-8 shadow-sm border border-gray-100">
+                <motion.div key={c.title} variants={fadeUp} className="bg-white rounded-2xl p-5 sm:p-6 md:p-8 shadow-sm border border-gray-100">
                   <div className="w-10 h-10 bg-brand-maroon/10 rounded-xl flex items-center justify-center mb-4">
                     <svg className="w-5 h-5 text-brand-maroon" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
@@ -148,23 +148,23 @@ export default function Enterprise() {
       </section>
 
       {/* PLATFORMS */}
-      <section className="py-20 bg-white">
+      <section className="py-12 md:py-20 bg-white">
         <div className="section-container">
           <AnimatedSection>
-            <motion.div variants={fadeUp} className="text-center mb-14">
+            <motion.div variants={fadeUp} className="text-center mb-8 md:mb-14">
               <p className="text-sm font-semibold tracking-widest uppercase text-brand-maroon mb-3">Glimmora Solutions</p>
-              <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-5">
+              <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-gray-900 mb-4 md:mb-5">
                 Platforms Built for Enterprise
               </h2>
             </motion.div>
-            <motion.div variants={stagger} className="space-y-6">
+            <motion.div variants={stagger} className="space-y-4 md:space-y-6">
               {PLATFORMS.map((platform) => (
                 <motion.div key={platform.name} variants={fadeUp}
-                  className="bg-[#F5F3F1] rounded-2xl p-8 flex flex-col md:flex-row gap-6 items-start"
+                  className="bg-[#F5F3F1] rounded-2xl p-5 sm:p-6 md:p-8 flex flex-col md:flex-row gap-4 md:gap-6 items-start"
                 >
-                  <div className="flex-1">
-                    <div className="flex items-center gap-3 mb-3">
-                      <h3 className="text-xl font-bold text-gray-900">{platform.name}</h3>
+                  <div className="flex-1 min-w-0">
+                    <div className="flex flex-wrap items-center gap-2 md:gap-3 mb-3">
+                      <h3 className="text-lg md:text-xl font-bold text-gray-900">{platform.name}</h3>
                       <span className="text-xs font-semibold bg-brand-maroon text-white px-3 py-1 rounded-full">{platform.badge}</span>
                       {platform.live && (
                         <span className="text-xs font-semibold bg-green-50 text-green-600 px-2.5 py-1 rounded-full flex items-center gap-1">
@@ -172,14 +172,14 @@ export default function Enterprise() {
                         </span>
                       )}
                     </div>
-                    <p className="text-gray-600 mb-4 leading-relaxed">{platform.desc}</p>
+                    <p className="text-gray-600 mb-4 leading-relaxed text-sm md:text-base">{platform.desc}</p>
                     <div className="flex flex-wrap gap-2">
                       {platform.modules.map((m) => (
                         <span key={m} className="text-xs bg-white text-gray-600 border border-gray-200 px-3 py-1 rounded-full">{m}</span>
                       ))}
                     </div>
                   </div>
-                  <Link to={platform.path} className="btn-primary px-6 py-3 whitespace-nowrap flex-shrink-0">
+                  <Link to={platform.path} className="btn-primary px-6 py-3 whitespace-nowrap flex-shrink-0 w-full md:w-auto text-center">
                     Explore Platform
                   </Link>
                 </motion.div>
@@ -211,15 +211,15 @@ export default function Enterprise() {
       />
 
       {/* CTA */}
-      <section className="py-20 bg-[#F5F3F1]">
+      <section className="py-12 md:py-20 bg-[#F5F3F1]">
         <div className="section-container text-center">
           <AnimatedSection>
             <motion.div variants={fadeUp}>
-              <h2 className="text-4xl font-bold text-gray-900 mb-5">Deploy Enterprise Intelligence</h2>
-              <p className="text-lg text-gray-600 max-w-2xl mx-auto mb-10">
+              <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-gray-900 mb-4 md:mb-5">Deploy Enterprise Intelligence</h2>
+              <p className="text-base md:text-lg text-gray-600 max-w-2xl mx-auto mb-6 sm:mb-10">
                 Work with our enterprise team to design a custom deployment roadmap for your regulatory, risk, and compliance challenges.
               </p>
-              <Link to="/contact" className="btn-primary px-8 py-4 inline-flex items-center gap-2">
+              <Link to="/contact" className="btn-primary px-6 sm:px-8 py-3 sm:py-4 inline-flex items-center gap-2">
                 Request Strategic Demo
               </Link>
             </motion.div>
