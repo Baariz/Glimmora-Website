@@ -338,7 +338,7 @@ const Contact = () => {
                 <p className="text-xs text-white/60 font-bold uppercase tracking-widest mb-4 italic">Direct Connection</p>
                 <h3 className="text-xl font-bold mb-2 text-white">Call us at:</h3>
                 <p className="text-2xl sm:text-3xl font-light tracking-tighter text-white">+971 501371105</p>
-                <p className="text-xl font-light tracking-tighter text-white/80">info@baarez.com</p>
+                <p className="text-xl font-light tracking-tighter text-white/80">info@glimmora.ai</p>
               </div>
 
               {/* Benefit Pillars */}

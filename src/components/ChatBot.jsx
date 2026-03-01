@@ -1,6 +1,6 @@
 import React, { useState, useRef, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { MessageSquare, X, Send, Loader2, CheckCircle, Mic, MicOff } from 'lucide-react';
+import { MessageSquare, X, Send, Loader2, CheckCircle, Mic, Pause, Trash2 } from 'lucide-react';
 import emailjs from '@emailjs/browser';
 
 // --- BRAND CONFIG ---
@@ -48,7 +48,7 @@ CONTACT FORM — STRICT RULES:
 - When you DO show the form, include [CONTACT_FORM] at the very END of your message. It renders an inline form automatically.
 - Only include [CONTACT_FORM] ONCE per conversation. After that, just mention email/phone.
 - Do NOT explain the form fields — it appears automatically.
-- Alternative contact: email info@baarez.com or call +971 501371105.
+- Alternative contact: email info@glimmora.ai or call +971 501371105.
 
 ---
 
@@ -68,7 +68,7 @@ Technology Partners: Oracle, AWS, Google Cloud, Fujitsu, Palo Alto Networks, New
 ---
 
 CONTACT INFORMATION:
-- Email: info@baarez.com
+- Email: info@glimmora.ai
 - Phone: +971 501371105
 - Location: Dubai, UAE (MENA headquarters)
 - Website: glimmora.com
@@ -126,17 +126,19 @@ PLATFORMS (12+ total):
 5. **AEGIS Glimmora** — Defense Training & War Simulation (Coming Soon)
    AI-powered defense and security intelligence. Tactical intelligence, simulation, and mission readiness for national security agencies with classified deployment options.
 
-6. **Glimmora Reach** — Enterprise Outreach Platform (Coming Soon)
+6. **Glimmora Reach** — Enterprise Outreach Platform (Available — Book a Demo)
    Multi-channel AI-powered market intelligence and enterprise outreach. CRM intelligence, campaign analytics, AI outreach engine.
+   Target: CMOs, Sales Leaders, Business Development Teams.
 
-7. **GlimmoraTeam** — Workforce Intelligence Platform (Coming Soon)
+7. **GlimmoraTeam** — Workforce Intelligence Platform (Available — Book a Demo)
    Converts a Scope of Work (SOW) into a fully governed project execution flow. AGI layer breaks SOW into modules, tasks, and micro-roles. Assembles teams from verified students, professionals, and educated homemakers based on skills, not resumes. Every task is atomic, evidence-backed, and paid on validated outcomes. NOT a freelancing platform — an enterprise-grade project operating system.
    Modules: SOW Intelligence Engine, AGI Team Formation, Autonomous Project Governor (APG), Atomic Task Engine, Proof-of-Delivery Ledger, Embedded Learning Layer.
+   Target: Enterprises, Project Managers, Businesses needing governed execution.
 
 8. **Moda Glimmora** — Fashion & Retail Intelligence (Coming Soon)
    AI intelligence layer for fashion and retail industry.
 
-9. **Design Glimmora** — Architecture & Interior Design Intelligence (Coming Soon)
+9. **Design Glimmora** — Architecture & Interior Design Intelligence (Available — Book a Demo)
    The operating system for architecture and interior design. Takes rough ideas and transforms them into build-ready designs with Vastu compliance, safety checks, 3D previews, cost estimation, and site execution control.
    Modules: AI Design Generator, Vastu Compliance Engine, 3D Preview & Visualization, Cost Estimation AI, Construction Site Control, Client Presentation Module.
    Target: Architects, Interior Designers, Real Estate Developers, Construction Firms.
@@ -328,10 +330,21 @@ const ChatBot = () => {
   const [formShownId, setFormShownId] = useState(null); // track which message has form
   const [formSubmitted, setFormSubmitted] = useState(false);
   const [isListening, setIsListening] = useState(false);
+  const [isRecording, setIsRecording] = useState(false);
+  const [isPaused, setIsPaused] = useState(false);
+  const [recordingTime, setRecordingTime] = useState(0);
+  const [voiceTranscript, setVoiceTranscript] = useState('');
 
   const messagesEndRef = useRef(null);
   const inputRef = useRef(null);
   const recognitionRef = useRef(null);
+  const audioContextRef = useRef(null);
+  const analyserRef = useRef(null);
+  const streamRef = useRef(null);
+  const timerIntervalRef = useRef(null);
+  const transcriptAccumRef = useRef('');
+  const isRecordingRef = useRef(false);
+  const isPausedRef = useRef(false);
 
   useEffect(() => {
     messagesEndRef.current?.scrollIntoView({ behavior: 'smooth' });
@@ -348,7 +361,7 @@ const ChatBot = () => {
     const model = import.meta.env.VITE_OPENROUTER_MODEL || 'google/gemini-2.0-flash-001';
 
     if (!apiKey) {
-      return "I'm having a connection issue right now. Please reach out to us directly at **info@baarez.com** or call **+971 501371105** and our team will be happy to help!";
+      return "I'm having a connection issue right now. Please reach out to us directly at **info@glimmora.ai** or call **+971 501371105** and our team will be happy to help!";
     }
 
     // Build message history (keep last 20 messages, strip form markers from content)
@@ -381,14 +394,14 @@ const ChatBot = () => {
 
       if (!response.ok) {
         console.error('OpenRouter API error:', response.status);
-        return "I'm experiencing a brief hiccup. Feel free to email us at **info@baarez.com** or call **+971 501371105**!";
+        return "I'm experiencing a brief hiccup. Feel free to email us at **info@glimmora.ai** or call **+971 501371105**!";
       }
 
       const data = await response.json();
       return data.choices?.[0]?.message?.content || "I didn't catch that. Could you rephrase?";
     } catch (err) {
       console.error('ChatBot API error:', err);
-      return "I'm having trouble connecting. You can reach our team at **info@baarez.com** or **+971 501371105**!";
+      return "I'm having trouble connecting. You can reach our team at **info@glimmora.ai** or **+971 501371105**!";
     }
   };
 
@@ -450,43 +463,153 @@ const ChatBot = () => {
       {
         id: Date.now(),
         role: 'assistant',
-        content: "No worries! You can always reach us at **info@baarez.com** or **+971 501371105**. What else can I help you with?",
+        content: "No worries! You can always reach us at **info@glimmora.ai** or **+971 501371105**. What else can I help you with?",
       },
     ]);
   };
 
-  // Voice input using Web Speech API
-  const toggleVoice = () => {
+  // --- WhatsApp-style voice recording ---
+  const formatTime = (seconds) => {
+    const mins = Math.floor(seconds / 60);
+    const secs = seconds % 60;
+    return `${mins}:${secs.toString().padStart(2, '0')}`;
+  };
+
+
+  const startSpeechRecognition = () => {
+    const SpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecognition;
+    if (!SpeechRecognition) return;
+    const recognition = new SpeechRecognition();
+    recognition.lang = 'en-US';
+    recognition.continuous = true;
+    recognition.interimResults = true;
+    recognition.maxAlternatives = 1;
+    recognitionRef.current = recognition;
+    let sessionFinalText = '';
+    recognition.onresult = (event) => {
+      let currentFinal = '';
+      let currentInterim = '';
+      for (let i = 0; i < event.results.length; i++) {
+        if (event.results[i].isFinal) {
+          currentFinal += event.results[i][0].transcript + ' ';
+        } else {
+          currentInterim += event.results[i][0].transcript;
+        }
+      }
+      sessionFinalText = currentFinal;
+      setVoiceTranscript((transcriptAccumRef.current + currentFinal + currentInterim).trim());
+    };
+    recognition.onerror = (e) => {
+      if (e.error !== 'no-speech' && e.error !== 'aborted') {
+        console.error('Speech recognition error:', e.error);
+      }
+    };
+    recognition.onend = () => {
+      transcriptAccumRef.current += sessionFinalText;
+      if (isRecordingRef.current && !isPausedRef.current) {
+        setTimeout(() => {
+          if (isRecordingRef.current && !isPausedRef.current) {
+            startSpeechRecognition();
+          }
+        }, 100);
+      }
+    };
+    try { recognition.start(); } catch (e) {}
+  };
+
+  const startRecording = async () => {
     const SpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecognition;
     if (!SpeechRecognition) {
       setMessages(prev => [...prev, { id: Date.now(), role: 'assistant', content: "Voice input isn't supported in this browser. Try Chrome or Edge!" }]);
       return;
     }
-
-    if (isListening) {
-      recognitionRef.current?.stop();
-      setIsListening(false);
-      return;
+    try {
+      const stream = await navigator.mediaDevices.getUserMedia({ audio: true });
+      streamRef.current = stream;
+      const audioContext = new (window.AudioContext || window.webkitAudioContext)();
+      const analyser = audioContext.createAnalyser();
+      analyser.fftSize = 256;
+      const source = audioContext.createMediaStreamSource(stream);
+      source.connect(analyser);
+      audioContextRef.current = audioContext;
+      analyserRef.current = analyser;
+      transcriptAccumRef.current = '';
+      isRecordingRef.current = true;
+      isPausedRef.current = false;
+      startSpeechRecognition();
+      setRecordingTime(0);
+      timerIntervalRef.current = setInterval(() => {
+        setRecordingTime(prev => prev + 1);
+      }, 1000);
+      setIsRecording(true);
+      setIsPaused(false);
+      setVoiceTranscript('');
+    } catch (err) {
+      console.error('Microphone access error:', err);
+      setMessages(prev => [...prev, { id: Date.now(), role: 'assistant', content: "Couldn't access your microphone. Please check your browser permissions." }]);
     }
+  };
 
-    const recognition = new SpeechRecognition();
-    recognition.lang = 'en-US';
-    recognition.interimResults = false;
-    recognition.maxAlternatives = 1;
-    recognitionRef.current = recognition;
+  const pauseRecording = () => {
+    isPausedRef.current = true;
+    setIsPaused(true);
+    if (recognitionRef.current) {
+      try { recognitionRef.current.stop(); } catch (e) {}
+    }
+    clearInterval(timerIntervalRef.current);
+  };
 
-    recognition.onstart = () => setIsListening(true);
-    recognition.onresult = (event) => {
-      const transcript = event.results[0][0].transcript;
-      setInputValue(transcript);
-      setIsListening(false);
-      // Auto-send after voice capture
-      setTimeout(() => handleSend(transcript), 200);
-    };
-    recognition.onerror = () => setIsListening(false);
-    recognition.onend = () => setIsListening(false);
+  const resumeRecording = () => {
+    isPausedRef.current = false;
+    setIsPaused(false);
+    startSpeechRecognition();
+    timerIntervalRef.current = setInterval(() => {
+      setRecordingTime(prev => prev + 1);
+    }, 1000);
+  };
 
-    recognition.start();
+  const cleanupRecording = () => {
+    if (recognitionRef.current) {
+      try { recognitionRef.current.stop(); } catch (e) {}
+      recognitionRef.current = null;
+    }
+    if (timerIntervalRef.current) {
+      clearInterval(timerIntervalRef.current);
+      timerIntervalRef.current = null;
+    }
+    if (audioContextRef.current) {
+      audioContextRef.current.close().catch(() => {});
+      audioContextRef.current = null;
+    }
+    if (streamRef.current) {
+      streamRef.current.getTracks().forEach(t => t.stop());
+      streamRef.current = null;
+    }
+    analyserRef.current = null;
+    isRecordingRef.current = false;
+    isPausedRef.current = false;
+  };
+
+  const cancelRecording = () => {
+    cleanupRecording();
+    setIsRecording(false);
+    setIsPaused(false);
+    setRecordingTime(0);
+    setVoiceTranscript('');
+    transcriptAccumRef.current = '';
+  };
+
+  const sendVoiceMessage = () => {
+    const text = voiceTranscript.trim() || transcriptAccumRef.current.trim();
+    cleanupRecording();
+    setIsRecording(false);
+    setIsPaused(false);
+    setRecordingTime(0);
+    setVoiceTranscript('');
+    transcriptAccumRef.current = '';
+    if (text) {
+      handleSend(text);
+    }
   };
 
   // Render message content — handles bold, line breaks, and strips [CONTACT_FORM] tag
@@ -603,34 +726,88 @@ const ChatBot = () => {
 
             {/* Input */}
             <div className="p-3 bg-white border-t border-gray-100 shrink-0">
-              <form onSubmit={handleSubmit} className="flex gap-2">
-                <input
-                  ref={inputRef}
-                  type="text"
-                  value={inputValue}
-                  onChange={(e) => setInputValue(e.target.value)}
-                  placeholder="Ask me anything about Glimmora..."
-                  disabled={isLoading}
-                  className="flex-1 bg-gray-50 border border-gray-200 rounded-lg px-4 py-2.5 text-sm focus:outline-none focus:ring-1 focus:border-[#70564b] transition-all disabled:opacity-50"
-                  style={{ '--tw-ring-color': BRAND.colors.primary }}
-                />
-                <button
-                  type="button"
-                  onClick={toggleVoice}
-                  disabled={isLoading}
-                  className={`p-2.5 rounded-lg transition-all shadow-sm flex items-center justify-center min-w-[42px] shrink-0 ${isListening ? 'bg-red-500 text-white animate-pulse' : 'bg-gray-100 text-gray-500 hover:bg-gray-200'}`}
-                >
-                  {isListening ? <MicOff size={18} /> : <Mic size={18} />}
-                </button>
-                <button
-                  type="submit"
-                  disabled={!inputValue.trim() || isLoading}
-                  className="text-white p-2.5 rounded-lg transition-all disabled:opacity-40 hover:opacity-90 shadow-sm flex items-center justify-center min-w-[42px] shrink-0"
-                  style={{ backgroundColor: BRAND.colors.primary }}
-                >
-                  {isLoading ? <Loader2 size={18} className="animate-spin" /> : <Send size={18} />}
-                </button>
-              </form>
+              {isRecording ? (
+                /* Voice recording UI — editable transcript */
+                <div className="flex items-center gap-2">
+                  {/* Cancel */}
+                  <button
+                    onClick={cancelRecording}
+                    className="p-2 text-red-400 hover:text-red-600 hover:bg-red-50 rounded-full transition-colors shrink-0"
+                    title="Cancel"
+                  >
+                    <Trash2 size={20} />
+                  </button>
+
+                  {/* Editable transcript field */}
+                  <div className="flex-1 relative">
+                    <input
+                      type="text"
+                      value={voiceTranscript}
+                      onChange={(e) => setVoiceTranscript(e.target.value)}
+                      placeholder="Listening..."
+                      className="w-full bg-gray-50 border border-gray-200 rounded-lg px-4 py-2.5 pr-16 text-sm focus:outline-none focus:ring-1 focus:border-[#70564b] transition-all"
+                      style={{ '--tw-ring-color': BRAND.colors.primary }}
+                    />
+                    {/* Recording indicator + timer */}
+                    <div className="absolute right-3 top-1/2 -translate-y-1/2 flex items-center gap-1.5">
+                      <span className="w-2 h-2 bg-red-500 rounded-full animate-pulse" />
+                      <span className="text-[10px] font-mono text-gray-400 tabular-nums">
+                        {formatTime(recordingTime)}
+                      </span>
+                    </div>
+                  </div>
+
+                  {/* Pause / Resume mic */}
+                  <button
+                    onClick={isPaused ? resumeRecording : pauseRecording}
+                    className={`p-2.5 rounded-lg transition-all shadow-sm flex items-center justify-center min-w-[42px] shrink-0 ${isPaused ? 'bg-gray-100 text-gray-500 hover:bg-gray-200' : 'bg-red-50 text-red-500 hover:bg-red-100'}`}
+                    title={isPaused ? 'Resume' : 'Pause'}
+                  >
+                    {isPaused ? <Mic size={18} /> : <Pause size={18} />}
+                  </button>
+
+                  {/* Send */}
+                  <button
+                    onClick={sendVoiceMessage}
+                    disabled={!voiceTranscript.trim()}
+                    className="text-white p-2.5 rounded-lg transition-all disabled:opacity-40 hover:opacity-90 shadow-sm flex items-center justify-center min-w-[42px] shrink-0"
+                    style={{ backgroundColor: BRAND.colors.primary }}
+                    title="Send"
+                  >
+                    <Send size={18} />
+                  </button>
+                </div>
+              ) : (
+                /* Normal text input */
+                <form onSubmit={handleSubmit} className="flex gap-2">
+                  <input
+                    ref={inputRef}
+                    type="text"
+                    value={inputValue}
+                    onChange={(e) => setInputValue(e.target.value)}
+                    placeholder="Ask me anything about Glimmora..."
+                    disabled={isLoading}
+                    className="flex-1 bg-gray-50 border border-gray-200 rounded-lg px-4 py-2.5 text-sm focus:outline-none focus:ring-1 focus:border-[#70564b] transition-all disabled:opacity-50"
+                    style={{ '--tw-ring-color': BRAND.colors.primary }}
+                  />
+                  <button
+                    type="button"
+                    onClick={startRecording}
+                    disabled={isLoading}
+                    className="p-2.5 rounded-lg transition-all shadow-sm flex items-center justify-center min-w-[42px] shrink-0 bg-gray-100 text-gray-500 hover:bg-gray-200"
+                  >
+                    <Mic size={18} />
+                  </button>
+                  <button
+                    type="submit"
+                    disabled={!inputValue.trim() || isLoading}
+                    className="text-white p-2.5 rounded-lg transition-all disabled:opacity-40 hover:opacity-90 shadow-sm flex items-center justify-center min-w-[42px] shrink-0"
+                    style={{ backgroundColor: BRAND.colors.primary }}
+                  >
+                    {isLoading ? <Loader2 size={18} className="animate-spin" /> : <Send size={18} />}
+                  </button>
+                </form>
+              )}
               <div className="text-center mt-2">
                 <p className="text-[10px] text-gray-300">Powered by Glimmora International</p>
               </div>

@@ -96,7 +96,7 @@ const ALL_PLATFORMS = [
     desc: 'Multi-channel enterprise intelligence and outreach platform powered by AI. Market intelligence, predictive analytics, and AI-driven engagement at scale.',
     modules: ['Market Intelligence', 'AI Outreach Engine', 'CRM Intelligence', 'Predictive Analytics', 'Campaign Intelligence'],
     path: '/platforms/reach',
-    status: 'soon',
+    status: 'live',
     target: 'CMOs, Sales Leaders, Business Development',
     outcome: 'Accelerated enterprise pipeline growth',
     color: '#70564b',
@@ -161,7 +161,7 @@ const ALL_PLATFORMS = [
     desc: 'The operating system for architecture and interior design. Design Glimmora thinks like an experienced architect — taking rough ideas and transforming them into build-ready designs with Vastu compliance, 3D previews, cost estimation, and site execution control.',
     modules: ['AI Design Generator', 'Vastu Compliance Engine', '3D Preview & Visualization', 'Cost Estimation AI', 'Construction Site Control', 'Client Presentation Module'],
     path: '/platforms/design',
-    status: 'soon',
+    status: 'live',
     target: 'Architects, Interior Designers, Real Estate Developers, Construction Firms',
     outcome: 'Build-ready designs from rough concepts in minutes',
     color: '#956e5d',
@@ -174,7 +174,7 @@ const ALL_PLATFORMS = [
     desc: 'Converts a Scope of Work into a fully governed project execution flow. AGI forms teams from verified students, professionals, and educated homemakers based on skills — not resumes. Atomic tasks, validated outcomes, and a Proof-of-Delivery Ledger replace traditional freelancing with an enterprise-grade project operating system.',
     modules: ['SOW Intelligence Engine', 'AGI Team Formation', 'Autonomous Project Governor', 'Atomic Task Engine', 'Proof-of-Delivery Ledger', 'Embedded Learning Layer'],
     path: '/platforms/team',
-    status: 'soon',
+    status: 'live',
     target: 'Enterprises, Project Managers, Operations Leaders',
     outcome: 'Governed execution with validated, evidence-backed outcomes',
     color: '#70564b',
@@ -280,8 +280,8 @@ export default function Platforms() {
               </p>
               <div className="flex flex-wrap gap-5 md:gap-8">
                 {[
-                  { value: '3', label: 'Live Platforms' },
-                  { value: '14+', label: 'Launching Soon' },
+                  { value: '6', label: 'Live Platforms' },
+                  { value: '11+', label: 'Launching Soon' },
                   { value: '8+', label: 'Industries Served' },
                 ].map((stat) => (
                   <div key={stat.label}>

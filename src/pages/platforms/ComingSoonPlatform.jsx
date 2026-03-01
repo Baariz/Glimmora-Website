@@ -159,9 +159,11 @@ export function ComingSoonPlatform({ platform }) {
                 <span className="inline-block text-xs font-semibold tracking-widest uppercase bg-[#70564b]/10 text-[#70564b] px-4 py-2">
                   {platform.category}
                 </span>
-                <span className="text-xs font-bold bg-amber-50 border border-amber-200 text-amber-700 px-3 py-1.5">
-                  Launching Soon
-                </span>
+                {!platform.showDemo && (
+                  <span className="text-xs font-bold bg-amber-50 border border-amber-200 text-amber-700 px-3 py-1.5">
+                    Launching Soon
+                  </span>
+                )}
               </motion.div>
 
               {/* Title */}
@@ -183,7 +185,7 @@ export function ComingSoonPlatform({ platform }) {
               {/* Modules */}
               <motion.div variants={fadeUp} className="mb-6 md:mb-8">
                 <p className="text-xs font-semibold text-gray-400 uppercase tracking-widest mb-3">
-                  Planned Modules
+                  {platform.showDemo ? 'Core Modules' : 'Planned Modules'}
                 </p>
                 <div className="flex flex-wrap gap-2">
                   {platform.modules.map((mod) => (
@@ -230,40 +232,60 @@ export function ComingSoonPlatform({ platform }) {
               viewport={{ once: true, margin: '-60px' }}
               variants={stagger}
             >
-              <motion.p variants={fadeUp} className="text-xs font-semibold uppercase tracking-widest text-[#70564b] mb-3">
-                Early Access
-              </motion.p>
-              <motion.h2 variants={fadeUp} className="text-2xl md:text-3xl font-bold text-gray-900 mb-3">
-                Be First to Deploy {platform.displayName}
-              </motion.h2>
-              <motion.p variants={fadeUp} className="text-gray-500 text-sm mb-8 leading-relaxed">
-                Join our early access program and get priority deployment when {platform.displayName} launches.
-              </motion.p>
-
-              <motion.div variants={fadeUp}>
-                {submitted ? (
-                  <div className="flex items-center justify-center gap-3 text-green-600 bg-green-50 border border-green-200 px-6 py-4">
-                    <svg className="w-5 h-5 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
-                    </svg>
-                    <span className="font-semibold text-sm">You're on the list. We'll be in touch.</span>
-                  </div>
-                ) : (
-                  <form onSubmit={handleSubmit} className="flex flex-col sm:flex-row gap-3 max-w-md mx-auto">
-                    <input
-                      type="email"
-                      value={email}
-                      onChange={(e) => setEmail(e.target.value)}
-                      placeholder="Enter your work email"
-                      required
-                      className="flex-1 bg-gray-50 border border-gray-200 text-gray-900 placeholder:text-gray-400 px-4 py-3 outline-none focus:border-[#956e5d] transition-colors text-sm"
-                    />
-                    <button type="submit" className="btn-primary px-6 py-3 text-sm whitespace-nowrap">
-                      Request Access
-                    </button>
-                  </form>
-                )}
-              </motion.div>
+              {platform.showDemo ? (
+                <>
+                  <motion.p variants={fadeUp} className="text-xs font-semibold uppercase tracking-widest text-[#70564b] mb-3">
+                    Get Started
+                  </motion.p>
+                  <motion.h2 variants={fadeUp} className="text-2xl md:text-3xl font-bold text-gray-900 mb-3">
+                    See {platform.displayName} in Action
+                  </motion.h2>
+                  <motion.p variants={fadeUp} className="text-gray-500 text-sm mb-8 leading-relaxed">
+                    Schedule a strategic demo to explore how {platform.displayName} can transform your operations.
+                  </motion.p>
+                  <motion.div variants={fadeUp}>
+                    <Link to="/contact" className="btn-primary px-8 py-4 text-sm inline-block">
+                      Book a Demo
+                    </Link>
+                  </motion.div>
+                </>
+              ) : (
+                <>
+                  <motion.p variants={fadeUp} className="text-xs font-semibold uppercase tracking-widest text-[#70564b] mb-3">
+                    Early Access
+                  </motion.p>
+                  <motion.h2 variants={fadeUp} className="text-2xl md:text-3xl font-bold text-gray-900 mb-3">
+                    Be First to Deploy {platform.displayName}
+                  </motion.h2>
+                  <motion.p variants={fadeUp} className="text-gray-500 text-sm mb-8 leading-relaxed">
+                    Join our early access program and get priority deployment when {platform.displayName} launches.
+                  </motion.p>
+                  <motion.div variants={fadeUp}>
+                    {submitted ? (
+                      <div className="flex items-center justify-center gap-3 text-green-600 bg-green-50 border border-green-200 px-6 py-4">
+                        <svg className="w-5 h-5 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                        </svg>
+                        <span className="font-semibold text-sm">You're on the list. We'll be in touch.</span>
+                      </div>
+                    ) : (
+                      <form onSubmit={handleSubmit} className="flex flex-col sm:flex-row gap-3 max-w-md mx-auto">
+                        <input
+                          type="email"
+                          value={email}
+                          onChange={(e) => setEmail(e.target.value)}
+                          placeholder="Enter your work email"
+                          required
+                          className="flex-1 bg-gray-50 border border-gray-200 text-gray-900 placeholder:text-gray-400 px-4 py-3 outline-none focus:border-[#956e5d] transition-colors text-sm"
+                        />
+                        <button type="submit" className="btn-primary px-6 py-3 text-sm whitespace-nowrap">
+                          Request Access
+                        </button>
+                      </form>
+                    )}
+                  </motion.div>
+                </>
+              )}
 
               {platform.target && (
                 <motion.p variants={fadeUp} className="text-xs text-gray-400 mt-5">

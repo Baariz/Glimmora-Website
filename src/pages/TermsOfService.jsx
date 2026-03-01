@@ -141,7 +141,7 @@ const TermsOfService = () => {
             <div className="pt-10 border-t border-gray-100 flex flex-col md:flex-row justify-between items-start gap-8">
               <div className="text-sm text-gray-600">
                 <h3 className="text-[#70564b] font-bold mb-2">Legal Inquiries</h3>
-                <p>Email: info@baarez.com</p>
+                <p>Email: info@glimmora.ai</p>
                 <p className="mt-4">
                   For information on data handling, visit our <Link to="/privacy" className="text-[#70564b] font-bold hover:underline">Privacy Policy</Link>.
                 </p>

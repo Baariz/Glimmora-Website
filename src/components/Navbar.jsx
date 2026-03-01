@@ -101,17 +101,17 @@ function Navbar() {
         { name: 'Glimmora Hospitality', path: '/platforms/hospitality', desc: 'AGI-native intelligence for hotels & resorts.', icon: Icons.Hotel, badge: null },
         { name: 'Glimmora VerifAI', path: '/platforms/verifai', desc: 'Enterprise governance, risk & compliance intelligence.', icon: Icons.Shield, badge: null },
         { name: 'Glimmora ScanVista', path: '/platforms/scanvista', desc: 'Intelligent document understanding — English & Arabic OCR.', icon: Icons.Doc, badge: null },
+        { name: 'Design Glimmora',  path: '/platforms/design',        desc: 'AI architecture & interior design intelligence.',            icon: Icons.Building, badge: null },
+        { name: 'GlimmoraTeam',     path: '/platforms/team',          desc: 'SOW to governed project execution via AGI.',                icon: Icons.Users,    badge: null },
+        { name: 'Glimmora Reach',   path: '/platforms/reach',         desc: 'Multi-channel enterprise outreach platform.',               icon: Icons.Globe,    badge: null },
       ]
     },
     {
       title: 'Coming Soon',
       items: [
         { name: 'Moda Glimmora',    path: '/platforms/moda',          desc: 'Fashion & retail intelligence layer.',                        icon: Icons.Sparkles, badge: 'Soon' },
-        { name: 'Design Glimmora',  path: '/platforms/design',        desc: 'AI architecture & interior design intelligence.',            icon: Icons.Building, badge: 'Soon' },
-        { name: 'GlimmoraTeam',     path: '/platforms/team',          desc: 'SOW to governed project execution via AGI.',                icon: Icons.Users,    badge: 'Soon' },
         { name: 'Film Glimmora',    path: '/platforms/film',          desc: 'Cinema & entertainment intelligence.',                      icon: Icons.Film,     badge: 'Soon' },
         { name: 'Elan Glimmora',    path: '/platforms/elan',          desc: 'Travel & luxury intelligence ecosystem.',                   icon: Icons.Plane,    badge: 'Soon' },
-        { name: 'Glimmora Reach',   path: '/platforms/reach',         desc: 'Multi-channel enterprise outreach platform.',               icon: Icons.Globe,    badge: 'Soon' },
         { name: 'Glimmora Nidhi',   path: '/platforms/nidhi',         desc: 'Financial intelligence & advisory platform.',              icon: Icons.Layers,   badge: 'Soon' },
         { name: 'Cyber Glimmora',   path: '/platforms/cyber',         desc: '24/7 cybersecurity & sovereign threat intelligence.',      icon: Icons.Lock,     badge: 'Soon' },
       ]
